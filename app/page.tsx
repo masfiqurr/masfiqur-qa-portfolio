@@ -52,6 +52,7 @@ const cardFade = {
 
 const highlights = [
   "14+ years of professional QA experience",
+  "Bachelor’s and Master’s degrees in Computer Science",
   "11+ years of remote client delivery",
   "200+ web & mobile applications tested",
   "Top Rated Plus · 100% Job Success on Upwork",
@@ -465,14 +466,17 @@ export default function Home() {
           >
             <span className="badge">About</span>
             <h2 className="mt-5 font-display font-semibold heading-section">
-              <span className="text-brandSoft">14+ years</span> as a software QA engineer, tester &amp; QA lead
+              <span className="text-brandSoft">14+ years</span>
+              {" "}
+              <span>as a software QA engineer, tester &amp; QA lead</span>
             </h2>
             <p className="mt-6 text-base leading-8 text-mute md:text-lg">
               I am a Senior Software Quality Assurance Engineer with 14+ years of experience helping
-              startups, SaaS companies, and enterprise organizations deliver reliable products. Whether
-              you need a hands-on QA engineer, software tester, or QA manager mindset for release
-              planning, my focus is not only finding bugs — but improving usability, user experience,
-              and overall product quality before release.
+              startups, SaaS companies, and enterprise organizations deliver reliable products. I hold
+              both Bachelor’s and Master’s degrees in Computer Science, and whether you need a
+              hands-on QA engineer, software tester, or QA manager mindset for release planning, my
+              focus is not only finding bugs — but improving usability, user experience, and overall
+              product quality before release.
             </p>
             <p className="mt-4 text-base leading-8 text-mute md:text-lg">
               I have contributed to projects for global brands including Tesco, Harrods, Marks & Spencer,
