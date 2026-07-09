@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#050505"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" stroke="#5B29DA" stroke-width="3"/>
+  <path
+    d="M22 18.5l4.2 4.2L38.5 10.4"
+    stroke="#75C32C"
+    stroke-width="3.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <text
+    x="32"
+    y="48"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="18"
+    font-weight="700"
+    fill="#FFFFFF"
+    letter-spacing="1"
+  >MR</text>
+</svg>
