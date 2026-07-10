@@ -25,6 +25,8 @@ import {
   X,
   ExternalLink,
 } from "lucide-react";
+import TestimonialsSection from "@/components/Testimonials";
+import { testimonials } from "@/data/testimonials";
 
 const fade = {
   hidden: { opacity: 0, y: 24 },
@@ -53,6 +55,7 @@ const cardFade = {
 const highlights = [
   "14+ years of professional QA experience",
   "Bachelor’s and Master’s degrees in Computer Science",
+  "Clients across USA, UK, Australia, Netherlands & Brazil",
   "11+ years of remote client delivery",
   "200+ web & mobile applications tested",
   "Top Rated Plus · 100% Job Success on Upwork",
@@ -347,6 +350,9 @@ export default function Home() {
             <a href="#certificates" className="transition hover:text-white">
               Certificates
             </a>
+            <a href="#testimonials" className="transition hover:text-white">
+              Testimonials
+            </a>
             <a href="#feedback" className="transition hover:text-white">
               Feedback
             </a>
@@ -407,7 +413,8 @@ export default function Home() {
             >
               Senior software QA engineer, tester, and QA lead helping startups and enterprises ship
               reliable products with manual QA, Playwright automation, API testing, AI validation,
-              documentation, end-to-end testing, and release readiness.
+              documentation, end-to-end testing, and release readiness. Experience working with clients
+              in the USA, UK, Australia, Netherlands, and Brazil.
             </motion.p>
 
             <motion.div
@@ -480,7 +487,8 @@ export default function Home() {
             </p>
             <p className="mt-4 text-base leading-8 text-mute md:text-lg">
               I have contributed to projects for global brands including Tesco, Harrods, Marks & Spencer,
-              Xoom, FedEx, Dell, Visa, Hilton, and many others.
+              Xoom, FedEx, Dell, Visa, Hilton, and many others — working with clients across the USA,
+              UK, Australia, Netherlands, and Brazil.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {brands.map((brand) => (
@@ -632,6 +640,12 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <TestimonialsSection
+        items={testimonials}
+        upworkUrl={links.upwork}
+        linkedinUrl={links.linkedin}
+      />
 
       <section id="feedback" className="section">
         <motion.div

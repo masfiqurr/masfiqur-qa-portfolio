@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Masfiqur Rahman",
   },
   description:
-    "Hire Masfiqur Rahman — Top-Rated Senior QA Engineer, software tester, and QA lead with 14+ years experience in manual QA, Playwright automation, API testing, mobile QA, AI testing, and release readiness.",
+    "Hire Masfiqur Rahman — Top-Rated Senior QA Engineer, software tester, and QA lead with 14+ years experience in manual QA, Playwright automation, API testing, mobile QA, AI testing, and release readiness. Worked with clients in the USA, UK, Australia, Netherlands, and Brazil.",
   keywords: [
     "QA engineer",
     "software QA",
@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     "senior QA engineer",
     "manual QA",
     "Playwright automation",
+    "test automation",
     "API testing",
     "mobile QA",
     "AI testing",
@@ -51,13 +52,13 @@ export const metadata: Metadata = {
     siteName: "Masfiqur Rahman — Senior QA Engineer",
     title: "Masfiqur Rahman | Senior QA Engineer, Software Tester & QA Manager",
     description:
-      "Top-Rated Senior QA Engineer with 14+ years experience. Manual QA, Playwright, API, mobile, AI testing, and release readiness for startups and enterprises.",
+      "Top-Rated Senior QA Engineer with 14+ years experience. Manual QA, Playwright, Automation, API, mobile, AI testing, and release readiness. Worked with clients in the USA, UK, Australia, Netherlands, and Brazil.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Masfiqur Rahman | Senior QA Engineer & Software Tester",
     description:
-      "14+ years in software QA. Hire a Top-Rated QA engineer for web, mobile, API, AI, and automation testing.",
+      "14+ years in software QA. Manual QA, Playwright, Automation, API, mobile & AI testing for clients in the USA, UK, Australia, Netherlands, and Brazil.",
   },
   robots: {
     index: true,
@@ -85,11 +86,12 @@ const jsonLd = {
   url: siteUrl,
   jobTitle: "Senior QA Engineer",
   description:
-    "Top-Rated Senior QA Engineer, software tester, and QA lead specializing in manual QA, Playwright automation, API testing, mobile QA, and AI product testing.",
+    "Top-Rated Senior QA Engineer, software tester, and QA lead specializing in manual QA, Playwright automation, API testing, mobile QA, and AI product testing. Experience working with clients in the USA, UK, Australia, Netherlands, and Brazil.",
   knowsAbout: [
     "Software QA",
     "QA Engineering",
     "Manual Testing",
+    "Test Automation",
     "Playwright",
     "API Testing",
     "Mobile QA",
