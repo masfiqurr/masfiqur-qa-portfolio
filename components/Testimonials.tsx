@@ -118,22 +118,22 @@ export default function TestimonialsSection({
                 {item.clientName}
               </h3>
 
-              <div className="mt-2 space-y-1.5 text-sm leading-6 text-mute">
+              <div className="mt-2 space-y-2 text-sm leading-6 text-mute">
                 {item.position && (
-                  <p className="inline-flex items-start gap-2">
-                    <Briefcase className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                  <p className="flex items-start gap-3">
+                    <Briefcase className="mt-1 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                     <span>{item.position}</span>
                   </p>
                 )}
                 {item.company && (
-                  <p className="inline-flex items-start gap-2">
-                    <Building2 className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                  <p className="flex items-start gap-3">
+                    <Building2 className="mt-1 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                     <span>{item.company}</span>
                   </p>
                 )}
                 {item.date && (
-                  <p className="inline-flex items-center gap-2 text-xs">
-                    <Calendar className="h-3.5 w-3.5 shrink-0" />
+                  <p className="flex items-center gap-3 text-xs">
+                    <Calendar className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                     <span>{item.date}</span>
                   </p>
                 )}

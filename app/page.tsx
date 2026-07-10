@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Bug,
@@ -24,6 +25,7 @@ import {
   Award,
   X,
   ExternalLink,
+  Menu,
 } from "lucide-react";
 import TestimonialsSection from "@/components/Testimonials";
 import { testimonials } from "@/data/testimonials";
@@ -69,7 +71,7 @@ const services = [
   { icon: Database, title: "API & SQL Validation", desc: "Postman API checks plus database integrity, duplicates, nulls, and migration validation." },
   { icon: Smartphone, title: "Real Device Mobile QA", desc: "iOS, Android, iPad, TestFlight, BrowserStack, and real-device coverage across screen sizes." },
   { icon: Bot, title: "AI Product Testing", desc: "AI app testing, prompt validation, and quality checks for AI-powered product flows." },
-  { icon: ShieldCheck, title: "Release Readiness", desc: "Cross-browser, accessibility (WCAG), production verification, and go / no-go confidence." },
+  { icon: ShieldCheck, title: "Release Readiness", desc: "Cross-browser testing, accessibility (WCAG), production verification, and go / no-go confidence." },
 ];
 
 const expertise = [
@@ -83,7 +85,8 @@ const expertise = [
   "User Acceptance Testing (UAT)",
   "Release & Production Validation",
   "Accessibility Testing (WCAG)",
-  "Cross-Browser & Cross-Device Testing",
+  "Cross-Browser Testing",
+  "Cross-Device Testing",
   "SQL Database Validation",
 ];
 
@@ -103,6 +106,8 @@ const tools = [
   "Trello",
   "Asana",
   "Monday",
+  "Slack",
+  "Loom",
   "GitHub",
   "Bitbucket",
   "BrowserStack",
@@ -111,6 +116,10 @@ const tools = [
   "Xcode",
   "Postman",
   "Chrome DevTools",
+  "Cursor",
+  "Claude",
+  "Network Link Conditioner",
+  "Charles Proxy",
 ];
 
 const industries = [
@@ -311,6 +320,7 @@ const links = {
 
 export default function Home() {
   const [activeCert, setActiveCert] = useState<(typeof certificates)[number] | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (!activeCert) return;
@@ -328,45 +338,90 @@ export default function Home() {
     };
   }, [activeCert]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
+
+  const navLinks = [
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
+    { href: "#certificates", label: "Certificates" },
+    { href: "#testimonials", label: "Testimonials" },
+    { href: "#feedback", label: "Feedback" },
+    { href: "#case-studies", label: "Work" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   return (
     <main className="overflow-x-hidden bg-ink text-white">
       <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-ink/80 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#" className="group flex items-baseline gap-1.5">
-            <span className="font-display text-lg font-semibold tracking-tight text-white transition group-hover:text-brandSoft md:text-xl">
+        <nav
+          className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4"
+          aria-label="Primary"
+        >
+          <a href="#" className="group flex min-w-0 shrink items-baseline gap-1.5">
+            <span className="font-display text-base font-semibold tracking-tight text-white transition group-hover:text-brandSoft sm:text-lg md:text-xl">
               Masfiqur
             </span>
-            <span className="font-display text-lg font-medium tracking-tight text-brandSoft md:text-xl">
+            <span className="font-display text-base font-medium tracking-tight text-brandSoft sm:text-lg md:text-xl">
               Rahman
             </span>
           </a>
-          <div className="hidden items-center gap-7 text-sm font-medium text-mute md:flex">
-            <a href="#about" className="transition hover:text-white">
-              About
-            </a>
-            <a href="#services" className="transition hover:text-white">
-              Services
-            </a>
-            <a href="#certificates" className="transition hover:text-white">
-              Certificates
-            </a>
-            <a href="#testimonials" className="transition hover:text-white">
-              Testimonials
-            </a>
-            <a href="#feedback" className="transition hover:text-white">
-              Feedback
-            </a>
-            <a href="#case-studies" className="transition hover:text-white">
-              Work
-            </a>
-            <a href="#contact" className="transition hover:text-white">
-              Contact
-            </a>
+
+          <div className="hidden items-center gap-5 text-sm font-medium text-mute xl:flex">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} className="whitespace-nowrap transition hover:text-white">
+                {link.label}
+              </a>
+            ))}
           </div>
-          <a href={links.upwork} target="_blank" rel="noreferrer" className="btn-primary">
-            Hire Me <ArrowUpRight className="h-4 w-4" />
-          </a>
+
+          <div className="flex shrink-0 items-center gap-2">
+            <a
+              href={links.upwork}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary !px-3 !py-2 text-xs sm:!px-5 sm:!py-3 sm:text-sm"
+            >
+              Hire Me <ArrowUpRight className="h-4 w-4" />
+            </a>
+            <button
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 text-white transition hover:border-brand/50 hover:bg-brand/20 xl:hidden"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </nav>
+
+        {menuOpen && (
+          <div
+            id="mobile-nav"
+            className="border-t border-white/10 bg-ink/95 px-4 py-4 xl:hidden"
+          >
+            <div className="mx-auto flex max-w-6xl flex-col gap-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-lg px-3 py-2.5 text-sm font-medium text-mute transition hover:bg-white/5 hover:text-white"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </header>
 
       <section className="relative flex min-h-[100svh] flex-col overflow-x-clip pt-20">
@@ -400,11 +455,22 @@ export default function Home() {
               transition={{ duration: 0.55 }}
               className="font-display font-semibold heading-hero"
             >
-              Top-Rated Senior QA Engineer
-              <span className="mt-1.5 block text-brandSoft md:mt-2">
-                Helping Teams Ship High-Quality Web, Mobile &amp; AI Products
-              </span>
+              Masfiqur Rahman
             </motion.h1>
+            <motion.p
+              variants={fade}
+              transition={{ duration: 0.55 }}
+              className="mt-3 font-display text-2xl font-semibold leading-snug tracking-tight text-brandSoft sm:text-3xl md:mt-4 md:text-4xl"
+            >
+              Top-Rated Senior QA Engineer
+            </motion.p>
+            <motion.p
+              variants={fade}
+              transition={{ duration: 0.55 }}
+              className="mt-2 text-base font-medium leading-7 text-white/90 sm:text-lg md:text-xl"
+            >
+              Helping teams ship high-quality web, mobile &amp; AI products
+            </motion.p>
 
             <motion.p
               variants={fade}
@@ -413,8 +479,8 @@ export default function Home() {
             >
               Senior software QA engineer, tester, and QA lead helping startups and enterprises ship
               reliable products with manual QA, Playwright automation, API testing, AI validation,
-              documentation, end-to-end testing, and release readiness. Experience working with clients
-              in the USA, UK, Australia, Netherlands, and Brazil.
+              cross-browser testing, documentation, end-to-end testing, and release readiness.
+              Experience working with clients in the USA, UK, Australia, Netherlands, and Brazil.
             </motion.p>
 
             <motion.div
@@ -480,10 +546,10 @@ export default function Home() {
             <p className="mt-6 text-base leading-8 text-mute md:text-lg">
               I am a Senior Software Quality Assurance Engineer with 14+ years of experience helping
               startups, SaaS companies, and enterprise organizations deliver reliable products. I hold
-              both Bachelor’s and Master’s degrees in Computer Science, and whether you need a
-              hands-on QA engineer, software tester, or QA manager mindset for release planning, my
-              focus is not only finding bugs — but improving usability, user experience, and overall
-              product quality before release.
+              both Bachelor’s and Master’s degrees in Computer Science. Whether you need a hands-on QA
+              engineer, software tester, or QA manager mindset for release planning, my focus goes beyond
+              finding bugs — improving usability, user experience, and overall product quality before
+              release.
             </p>
             <p className="mt-4 text-base leading-8 text-mute md:text-lg">
               I have contributed to projects for global brands including Tesco, Harrods, Marks & Spencer,
@@ -512,8 +578,11 @@ export default function Home() {
             <h3 className="font-display text-xl font-semibold">Key highlights</h3>
             <ul className="mt-5 space-y-3">
               {highlights.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm leading-7 text-mute">
-                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-accent" />
+                <li key={item} className="flex items-start gap-3.5 text-sm leading-7 text-mute">
+                  <CheckCircle2
+                    className="mt-1 h-4 w-4 shrink-0 text-accent"
+                    aria-hidden="true"
+                  />
                   <span>{item}</span>
                 </li>
               ))}
@@ -572,8 +641,11 @@ export default function Home() {
           <div className="mt-14 grid gap-4 md:grid-cols-3">
             {expertise.map((item) => (
               <div key={item} className="rounded-2xl border border-line bg-ink p-5">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" />
+                <div className="flex items-start gap-3.5">
+                  <CheckCircle2
+                    className="mt-1 h-4 w-4 shrink-0 text-accent"
+                    aria-hidden="true"
+                  />
                   <p className="text-sm leading-7 text-mute">{item}</p>
                 </div>
               </div>
@@ -617,14 +689,16 @@ export default function Home() {
                 className="group overflow-hidden rounded-2xl border border-line bg-ink text-left transition hover:border-brand/50 hover:shadow-glow"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
-                  <img
+                  <Image
                     src={cert.preview}
-                    alt={`${cert.title} certificate preview`}
-                    className="h-full w-full object-cover object-top transition duration-300 group-hover:scale-[1.03]"
+                    alt={`${cert.title} certificate from ${cert.issuer} — preview`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover object-top transition duration-300 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-80" />
                   <span className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-md bg-brand/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">
-                    <Award className="h-3.5 w-3.5" />
+                    <Award className="h-3.5 w-3.5" aria-hidden="true" />
                     Preview
                   </span>
                 </div>
@@ -699,13 +773,13 @@ export default function Home() {
               </div>
               <h3 className="mt-4 font-display text-lg font-semibold leading-snug">{item.client}</h3>
               <p className="mt-1 text-sm leading-6 text-mute">{item.title}</p>
-              <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-mute">
-                <span className="inline-flex items-center gap-1.5">
-                  <User className="h-3.5 w-3.5" />
+              <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-mute">
+                <span className="inline-flex items-center gap-2.5">
+                  <User className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                   {item.role}
                 </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Calendar className="h-3.5 w-3.5" />
+                <span className="inline-flex items-center gap-2.5">
+                  <Calendar className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                   {item.date}
                 </span>
               </div>
@@ -845,18 +919,24 @@ export default function Home() {
             </div>
             <h3 className="mt-5 font-display text-2xl font-semibold leading-snug">Real device testing</h3>
             <p className="mt-4 text-sm leading-7 text-mute">
-              Accurate validation across browsers, OS versions, screen sizes, and real-world scenarios —
-              including iPhone 17 Pro Max, iPhones & iPads, Android devices, Windows, MacBooks, and Linux.
+              Accurate cross-browser and real-device validation across OS versions, screen sizes, and
+              real-world scenarios — including iPhone 17 Pro Max, iPhones, iPads, Apple Watch, Android
+              devices, Windows, MacBooks, and Linux.
             </p>
-            <ul className="mt-5 space-y-2 text-sm leading-7 text-mute">
+            <ul className="mt-5 space-y-3 text-sm leading-7 text-mute">
               {[
-                "iPhone 17 Pro Max & multi-iOS coverage",
+                "iPhone 17 Pro Max, iPhones & multi-iOS coverage",
+                "iPad and Apple Watch testing",
                 "Android devices via BrowserStack & local",
+                "Cross-browser testing across major browsers",
                 "Windows, MacBook & Linux environments",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-accent" />
-                  {item}
+                <li key={item} className="flex items-start gap-3.5">
+                  <CheckCircle2
+                    className="mt-1 h-4 w-4 shrink-0 text-accent"
+                    aria-hidden="true"
+                  />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -992,11 +1072,16 @@ HAVING COUNT(*) > 1;`}
               </div>
             </div>
             <div className="min-h-0 flex-1 overflow-auto bg-ink p-3 sm:p-5">
-              <img
-                src={activeCert.preview}
-                alt={`${activeCert.title} full certificate`}
-                className="mx-auto max-h-[75vh] w-auto max-w-full rounded-lg object-contain"
-              />
+              <div className="relative mx-auto h-[min(75vh,900px)] w-full max-w-3xl">
+                <Image
+                  src={activeCert.preview}
+                  alt={`${activeCert.title} certificate issued by ${activeCert.issuer}`}
+                  fill
+                  sizes="(max-width: 896px) 100vw, 896px"
+                  className="rounded-lg object-contain"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

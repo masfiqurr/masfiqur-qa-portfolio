@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#050505"/>
+  <rect x="48" y="48" width="1104" height="534" rx="28" fill="#111111" stroke="#5B29DA" stroke-width="3"/>
+  <text x="100" y="250" fill="#7C4DFF" font-family="Arial, sans-serif" font-size="42" font-weight="700">Senior QA Engineer</text>
+  <text x="100" y="340" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="72" font-weight="700">Masfiqur Rahman</text>
+  <text x="100" y="420" fill="#A3A3A3" font-family="Arial, sans-serif" font-size="28">Manual QA · Playwright · Automation · API · Mobile · AI</text>
+  <text x="100" y="480" fill="#75C32C" font-family="Arial, sans-serif" font-size="24">14+ Years · Top Rated Plus · Clients worldwide</text>
+</svg>

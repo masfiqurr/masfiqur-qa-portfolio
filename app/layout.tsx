@@ -6,12 +6,16 @@ const display = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["500", "600", "700"],
+  display: "swap",
+  preload: true,
 });
 
 const body = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+  preload: true,
 });
 
 const siteUrl = "https://masfiqur.com";
@@ -23,8 +27,9 @@ export const metadata: Metadata = {
     template: "%s | Masfiqur Rahman",
   },
   description:
-    "Hire Masfiqur Rahman — Top-Rated Senior QA Engineer, software tester, and QA lead with 14+ years experience in manual QA, Playwright automation, API testing, mobile QA, AI testing, and release readiness. Worked with clients in the USA, UK, Australia, Netherlands, and Brazil.",
+    "Hire Masfiqur Rahman — Top-Rated Senior QA Engineer with 14+ years experience in manual QA, Playwright automation, API testing, mobile QA, AI testing, cross-browser testing, and release readiness. Clients in the USA, UK, Australia, Netherlands, and Brazil.",
   keywords: [
+    "Masfiqur Rahman",
     "QA engineer",
     "software QA",
     "software tester",
@@ -37,14 +42,16 @@ export const metadata: Metadata = {
     "API testing",
     "mobile QA",
     "AI testing",
+    "cross-browser testing",
     "end to end testing",
     "quality assurance engineer",
     "freelance QA engineer",
     "Upwork QA engineer",
-    "Masfiqur Rahman",
   ],
   authors: [{ name: "Masfiqur Rahman", url: siteUrl }],
   creator: "Masfiqur Rahman",
+  publisher: "Masfiqur Rahman",
+  category: "technology",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -52,13 +59,22 @@ export const metadata: Metadata = {
     siteName: "Masfiqur Rahman — Senior QA Engineer",
     title: "Masfiqur Rahman | Senior QA Engineer, Software Tester & QA Manager",
     description:
-      "Top-Rated Senior QA Engineer with 14+ years experience. Manual QA, Playwright, Automation, API, mobile, AI testing, and release readiness. Worked with clients in the USA, UK, Australia, Netherlands, and Brazil.",
+      "Top-Rated Senior QA Engineer with 14+ years experience. Manual QA, Playwright, Automation, API, mobile, AI & cross-browser testing. Clients in the USA, UK, Australia, Netherlands, and Brazil.",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Masfiqur Rahman — Senior QA Engineer portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Masfiqur Rahman | Senior QA Engineer & Software Tester",
     description:
-      "14+ years in software QA. Manual QA, Playwright, Automation, API, mobile & AI testing for clients in the USA, UK, Australia, Netherlands, and Brazil.",
+      "14+ years in software QA. Manual QA, Playwright, Automation, API, mobile, AI & cross-browser testing for clients worldwide.",
+    images: ["/og-image.svg"],
   },
   robots: {
     index: true,
@@ -66,6 +82,7 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
@@ -84,9 +101,14 @@ const jsonLd = {
   "@type": "Person",
   name: "Masfiqur Rahman",
   url: siteUrl,
+  image: `${siteUrl}/icon.svg`,
   jobTitle: "Senior QA Engineer",
   description:
-    "Top-Rated Senior QA Engineer, software tester, and QA lead specializing in manual QA, Playwright automation, API testing, mobile QA, and AI product testing. Experience working with clients in the USA, UK, Australia, Netherlands, and Brazil.",
+    "Top-Rated Senior QA Engineer, software tester, and QA lead specializing in manual QA, Playwright automation, API testing, mobile QA, cross-browser testing, and AI product testing.",
+  alumniOf: {
+    "@type": "EducationalOrganization",
+    name: "Computer Science (Bachelor's and Master's)",
+  },
   knowsAbout: [
     "Software QA",
     "QA Engineering",
@@ -95,9 +117,14 @@ const jsonLd = {
     "Playwright",
     "API Testing",
     "Mobile QA",
+    "Cross-Browser Testing",
     "AI Testing",
     "QA Management",
   ],
+  worksFor: {
+    "@type": "Organization",
+    name: "Independent / Upwork",
+  },
   sameAs: [
     "https://www.upwork.com/freelancers/masfique",
     "https://www.linkedin.com/in/masfique/",
@@ -108,18 +135,19 @@ const jsonLd = {
     addressLocality: "Dhaka",
     addressCountry: "BD",
   },
+  email: "ameit001@gmail.com",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <head>
+      <body className="antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className="antialiased">{children}</body>
+        {children}
+      </body>
     </html>
   );
 }
