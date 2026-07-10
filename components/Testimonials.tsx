@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, Building2, Briefcase, Star, ArrowUpRight, Link2 } from "lucide-react";
+import { Calendar, Star, ArrowUpRight, Link2 } from "lucide-react";
 import type { Testimonial } from "@/data/testimonials";
 
 const fade = {
@@ -118,21 +118,11 @@ export default function TestimonialsSection({
                 {item.clientName}
               </h3>
 
-              <div className="mt-2 space-y-2 text-sm leading-6 text-mute">
-                {item.position && (
-                  <p className="flex items-start gap-3">
-                    <Briefcase className="mt-1 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-                    <span>{item.position}</span>
-                  </p>
-                )}
-                {item.company && (
-                  <p className="flex items-start gap-3">
-                    <Building2 className="mt-1 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-                    <span>{item.company}</span>
-                  </p>
-                )}
+              <div className="mt-2 space-y-1 text-sm leading-6 text-mute">
+                {item.position && <p>{item.position}</p>}
+                {item.company && <p>{item.company}</p>}
                 {item.date && (
-                  <p className="flex items-center gap-3 text-xs">
+                  <p className="flex items-center gap-3 pt-1 text-xs">
                     <Calendar className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                     <span>{item.date}</span>
                   </p>

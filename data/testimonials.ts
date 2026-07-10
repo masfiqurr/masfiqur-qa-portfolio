@@ -18,17 +18,30 @@ export type Testimonial = {
  */
 export const testimonials: Testimonial[] = [
   {
-    id: "andy-platform-qa",
+    id: "andy-planet-price",
     rating: 5,
     clientName: "Andy H.",
     position: "Client",
-    company: "Platform QA testing",
+    company: "Planet Price",
     projectTitle: "Platform QA testing",
     comment:
       "Masfiqur did a great job of thoroughly testing a new platform and recommending numerous UX and overall improvements. I would highly recommend and look forward to working with him again!",
     date: "Apr 18, 2022",
     source: "Upwork",
     tags: ["Detail Oriented", "Collaborative"],
+  },
+  {
+    id: "andrew-sjahadi",
+    rating: 5,
+    clientName: "Andrew Sjahadi",
+    position: "Client",
+    company: "Upwork",
+    projectTitle: "Mobile App and Web Tester",
+    comment:
+      "Highly recommended. One of the best and most trusted people I have ever worked with.",
+    date: "Apr 21, 2022",
+    source: "Upwork",
+    tags: ["Mobile App QA", "Web QA"],
   },
   {
     id: "workflow-platform",
@@ -42,17 +55,6 @@ export const testimonials: Testimonial[] = [
     date: "Dec 15, 2021",
     source: "Upwork",
     tags: ["Clear Communicator"],
-  },
-  {
-    id: "mobile-web-tester",
-    rating: 5,
-    clientName: "Upwork Client",
-    position: "Client",
-    company: "Mobile & Web product",
-    projectTitle: "Mobile App and Web Tester",
-    comment: "Highly recommended. One of the best and trusted client i ever worked with.",
-    date: "Apr 21, 2022",
-    source: "Upwork",
   },
   {
     id: "grant-espanet",

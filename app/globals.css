@@ -86,6 +86,15 @@ body {
   animation: float-glow 7s ease-in-out infinite;
 }
 
+/* Checkmark rows: icon aligns to first text line */
+.check-row {
+  @apply flex items-start gap-3;
+}
+
+.check-row__icon {
+  @apply mt-[0.3em] h-4 w-4 shrink-0 text-accent;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;

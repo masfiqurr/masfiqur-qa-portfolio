@@ -21,7 +21,6 @@ import {
   Globe2,
   Bot,
   Calendar,
-  User,
   Award,
   X,
   ExternalLink,
@@ -66,12 +65,36 @@ const highlights = [
 ];
 
 const services = [
-  { icon: TestTube2, title: "Manual & Exploratory QA", desc: "Functional, regression, smoke, sanity, UAT, and edge-case discovery across web, mobile, and desktop." },
-  { icon: Code2, title: "Playwright Automation", desc: "Stable UI automation, smoke suites, and CI-friendly regression coverage with Playwright MCP." },
-  { icon: Database, title: "API & SQL Validation", desc: "Postman API checks plus database integrity, duplicates, nulls, and migration validation." },
-  { icon: Smartphone, title: "Real Device Mobile QA", desc: "iOS, Android, iPad, TestFlight, BrowserStack, and real-device coverage across screen sizes." },
-  { icon: Bot, title: "AI Product Testing", desc: "AI app testing, prompt validation, and quality checks for AI-powered product flows." },
-  { icon: ShieldCheck, title: "Release Readiness", desc: "Cross-browser testing, accessibility (WCAG), production verification, and go / no-go confidence." },
+  {
+    icon: TestTube2,
+    title: "Manual QA & Exploratory Testing",
+    desc: "Hands-on manual QA for web and mobile apps — functional, regression, smoke, sanity, UAT, and edge-case discovery.",
+  },
+  {
+    icon: Code2,
+    title: "Playwright Automation",
+    desc: "Playwright QA and automation engineering with stable UI suites, smoke coverage, and CI-friendly regression using Playwright MCP.",
+  },
+  {
+    icon: Database,
+    title: "API Testing & SQL Validation",
+    desc: "API testing with Postman plus SQL checks for data integrity, duplicates, nulls, and migration validation.",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile App QA (iOS & Android)",
+    desc: "iOS QA and Android QA on real devices, iPad, TestFlight, BrowserStack, and cross-device screen coverage.",
+  },
+  {
+    icon: Bot,
+    title: "AI QA & Prompt Validation",
+    desc: "AI product testing, prompt validation, and quality checks for AI-powered SaaS and application flows.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Release Readiness & eCommerce QA",
+    desc: "Cross-browser testing, accessibility (WCAG), production verification, and eCommerce checkout confidence.",
+  },
 ];
 
 const expertise = [
@@ -85,8 +108,7 @@ const expertise = [
   "User Acceptance Testing (UAT)",
   "Release & Production Validation",
   "Accessibility Testing (WCAG)",
-  "Cross-Browser Testing",
-  "Cross-Device Testing",
+  "Cross-Browser & Cross-Device Testing",
   "SQL Database Validation",
 ];
 
@@ -153,24 +175,24 @@ const brands = [
 const caseStudies = [
   {
     title: "Sports Management Platform",
-    type: "Web + Mobile QA",
+    type: "Web + Mobile App QA",
     summary:
-      "Validated live scoring, match management, team sheets, offline behavior, permissions and tablet layouts across iOS, Android and web.",
-    impact: "Found release-blocking workflow, sync and UI issues before production.",
+      "Manual QA and real-device testing for live scoring, match management, team sheets, offline behavior, permissions, and tablet layouts across iOS, Android, and web.",
+    impact: "Found release-blocking workflow, sync, and UI issues before production.",
   },
   {
     title: "EdTech Application",
     type: "Mobile + Ad Hoc QA",
     summary:
-      "Ad hoc testing for a complicated, multifaceted edtech product under pressure — covering critical learner and admin flows.",
+      "Ad hoc software testing for a complicated, multifaceted edtech product under pressure — covering critical learner and admin flows.",
     impact: "Became an essential QA partner for a high-stakes release cycle.",
   },
   {
     title: "SaaS Dashboard / Data Platform",
-    type: "Web QA + Data Validation",
+    type: "Web QA + API & SQL Validation",
     summary:
-      "Designed coverage for tables, filters, sorting, ETL-style workflows, exports, role access and audit logs.",
-    impact: "Reduced data quality risk through UI, API and SQL validation.",
+      "Designed SaaS QA coverage for tables, filters, sorting, ETL-style workflows, exports, role access, and audit logs with API testing and SQL validation.",
+    impact: "Reduced data quality risk through UI, API, and SQL validation.",
   },
 ];
 
@@ -219,7 +241,15 @@ const bugs = [
   },
 ];
 
-const feedback = [
+const feedback: {
+  source: "Upwork" | "LinkedIn";
+  title: string;
+  role: string;
+  company?: string;
+  date: string;
+  client: string;
+  quote: string;
+}[] = [
   {
     source: "Upwork",
     title: "QA Website Tester",
@@ -241,7 +271,8 @@ const feedback = [
   {
     source: "Upwork",
     title: "QA Engineer for Ethereum Decentralized App Testing",
-    role: "Client",
+    role: "Co-Founder",
+    company: "Power Moves Development LLC",
     date: "Sep 21, 2022",
     client: "Kevin Moturi",
     quote:
@@ -250,9 +281,10 @@ const feedback = [
   {
     source: "Upwork",
     title: "Ad hoc testing for an edtech application",
-    role: "Client",
+    role: "Founder",
+    company: "Teachally",
     date: "Oct 21, 2023",
-    client: "Daniel B.",
+    client: "Daniel Bernstein",
     quote:
       "Masfiqur was a critical member of our team and absolutely essential for testing a complicated and multifaceted edtech application. He functioned well under pressure and was extremely proactive.",
   },
@@ -260,6 +292,7 @@ const feedback = [
     source: "LinkedIn",
     title: "Product Owner and Head of Marketing & Sales",
     role: "Managed directly · ~10 years",
+    company: "The SilverLogic",
     date: "Jul 10, 2025",
     client: "Brian Wood",
     quote:
@@ -269,10 +302,11 @@ const feedback = [
     source: "LinkedIn",
     title: "CEO | Founder | Speaker",
     role: "Managed directly",
+    company: "The SilverLogic",
     date: "Jun 9, 2021",
     client: "David Hartmann",
     quote:
-      "Great team member, always pleasure to work with, and very reliable. Masfiq has often taken initiative frequently to learn new skills and level up.",
+      "Great team member, always a pleasure to work with, and very reliable. Masfiqur has often taken initiative to learn new skills and level up.",
   },
 ];
 
@@ -484,10 +518,11 @@ export default function Home() {
               transition={{ duration: 0.55 }}
               className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-mute md:mt-5 md:text-base md:leading-8"
             >
-              Senior software QA engineer, tester, and QA lead helping startups and enterprises ship
-              reliable products with manual QA, Playwright automation, API testing, AI validation,
-              cross-browser testing, documentation, end-to-end testing, and release readiness.
-              Experience working with clients in the USA, UK, Australia, Netherlands, and Brazil.
+              Masfiqur Rahman is a Senior Software Quality Assurance Engineer helping startups and
+              enterprises ship reliable products with manual QA, Playwright automation, API testing,
+              mobile app QA (iOS &amp; Android), AI QA, SaaS and eCommerce testing, documentation, and
+              release readiness. Experience working with clients in the USA, UK, Australia, Netherlands,
+              and Brazil.
             </motion.p>
 
             <motion.div
@@ -551,17 +586,16 @@ export default function Home() {
               <span>as a software QA engineer, tester &amp; QA lead</span>
             </h2>
             <p className="mt-6 text-base leading-8 text-mute md:text-lg">
-              I am a Senior Software Quality Assurance Engineer with 14+ years of experience helping
-              startups, SaaS companies, and enterprise organizations deliver reliable products. I hold
-              both Bachelor’s and Master’s degrees in Computer Science. Whether you need a hands-on QA
-              engineer, software tester, or QA manager mindset for release planning, my focus goes beyond
-              finding bugs — improving usability, user experience, and overall product quality before
-              release.
+              Masfiqur Rahman is a Top-Rated Senior Software Quality Assurance Engineer with 14+ years
+              of experience helping startups, SaaS companies, and enterprise organizations deliver
+              reliable products. With Bachelor’s and Master’s degrees in Computer Science, he brings a
+              hands-on QA engineer, software tester, and QA manager mindset to release planning —
+              improving usability, user experience, and overall product quality before release.
             </p>
             <p className="mt-4 text-base leading-8 text-mute md:text-lg">
-              I have contributed to projects for global brands including Tesco, Harrods, Marks & Spencer,
-              Xoom, FedEx, Dell, Visa, Hilton, and many others — working with clients across the USA,
-              UK, Australia, Netherlands, and Brazil.
+              Masfiqur has contributed to projects for global brands including Tesco, Harrods, Marks
+              &amp; Spencer, Xoom, FedEx, Dell, Visa, Hilton, and many others — working with clients
+              across the USA, UK, Australia, Netherlands, and Brazil.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {brands.map((brand) => (
@@ -585,12 +619,9 @@ export default function Home() {
             <h3 className="font-display text-xl font-semibold">Key highlights</h3>
             <ul className="mt-5 space-y-3">
               {highlights.map((item) => (
-                <li key={item} className="flex items-start gap-3.5 text-sm leading-7 text-mute">
-                  <CheckCircle2
-                    className="mt-1 h-4 w-4 shrink-0 text-accent"
-                    aria-hidden="true"
-                  />
-                  <span>{item}</span>
+                <li key={item} className="check-row text-sm leading-7 text-mute">
+                  <CheckCircle2 className="check-row__icon" aria-hidden="true" />
+                  <span className="min-w-0 flex-1">{item}</span>
                 </li>
               ))}
             </ul>
@@ -609,8 +640,12 @@ export default function Home() {
         >
           <span className="badge">Services</span>
           <h2 className="mt-5 font-display font-semibold heading-section">
-            End-to-end QA across web, mobile, API & AI
+            End-to-end QA across web, mobile, API &amp; AI
           </h2>
+          <p className="mt-4 text-base leading-7 text-mute">
+            Hire Masfiqur Rahman for manual QA, Playwright automation, mobile app QA, API testing,
+            SaaS QA, AI QA, and eCommerce quality assurance.
+          </p>
         </motion.div>
 
         <motion.div
@@ -642,18 +677,19 @@ export default function Home() {
           <div className="mx-auto max-w-3xl text-center">
             <span className="badge">QA Expertise</span>
             <h2 className="mt-5 font-display font-semibold heading-section">
-              Manual depth plus technical coverage
+              Manual QA depth plus Playwright &amp; API coverage
             </h2>
+            <p className="mt-4 text-base leading-7 text-mute">
+              Core software testing skills Masfiqur Rahman uses across web application testing, mobile
+              app QA, and automation QA engagements.
+            </p>
           </div>
           <div className="mt-14 grid gap-4 md:grid-cols-3">
             {expertise.map((item) => (
               <div key={item} className="rounded-2xl border border-line bg-ink p-5">
-                <div className="flex items-start gap-3.5">
-                  <CheckCircle2
-                    className="mt-1 h-4 w-4 shrink-0 text-accent"
-                    aria-hidden="true"
-                  />
-                  <p className="text-sm leading-7 text-mute">{item}</p>
+                <div className="check-row">
+                  <CheckCircle2 className="check-row__icon" aria-hidden="true" />
+                  <p className="min-w-0 flex-1 text-sm leading-7 text-mute">{item}</p>
                 </div>
               </div>
             ))}
@@ -698,7 +734,7 @@ export default function Home() {
                 <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
                   <Image
                     src={cert.preview}
-                    alt={`${cert.title} certificate from ${cert.issuer} — preview`}
+                    alt={`Masfiqur Rahman — ${cert.title} certificate from ${cert.issuer}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover object-top transition duration-300 group-hover:scale-[1.03]"
@@ -779,12 +815,18 @@ export default function Home() {
                 )}
               </div>
               <h3 className="mt-4 font-display text-lg font-semibold leading-snug">{item.client}</h3>
-              <p className="mt-1 text-sm leading-6 text-mute">{item.title}</p>
-              <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-mute">
-                <span className="inline-flex items-center gap-2.5">
-                  <User className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+              {item.company ? (
+                <p className="mt-1 text-sm leading-6 text-mute">
                   {item.role}
-                </span>
+                  <span className="mt-0.5 block text-mute/90">{item.company}</span>
+                </p>
+              ) : (
+                <p className="mt-1 text-sm leading-6 text-mute">{item.role}</p>
+              )}
+              <p className="mt-2 text-xs font-medium uppercase tracking-[0.12em] text-brandSoft">
+                {item.title}
+              </p>
+              <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-mute">
                 <span className="inline-flex items-center gap-2.5">
                   <Calendar className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                   {item.date}
@@ -938,12 +980,9 @@ export default function Home() {
                 "Cross-browser testing across major browsers",
                 "Windows, MacBook & Linux environments",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-3.5">
-                  <CheckCircle2
-                    className="mt-1 h-4 w-4 shrink-0 text-accent"
-                    aria-hidden="true"
-                  />
-                  <span>{item}</span>
+                <li key={item} className="check-row">
+                  <CheckCircle2 className="check-row__icon" aria-hidden="true" />
+                  <span className="min-w-0 flex-1">{item}</span>
                 </li>
               ))}
             </ul>
@@ -1008,11 +1047,11 @@ HAVING COUNT(*) > 1;`}
             Available now for QA projects
           </span>
           <h2 className="mt-6 max-w-3xl font-display font-semibold heading-section md:!text-[3.25rem]">
-            Need a senior QA engineer with 14+ years of experience?
+            Looking to hire Masfiqur Rahman for software QA?
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/80">
-            Thorough manual testing, API validation, AI testing, Playwright automation, and actionable
-            product feedback — ready to help your next release.
+            Get a Top-Rated Senior QA Engineer for manual QA, Playwright automation, mobile app QA,
+            API testing, SaaS, AI, and eCommerce quality assurance — ready to help your next release.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a
@@ -1035,7 +1074,8 @@ HAVING COUNT(*) > 1;`}
       </section>
 
       <footer className="border-t border-line py-8 text-center text-sm text-mute">
-        © 2026 Masfiqur Rahman. Top-Rated Senior QA Engineer · 14+ Years.
+        © 2026 Masfiqur Rahman · Top-Rated Senior QA Engineer &amp; Playwright Automation Expert · 14+
+        Years
       </footer>
 
       {activeCert && (
@@ -1082,7 +1122,7 @@ HAVING COUNT(*) > 1;`}
               <div className="relative mx-auto h-[min(75vh,900px)] w-full max-w-3xl">
                 <Image
                   src={activeCert.preview}
-                  alt={`${activeCert.title} certificate issued by ${activeCert.issuer}`}
+                  alt={`Masfiqur Rahman — ${activeCert.title} certificate issued by ${activeCert.issuer}`}
                   fill
                   sizes="(max-width: 896px) 100vw, 896px"
                   className="rounded-lg object-contain"

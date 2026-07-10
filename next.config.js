@@ -8,6 +8,7 @@ const nextConfig = {
   },
   poweredByHeader: false,
   compress: true,
+  trailingSlash: false,
   async redirects() {
     return [
       {
