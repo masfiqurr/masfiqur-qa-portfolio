@@ -124,14 +124,19 @@ const tools = [
 
 const industries = [
   "SaaS Platforms",
+  "AI Platforms",
   "eCommerce (Shopify, WooCommerce, Magento)",
+  "Booking & Travel Sites",
   "Healthcare & Telehealth",
   "FinTech & Banking",
+  "Blockchain & Web3",
   "Logistics & Transportation",
   "Sports & Gaming",
   "Education Platforms",
   "Insurance",
   "Enterprise Business Apps",
+  "Lumentender — lighting scheduling & control",
+  "Planet Price — AI environmental impact",
 ];
 
 const brands = [
