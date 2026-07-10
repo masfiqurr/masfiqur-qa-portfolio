@@ -286,10 +286,10 @@ const whyHire = [
 ];
 
 const stats = [
-  ["14+", "Years experience"],
-  ["$200K+", "Upwork earnings"],
-  ["30", "Total jobs"],
-  ["11K+", "Hours delivered"],
+  ["14+", "Years of Experience"],
+  ["$200K+", "Upwork Earnings"],
+  ["30+", "Projects Completed"],
+  ["11K+", "Hours Delivered"],
 ];
 
 const certificates = [
@@ -446,11 +446,11 @@ export default function Home() {
               className="mb-4 flex flex-wrap items-center justify-center gap-2.5 md:mb-5"
             >
               <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3.5 py-1.5 text-xs font-semibold text-accent md:text-sm">
-                <Sparkles className="h-3.5 w-3.5" />
+                <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
                 Top Rated Plus · 100% Job Success
               </span>
               <span className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/15 px-3.5 py-1.5 text-xs font-semibold text-brandSoft md:text-sm">
-                <span className="h-2 w-2 shrink-0 rounded-full bg-accent" />
+                <span className="h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
                 14+ Years Experience
               </span>
             </motion.div>
@@ -462,6 +462,7 @@ export default function Home() {
             >
               Masfiqur Rahman
             </motion.h1>
+
             <motion.p
               variants={fade}
               transition={{ duration: 0.55 }}
@@ -469,6 +470,7 @@ export default function Home() {
             >
               Top-Rated Senior QA Engineer
             </motion.p>
+
             <motion.p
               variants={fade}
               transition={{ duration: 0.55 }}
@@ -494,7 +496,7 @@ export default function Home() {
               className="mt-6 flex flex-wrap items-center justify-center gap-3 md:mt-8"
             >
               <a href={links.upwork} target="_blank" rel="noreferrer" className="btn-primary">
-                Hire on Upwork <ArrowUpRight className="h-4 w-4" />
+                Hire Me on Upwork <ArrowUpRight className="h-4 w-4" />
               </a>
               <a href="#feedback" className="btn-secondary">
                 Client Feedback
@@ -508,20 +510,20 @@ export default function Home() {
             variants={stagger}
             className="mt-8 grid w-full max-w-4xl grid-cols-2 gap-2.5 md:mt-10 md:grid-cols-4 md:gap-3"
           >
-            {stats.map(([value, label]) => (
+            {stats.map(([value, label], index) => (
               <motion.div
                 key={label}
                 variants={cardFade}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
                 className={`rounded-2xl border px-4 py-4 text-left md:px-5 md:py-5 ${
-                  label === "Years experience"
+                  index === 0
                     ? "border-brand/50 bg-brand/15 shadow-glow"
                     : "border-white/10 bg-white/[0.03]"
                 }`}
               >
                 <div
                   className={`font-display text-2xl font-semibold leading-none md:text-3xl ${
-                    label === "Years experience" ? "text-brandSoft" : "text-white"
+                    index === 0 ? "text-brandSoft" : "text-white"
                   }`}
                 >
                   {value}
