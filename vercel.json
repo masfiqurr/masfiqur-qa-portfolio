@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "masfiqur.com"
+        }
+      ],
+      "destination": "https://www.masfiqur.com/:path*",
+      "permanent": true
+    }
+  ]
+}

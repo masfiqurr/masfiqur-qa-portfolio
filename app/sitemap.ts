@@ -1,20 +1,14 @@
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+const siteUrl = "https://www.masfiqur.com";
 
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://masfiqur.com",
-      lastModified,
+      url: siteUrl,
+      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
-    },
-    {
-      url: "https://www.masfiqur.com",
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
     },
   ];
 }

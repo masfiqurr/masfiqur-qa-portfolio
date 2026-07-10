@@ -18,7 +18,7 @@ const body = Manrope({
   preload: true,
 });
 
-const siteUrl = "https://masfiqur.com";
+const siteUrl = "https://www.masfiqur.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
       "Top-Rated Senior QA Engineer with 14+ years experience. Manual QA, Playwright, Automation, API, mobile, AI & cross-browser testing. Clients in the USA, UK, Australia, Netherlands, and Brazil.",
     images: [
       {
-        url: "/og-image.svg",
+        url: `${siteUrl}/og-image.svg`,
         width: 1200,
         height: 630,
         alt: "Masfiqur Rahman — Senior QA Engineer portfolio",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     title: "Masfiqur Rahman | Senior QA Engineer & Software Tester",
     description:
       "14+ years in software QA. Manual QA, Playwright, Automation, API, mobile, AI & cross-browser testing for clients worldwide.",
-    images: ["/og-image.svg"],
+    images: [`${siteUrl}/og-image.svg`],
   },
   robots: {
     index: true,

@@ -8,5 +8,16 @@ const nextConfig = {
   },
   poweredByHeader: false,
   compress: true,
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "masfiqur.com" }],
+        destination: "https://www.masfiqur.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
+
 module.exports = nextConfig;
