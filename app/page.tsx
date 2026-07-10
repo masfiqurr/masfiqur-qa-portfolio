@@ -518,11 +518,10 @@ export default function Home() {
               transition={{ duration: 0.55 }}
               className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-mute md:mt-5 md:text-base md:leading-8"
             >
-              Masfiqur Rahman is a Senior Software Quality Assurance Engineer helping startups and
-              enterprises ship reliable products with manual QA, Playwright automation, API testing,
-              mobile app QA (iOS &amp; Android), AI QA, SaaS and eCommerce testing, documentation, and
-              release readiness. Experience working with clients in the USA, UK, Australia, Netherlands,
-              and Brazil.
+              I help startups and enterprises ship reliable products with manual QA, Playwright
+              automation, API testing, mobile app QA (iOS &amp; Android), AI QA, SaaS and eCommerce
+              testing, documentation, and release readiness — working with clients across the USA, UK,
+              Australia, Netherlands, and Brazil.
             </motion.p>
 
             <motion.div
@@ -586,16 +585,16 @@ export default function Home() {
               <span>as a software QA engineer, tester &amp; QA lead</span>
             </h2>
             <p className="mt-6 text-base leading-8 text-mute md:text-lg">
-              Masfiqur Rahman is a Top-Rated Senior Software Quality Assurance Engineer with 14+ years
-              of experience helping startups, SaaS companies, and enterprise organizations deliver
-              reliable products. With Bachelor’s and Master’s degrees in Computer Science, he brings a
-              hands-on QA engineer, software tester, and QA manager mindset to release planning —
-              improving usability, user experience, and overall product quality before release.
+              I am a Top-Rated Senior Software Quality Assurance Engineer with 14+ years of experience
+              helping startups, SaaS companies, and enterprise organizations deliver reliable products.
+              With Bachelor’s and Master’s degrees in Computer Science, I bring a hands-on QA engineer,
+              software tester, and QA manager mindset to release planning — improving usability, user
+              experience, and overall product quality before release.
             </p>
             <p className="mt-4 text-base leading-8 text-mute md:text-lg">
-              Masfiqur has contributed to projects for global brands including Tesco, Harrods, Marks
-              &amp; Spencer, Xoom, FedEx, Dell, Visa, Hilton, and many others — working with clients
-              across the USA, UK, Australia, Netherlands, and Brazil.
+              I have contributed to projects for global brands including Tesco, Harrods, Marks &amp;
+              Spencer, Xoom, FedEx, Dell, Visa, Hilton, and many others — working with clients across
+              the USA, UK, Australia, Netherlands, and Brazil.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {brands.map((brand) => (
@@ -620,7 +619,9 @@ export default function Home() {
             <ul className="mt-5 space-y-3">
               {highlights.map((item) => (
                 <li key={item} className="check-row text-sm leading-7 text-mute">
-                  <CheckCircle2 className="check-row__icon" aria-hidden="true" />
+                  <span className="check-row__icon" aria-hidden="true">
+                    <CheckCircle2 />
+                  </span>
                   <span className="min-w-0 flex-1">{item}</span>
                 </li>
               ))}
@@ -688,7 +689,9 @@ export default function Home() {
             {expertise.map((item) => (
               <div key={item} className="rounded-2xl border border-line bg-ink p-5">
                 <div className="check-row">
-                  <CheckCircle2 className="check-row__icon" aria-hidden="true" />
+                  <span className="check-row__icon" aria-hidden="true">
+                    <CheckCircle2 />
+                  </span>
                   <p className="min-w-0 flex-1 text-sm leading-7 text-mute">{item}</p>
                 </div>
               </div>
@@ -980,8 +983,10 @@ export default function Home() {
                 "Cross-browser testing across major browsers",
                 "Windows, MacBook & Linux environments",
               ].map((item) => (
-                <li key={item} className="check-row">
-                  <CheckCircle2 className="check-row__icon" aria-hidden="true" />
+                <li key={item} className="check-row text-sm leading-7 text-mute">
+                  <span className="check-row__icon" aria-hidden="true">
+                    <CheckCircle2 />
+                  </span>
                   <span className="min-w-0 flex-1">{item}</span>
                 </li>
               ))}

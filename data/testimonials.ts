@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
     id: "andy-planet-price",
     rating: 5,
     clientName: "Andy H.",
-    position: "Client",
+    position: "Founder",
     company: "Planet Price",
     projectTitle: "Platform QA testing",
     comment:

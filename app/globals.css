@@ -86,13 +86,27 @@ body {
   animation: float-glow 7s ease-in-out infinite;
 }
 
-/* Checkmark rows: icon aligns to first text line */
+/* Checkmark rows: icon optically centered on the first text line */
 .check-row {
-  @apply flex items-start gap-3;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
 }
 
 .check-row__icon {
-  @apply mt-[0.3em] h-4 w-4 shrink-0 text-accent;
+  display: flex;
+  height: 1.75rem; /* matches text-sm leading-7 */
+  width: 1rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: #75c32c;
+}
+
+.check-row__icon svg {
+  width: 1rem;
+  height: 1rem;
+  display: block;
 }
 
 @keyframes fade-up {
