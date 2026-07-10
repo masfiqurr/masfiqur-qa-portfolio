@@ -44,9 +44,9 @@ export const testimonials: Testimonial[] = [
     tags: ["Mobile App QA", "Web QA"],
   },
   {
-    id: "workflow-platform",
+    id: "phillip-bruner-workflow",
     rating: 5,
-    clientName: "Upwork Client",
+    clientName: "Phillip Bruner, PhD",
     position: "Client",
     company: "Workflow management platform",
     projectTitle: "Quality assurance testing for a workflow management platform",
