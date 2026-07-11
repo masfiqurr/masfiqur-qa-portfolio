@@ -1,12 +1,19 @@
 # Masfiqur Rahman — QA Portfolio
 
-A premium QA portfolio website built with:
+Personal portfolio website for **Md Masfiqur Rahman**, Top-Rated Senior QA Engineer.
 
-- Next.js
-- TypeScript
+**Live site:** [https://www.masfiqur.com](https://www.masfiqur.com)
+
+## Stack
+
+- Next.js + TypeScript
 - Tailwind CSS
 - Framer Motion
-- Vercel
+- Deployed on Vercel
+
+## Focus areas
+
+Manual QA · Playwright automation · Mobile (iOS/Android) · API testing · SaaS / AI / eCommerce QA · Release readiness
 
 ## Run locally
 
@@ -15,24 +22,10 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`
+Open [http://localhost:3000](http://localhost:3000)
 
-## Deploy to Vercel
+## Links
 
-1. Create a GitHub repository.
-2. Upload this project.
-3. Go to Vercel.
-4. Click **Add New Project**.
-5. Import the GitHub repository.
-6. Keep the default Next.js settings.
-7. Click **Deploy**.
-
-## Edit content
-
-Most website content is inside:
-
-```bash
-app/page.tsx
-```
-
-Update placeholder links for GitHub, LinkedIn and Upwork in the Contact section.
+- Portfolio: [masfiqur.com](https://www.masfiqur.com)
+- LinkedIn: [linkedin.com/in/masfique](https://www.linkedin.com/in/masfique/)
+- Upwork: [upwork.com/freelancers/masfique](https://www.upwork.com/freelancers/masfique)

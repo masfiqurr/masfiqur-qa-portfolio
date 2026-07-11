@@ -585,11 +585,12 @@ export default function Home() {
               <span>as a software QA engineer, tester &amp; QA lead</span>
             </h2>
             <p className="mt-6 text-base leading-8 text-mute md:text-lg">
-              I am a Top-Rated Senior Software Quality Assurance Engineer with 14+ years of experience
-              helping startups, SaaS companies, and enterprise organizations deliver reliable products.
-              With Bachelor’s and Master’s degrees in Computer Science, I bring a hands-on QA engineer,
-              software tester, and QA manager mindset to release planning — improving usability, user
-              experience, and overall product quality before release.
+              I am MD Masfiqur Rahman, a Top-Rated Senior Software Quality Assurance Engineer with 14+
+              years of experience helping startups, SaaS companies, and enterprise organizations
+              deliver reliable products. With Bachelor’s and Master’s degrees in Computer Science, I
+              bring a hands-on QA engineer, software tester, and QA manager mindset to release
+              planning — improving usability, user experience, and overall product quality before
+              release.
             </p>
             <p className="mt-4 text-base leading-8 text-mute md:text-lg">
               I have contributed to projects for global brands including Tesco, Harrods, Marks &amp;
@@ -1079,8 +1080,8 @@ HAVING COUNT(*) > 1;`}
       </section>
 
       <footer className="border-t border-line py-8 text-center text-sm text-mute">
-        © 2026 Masfiqur Rahman · Top-Rated Senior QA Engineer &amp; Playwright Automation Expert · 14+
-        Years
+        © 2026 MD Masfiqur Rahman · Top-Rated Senior QA Engineer &amp; Playwright Automation Expert ·
+        14+ Years
       </footer>
 
       {activeCert && (
