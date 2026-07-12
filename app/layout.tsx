@@ -39,12 +39,14 @@ export const metadata: Metadata = {
     "Best QA Engineer for hire",
     "Quality assurance engineer for hire",
     "Best QA for hiring",
-    "Best QA engineer Bangladesh",
-    "QA engineer Bangladesh",
+    "Hire QA engineer worldwide",
+    "Remote QA for global teams",
     "Remote QA engineer",
     "Hire remote QA engineer",
     "Freelance QA engineer",
     "QA for Hire",
+    "QA engineer Bangladesh",
+    "Remote QA engineer Bangladesh",
     "Senior QA Engineer",
     "Software QA",
     "SQA Engineer",
@@ -201,26 +203,47 @@ const jsonLd = {
     {
       "@type": "ProfessionalService",
       "@id": `${siteUrl}/#service`,
-      name: "Hire Senior QA Engineer — Masfiqur Rahman",
+      name: "Hire Senior QA Engineer Remotely — Masfiqur Rahman",
       url: `${siteUrl}/#hire`,
       image: `${siteUrl}/icons/icon-512.png`,
       description:
-        "Hire a Top-Rated Senior QA Engineer based in Bangladesh and available remotely for manual QA, Playwright automation, mobile app testing, API testing, and quality assurance engineering.",
+        "Hire a Top-Rated Senior QA Engineer available remotely worldwide for manual QA, Playwright automation, mobile app testing, API testing, and quality assurance engineering. Based in Bangladesh and trusted by global teams.",
       provider: { "@id": `${siteUrl}/#person` },
       areaServed: [
         {
-          "@type": "Country",
-          name: "Bangladesh",
-        },
-        {
           "@type": "Place",
           name: "Worldwide",
+        },
+        {
+          "@type": "Country",
+          name: "United States",
+        },
+        {
+          "@type": "Country",
+          name: "United Kingdom",
+        },
+        {
+          "@type": "Country",
+          name: "Australia",
+        },
+        {
+          "@type": "Country",
+          name: "Netherlands",
+        },
+        {
+          "@type": "Country",
+          name: "Brazil",
+        },
+        {
+          "@type": "Country",
+          name: "Bangladesh",
         },
       ],
       availableLanguage: ["English", "Bangla"],
       serviceType: [
         "QA Engineer for hire",
         "Remote QA engineering",
+        "Hire QA engineer worldwide",
         "Manual QA",
         "Playwright Automation",
         "Mobile App QA",

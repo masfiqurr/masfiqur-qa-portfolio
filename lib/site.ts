@@ -13,9 +13,9 @@ export const siteConfig = {
   email: "ameit001@gmail.com",
   locale: "en_US",
   description:
-    "Hire MD Masfiqur Rahman — a Top-Rated Senior QA Engineer in Bangladesh available remotely for manual QA, Playwright automation, mobile app testing, API testing, and quality assurance engineering worldwide.",
+    "Hire MD Masfiqur Rahman — a Top-Rated Senior QA Engineer available remotely worldwide for manual QA, Playwright automation, mobile app testing, API testing, and quality assurance engineering. Based in Bangladesh, trusted by global teams.",
   title:
-    "Hire a Senior QA Engineer | MD Masfiqur Rahman — Remote QA from Bangladesh",
+    "Hire a Senior QA Engineer Remotely | MD Masfiqur Rahman — Worldwide QA Services",
   ogImage: "/og-image.svg",
   links: {
     upwork: "https://www.upwork.com/freelancers/masfique",
