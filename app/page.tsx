@@ -25,6 +25,9 @@ import {
   X,
   ExternalLink,
   Menu,
+  CreditCard,
+  Container,
+  AppWindow,
 } from "lucide-react";
 import TestimonialsSection from "@/components/Testimonials";
 import { testimonials } from "@/data/testimonials";
@@ -83,7 +86,7 @@ const services = [
   {
     icon: Smartphone,
     title: "Mobile App QA (iOS & Android)",
-    desc: "iOS QA and Android QA on real devices, iPad, TestFlight, BrowserStack, and cross-device screen coverage.",
+    desc: "iOS and Android QA on real devices — TestFlight, APK, Expo, Xcode, iPad, BrowserStack, and cross-device screen coverage.",
   },
   {
     icon: Bot,
@@ -95,12 +98,33 @@ const services = [
     title: "Release Readiness & eCommerce QA",
     desc: "Cross-browser testing, accessibility (WCAG), production verification, and eCommerce checkout confidence.",
   },
+  {
+    icon: CreditCard,
+    title: "Stripe Payment Testing",
+    desc: "Stripe checkout, subscriptions, refunds, and edge cases — including NFC-enabled mobile apps verified with Stripe test cards.",
+  },
+  {
+    icon: Container,
+    title: "Local Branch Verification",
+    desc: "Local QA on feature branches using Git, Docker, and related setup — verify builds, env configs, and flows before merge or release.",
+  },
+  {
+    icon: AppWindow,
+    title: "Analytics QA",
+    desc: "Firebase and Google Analytics event triggering and tracking verification — confirm tags, funnels, and key product events fire correctly.",
+  },
 ];
 
 const expertise = [
   "Manual Testing (Web, Mobile & Desktop)",
   "Functional, Regression, Smoke & E2E",
   "API Testing with Postman",
+  "Stripe Payment Testing",
+  "NFC App Testing with Stripe Test Cards",
+  "Local Branch Verification (Git & Docker)",
+  "TestFlight, APK, Expo & Xcode App Testing",
+  "Firebase & Google Analytics Event Verification",
+  "Analytics QA",
   "AI Application & Prompt Validation",
   "Exploratory & Edge Case Discovery",
   "UI/UX Testing & Product Feedback",
@@ -119,7 +143,8 @@ const automation = [
   "JMeter",
   "Postman",
   "SQL Validation",
-  "GitHub / Bitbucket",
+  "Git / GitHub / Bitbucket",
+  "Docker",
   "CI/CD Workflows",
 ];
 
@@ -132,8 +157,13 @@ const tools = [
   "Loom",
   "GitHub",
   "Bitbucket",
-  "BrowserStack",
+  "Docker",
+  "Stripe Test Cards",
   "TestFlight",
+  "Expo",
+  "Firebase Analytics",
+  "Google Analytics",
+  "BrowserStack",
   "Android Studio",
   "Xcode",
   "Postman",
@@ -654,8 +684,9 @@ export default function Home() {
           </h2>
           <p className="mt-4 text-base leading-7 text-mute">
             Hire a senior QA engineer for manual QA, Playwright automation, mobile app QA, API
-            testing, SaaS QA, AI QA, and eCommerce quality assurance — remotely for worldwide clients
-            and global product teams.
+            testing, Stripe payment testing, Analytics QA (Firebase &amp; Google Analytics), local
+            branch verification (Git &amp; Docker), SaaS QA, AI QA, and eCommerce quality assurance —
+            remotely for worldwide clients and global product teams.
           </p>
         </motion.div>
 
@@ -744,7 +775,7 @@ export default function Home() {
               },
               {
                 title: "Full-stack quality coverage",
-                body: "Manual testing, Playwright automation, API testing, iOS & Android mobile QA, AI QA, SaaS and eCommerce testing, regression, UAT, and release readiness.",
+                body: "Manual testing, Playwright automation, API testing, Stripe payment & NFC test-card flows, local branch verification with Git & Docker, iOS & Android mobile QA, AI QA, SaaS and eCommerce testing, regression, UAT, and release readiness.",
               },
             ].map((item) => (
               <div key={item.title} className="rounded-2xl border border-line bg-ink p-7 text-left">
@@ -1124,7 +1155,8 @@ HAVING COUNT(*) > 1;`}
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/80">
             Remote senior QA for worldwide clients — manual QA, Playwright automation, mobile app QA,
-            API testing, SaaS, AI, and eCommerce quality assurance.
+            API testing, Stripe payment testing, local branch verification, SaaS, AI, and eCommerce
+            quality assurance.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a
