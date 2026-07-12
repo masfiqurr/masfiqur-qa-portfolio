@@ -389,7 +389,7 @@ export default function Home() {
   const navLinks = [
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
-    { href: "#certificates", label: "Certificates" },
+    { href: "#hire", label: "Hire" },
     { href: "#testimonials", label: "Testimonials" },
     { href: "#feedback", label: "Feedback" },
     { href: "#case-studies", label: "Work" },
@@ -502,7 +502,7 @@ export default function Home() {
               transition={{ duration: 0.55 }}
               className="mt-3 font-display text-2xl font-semibold leading-snug tracking-tight text-brandSoft sm:text-3xl md:mt-4 md:text-4xl"
             >
-              Top-Rated Senior QA Engineer
+              Senior QA Engineer for Hire
             </motion.p>
 
             <motion.p
@@ -510,7 +510,7 @@ export default function Home() {
               transition={{ duration: 0.55 }}
               className="mt-2 text-base font-medium leading-7 text-white/90 sm:text-lg md:text-xl"
             >
-              Helping teams ship high-quality web, mobile &amp; AI products
+              Remote quality assurance from Bangladesh for web, mobile &amp; AI products
             </motion.p>
 
             <motion.p
@@ -518,10 +518,10 @@ export default function Home() {
               transition={{ duration: 0.55 }}
               className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-mute md:mt-5 md:text-base md:leading-8"
             >
-              I help startups and enterprises ship reliable products with manual QA, Playwright
-              automation, API testing, mobile app QA (iOS &amp; Android), AI QA, SaaS and eCommerce
-              testing, documentation, and release readiness — working with clients across the USA, UK,
-              Australia, Netherlands, and Brazil.
+              Looking for a QA engineer for hire? I help startups and enterprises ship reliable
+              products with manual QA, Playwright automation, API testing, mobile app QA (iOS &amp;
+              Android), AI QA, SaaS and eCommerce testing — available remotely worldwide from
+              Bangladesh, with clients across the USA, UK, Australia, Netherlands, and Brazil.
             </motion.p>
 
             <motion.div
@@ -532,8 +532,8 @@ export default function Home() {
               <a href={links.upwork} target="_blank" rel="noreferrer" className="btn-primary">
                 Hire Me on Upwork <ArrowUpRight className="h-4 w-4" />
               </a>
-              <a href="#feedback" className="btn-secondary">
-                Client Feedback
+              <a href="#hire" className="btn-secondary">
+                Why Hire Me
               </a>
             </motion.div>
           </motion.div>
@@ -642,11 +642,12 @@ export default function Home() {
         >
           <span className="badge">Services</span>
           <h2 className="mt-5 font-display font-semibold heading-section">
-            End-to-end QA across web, mobile, API &amp; AI
+            Quality assurance engineer services for hire
           </h2>
           <p className="mt-4 text-base leading-7 text-mute">
-            Hire Masfiqur Rahman for manual QA, Playwright automation, mobile app QA, API testing,
-            SaaS QA, AI QA, and eCommerce quality assurance.
+            Hire a senior QA engineer for manual QA, Playwright automation, mobile app QA, API
+            testing, SaaS QA, AI QA, and eCommerce quality assurance — remotely from Bangladesh or
+            with your global team.
           </p>
         </motion.div>
 
@@ -697,6 +698,63 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="hire" className="border-y border-line bg-panel/60">
+        <div className="section">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fade}
+            transition={{ duration: 0.5 }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <span className="badge">Hire QA</span>
+            <h2 className="mt-5 font-display font-semibold heading-section">
+              QA engineer for hire in Bangladesh — available remotely
+            </h2>
+            <p className="mt-4 text-base leading-7 text-mute">
+              Searching for a quality assurance engineer for hire, a remote QA engineer, or the best QA
+              for hiring in Bangladesh? MD Masfiqur Rahman is a Top-Rated Senior QA Engineer with 14+
+              years of software testing experience for startups and global brands.
+            </p>
+          </motion.div>
+
+          <div className="mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Remote QA for global teams",
+                body: "11+ years of remote delivery with clients in the USA, UK, Australia, Netherlands, and Brazil — clear communication and reliable timezone overlap.",
+              },
+              {
+                title: "Bangladesh-based senior talent",
+                body: "A Top-Rated Senior QA Engineer based in Dhaka, Bangladesh, ready to support product teams that need thorough manual and automation QA.",
+              },
+              {
+                title: "Full-stack quality coverage",
+                body: "Manual testing, Playwright automation, API testing, iOS & Android mobile QA, AI QA, SaaS and eCommerce testing, regression, UAT, and release readiness.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-line bg-ink p-7 text-left">
+                <h3 className="font-display text-xl font-semibold leading-snug">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-mute">{item.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <a href={links.upwork} target="_blank" rel="noreferrer" className="btn-primary">
+              Hire on Upwork <ArrowUpRight className="h-4 w-4" />
+            </a>
+            <a href="#testimonials" className="btn-secondary">
+              View testimonials
+            </a>
+            <a href="#contact" className="btn-secondary">
+              Contact
+            </a>
           </div>
         </div>
       </section>
@@ -1053,11 +1111,12 @@ HAVING COUNT(*) > 1;`}
             Available now for QA projects
           </span>
           <h2 className="mt-6 max-w-3xl font-display font-semibold heading-section md:!text-[3.25rem]">
-            Looking to hire Masfiqur Rahman for software QA?
+            Hire a quality assurance engineer for your next release
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/80">
-            Get a Top-Rated Senior QA Engineer for manual QA, Playwright automation, mobile app QA,
-            API testing, SaaS, AI, and eCommerce quality assurance — ready to help your next release.
+            Remote senior QA from Bangladesh — manual QA, Playwright automation, mobile app QA, API
+            testing, SaaS, AI, and eCommerce quality assurance for teams that need reliable hiring
+            outcomes.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <a
@@ -1080,8 +1139,7 @@ HAVING COUNT(*) > 1;`}
       </section>
 
       <footer className="border-t border-line py-8 text-center text-sm text-mute">
-        © 2026 MD Masfiqur Rahman · Top-Rated Senior QA Engineer &amp; Playwright Automation Expert ·
-        14+ Years
+        © 2026 MD Masfiqur Rahman · Senior QA Engineer for Hire · Remote from Bangladesh · 14+ Years
       </footer>
 
       {activeCert && (
