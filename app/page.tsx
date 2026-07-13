@@ -28,6 +28,7 @@ import {
   CreditCard,
   Container,
   AppWindow,
+  Download,
 } from "lucide-react";
 import TestimonialsSection from "@/components/Testimonials";
 import { testimonials } from "@/data/testimonials";
@@ -352,8 +353,8 @@ const whyHire = [
 const stats = [
   ["14+", "Years of Experience"],
   ["$200K+", "Upwork Earnings"],
-  ["30+", "Projects Completed"],
-  ["11K+", "Hours Delivered"],
+  ["200+", "Applications Tested"],
+  ["11K+", "Hours Delivered on Upwork"],
 ];
 
 const certificates = [
@@ -385,6 +386,7 @@ const links = {
   linkedin: "https://www.linkedin.com/in/masfique/",
   github: "https://github.com/masfiqurr",
   email: "mailto:ameit001@gmail.com",
+  cv: "/cv/MD-Masfiqur-Rahman-CV.pdf",
 };
 
 export default function Home() {
@@ -433,11 +435,11 @@ export default function Home() {
           className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4"
           aria-label="Primary"
         >
-          <a href="#" className="group flex min-w-0 shrink items-baseline gap-1.5">
-            <span className="font-display text-base font-semibold tracking-tight text-white transition group-hover:text-brandSoft sm:text-lg md:text-xl">
+          <a href="#" className="group flex min-w-0 items-baseline gap-1.5 overflow-hidden">
+            <span className="font-display truncate text-base font-semibold tracking-tight text-white transition group-hover:text-brandSoft sm:text-lg md:text-xl">
               Masfiqur
             </span>
-            <span className="font-display text-base font-medium tracking-tight text-brandSoft sm:text-lg md:text-xl">
+            <span className="font-display truncate text-base font-medium tracking-tight text-brandSoft sm:text-lg md:text-xl">
               Rahman
             </span>
           </a>
@@ -488,6 +490,15 @@ export default function Home() {
                   {link.label}
                 </a>
               ))}
+              <a
+                href={links.cv}
+                download="MD-Masfiqur-Rahman-CV.pdf"
+                className="mt-2 inline-flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-brandSoft transition hover:bg-white/5"
+                onClick={() => setMenuOpen(false)}
+              >
+                <Download className="h-4 w-4" />
+                Download CV
+              </a>
             </div>
           </div>
         )}
@@ -557,21 +568,31 @@ export default function Home() {
             <motion.div
               variants={fade}
               transition={{ duration: 0.55 }}
-              className="mt-6 flex flex-nowrap items-center justify-center gap-2 sm:gap-3 md:mt-8"
+              className="mt-6 flex flex-col items-center gap-3 md:mt-8"
             >
+              <div className="flex flex-nowrap items-center justify-center gap-2 sm:gap-3">
+                <a
+                  href={links.upwork}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary shrink-0 !px-3 !py-2.5 text-xs sm:!px-5 sm:!py-3 sm:text-sm"
+                >
+                  Hire Me on Upwork <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                </a>
+                <a
+                  href="#feedback"
+                  className="btn-secondary shrink-0 !px-3 !py-2.5 text-xs sm:!px-5 sm:!py-3 sm:text-sm"
+                >
+                  Client Feedback
+                </a>
+              </div>
               <a
-                href={links.upwork}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-primary shrink-0 !px-3 !py-2.5 text-xs sm:!px-5 sm:!py-3 sm:text-sm"
+                href={links.cv}
+                download="MD-Masfiqur-Rahman-CV.pdf"
+                className="btn-secondary !hidden !px-4 !py-2.5 text-xs sm:!px-5 sm:!py-3 sm:text-sm md:!inline-flex"
               >
-                Hire Me on Upwork <ArrowUpRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              </a>
-              <a
-                href="#feedback"
-                className="btn-secondary shrink-0 !px-3 !py-2.5 text-xs sm:!px-5 sm:!py-3 sm:text-sm"
-              >
-                Client Feedback
+                <Download className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                Download CV
               </a>
             </motion.div>
           </motion.div>
