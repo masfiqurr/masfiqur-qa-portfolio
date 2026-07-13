@@ -429,8 +429,8 @@ export default function Home() {
   ];
 
   return (
-    <main className="overflow-x-hidden bg-ink text-white">
-      <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-ink/80 backdrop-blur-xl">
+    <>
+      <header className="site-header fixed inset-x-0 top-0 z-50 w-full border-b border-white/10 bg-ink/90 backdrop-blur-xl">
         <nav
           className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4"
           aria-label="Primary"
@@ -504,6 +504,7 @@ export default function Home() {
         )}
       </header>
 
+      <main className="bg-ink text-white">
       <section className="relative flex min-h-[100svh] flex-col overflow-x-clip pt-20">
         <div className="pointer-events-none absolute inset-0 hero-grid" />
         <div className="pointer-events-none absolute left-1/2 top-16 h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-brand/25 blur-[110px] hero-glow md:h-[380px] md:w-[380px]" />
@@ -1261,5 +1262,6 @@ HAVING COUNT(*) > 1;`}
         </div>
       )}
     </main>
+    </>
   );
 }
