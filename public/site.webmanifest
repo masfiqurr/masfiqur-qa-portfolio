@@ -1,12 +1,14 @@
 {
-  "name": "Masfiqur Rahman",
+  "name": "MD Masfiqur Rahman | Masfiqur Rahman",
   "short_name": "Masfiqur QA",
-  "description": "Top-Rated Senior QA Engineer portfolio — manual QA, Playwright automation, mobile, API, SaaS, AI, and eCommerce testing.",
+  "description": "MD Masfiqur Rahman (Masfiqur Rahman) — Top-Rated Senior QA Engineer portfolio. Manual QA, Playwright automation, mobile, API, SaaS, AI, and eCommerce testing for clients worldwide.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#050505",
   "theme_color": "#5B29DA",
   "lang": "en",
+  "dir": "ltr",
+  "categories": ["business", "productivity"],
   "icons": [
     {
       "src": "/icons/icon-192.png",

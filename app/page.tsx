@@ -559,10 +559,10 @@ export default function Home() {
               transition={{ duration: 0.55 }}
               className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-mute md:mt-5 md:text-base md:leading-8"
             >
-              I help startups and enterprises ship reliable products with manual QA, Playwright
-              automation, API testing, mobile app QA (iOS &amp; Android), AI QA, SaaS and eCommerce
-              testing, documentation, and release readiness — working with clients across the USA, UK,
-              Australia, Netherlands, and Brazil.
+              I&apos;m MD Masfiqur Rahman (Masfiqur Rahman) — helping startups and enterprises ship
+              reliable products with manual QA, Playwright automation, API testing, mobile app QA
+              (iOS &amp; Android), AI QA, SaaS and eCommerce testing, documentation, and release
+              readiness for clients across the USA, UK, Australia, Netherlands, Brazil, and worldwide.
             </motion.p>
 
             <motion.div

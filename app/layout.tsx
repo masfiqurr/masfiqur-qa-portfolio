@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Space_Grotesk, Manrope } from "next/font/google";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -28,12 +29,15 @@ export const metadata: Metadata = {
     template: "%s | Masfiqur Rahman",
   },
   description: siteConfig.description,
-  applicationName: "Masfiqur Rahman QA Portfolio",
+  applicationName: "MD Masfiqur Rahman — QA Portfolio",
   keywords: [
     "Masfiqur Rahman",
     "MD Masfiqur Rahman",
     "Md. Masfiqur Rahman",
     "Md Masfiqur Rahman",
+    "Masfiqur Rahman QA",
+    "MD Masfiqur Rahman QA Engineer",
+    "Masfiqur Rahman portfolio",
     "Hire QA Engineer",
     "QA Engineer for hire",
     "Best QA Engineer for hire",
@@ -79,12 +83,16 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "BD",
     "geo.placename": "Dhaka",
+    "profile:first_name": "Masfiqur",
+    "profile:last_name": "Rahman",
+    "profile:username": "masfique",
   },
   openGraph: {
-    type: "website",
+    type: "profile",
     locale: siteConfig.locale,
+    alternateLocale: ["en_GB", "en_AU", "en_CA", "en_IN", "bn_BD"],
     url: siteUrl,
-    siteName: "Masfiqur Rahman — Senior QA Engineer Portfolio",
+    siteName: "MD Masfiqur Rahman | Masfiqur Rahman — Senior QA Engineer",
     title: siteConfig.title,
     description: siteConfig.description,
     images: [
@@ -92,9 +100,12 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "Masfiqur Rahman — Top-Rated Senior QA Engineer and Playwright Automation Expert",
+        alt: "MD Masfiqur Rahman (Masfiqur Rahman) — Top-Rated Senior QA Engineer",
       },
     ],
+    firstName: "Masfiqur",
+    lastName: "Rahman",
+    username: "masfique",
   },
   twitter: {
     card: "summary_large_image",
@@ -115,6 +126,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteUrl,
+    languages: {
+      "x-default": siteUrl,
+      en: siteUrl,
+      "en-US": siteUrl,
+      "en-GB": siteUrl,
+      "en-AU": siteUrl,
+    },
   },
   icons: {
     icon: [
@@ -139,10 +157,16 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "Masfiqur Rahman QA Portfolio",
+      name: "MD Masfiqur Rahman | Masfiqur Rahman — QA Portfolio",
+      alternateName: [
+        "Masfiqur Rahman",
+        "MD Masfiqur Rahman",
+        "Masfiqur Rahman QA Portfolio",
+      ],
       description: siteConfig.description,
       publisher: { "@id": `${siteUrl}/#person` },
-      inLanguage: "en-US",
+      inLanguage: ["en", "en-US", "en-GB"],
+      copyrightHolder: { "@id": `${siteUrl}/#person` },
     },
     {
       "@type": "ProfilePage",
@@ -153,25 +177,50 @@ const jsonLd = {
       isPartOf: { "@id": `${siteUrl}/#website` },
       about: { "@id": `${siteUrl}/#person` },
       mainEntity: { "@id": `${siteUrl}/#person` },
-      inLanguage: "en-US",
+      inLanguage: "en",
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/cv-photo.png`,
+      },
     },
     {
       "@type": "Person",
       "@id": `${siteUrl}/#person`,
-      name: siteConfig.name,
-      alternateName: [...siteConfig.alternateNames],
+      name: siteConfig.officialName,
+      alternateName: [siteConfig.name, ...siteConfig.alternateNames],
       givenName: "Masfiqur",
       additionalName: "MD",
       familyName: "Rahman",
       url: siteUrl,
-      image: `${siteUrl}/icons/icon-512.png`,
+      image: [
+        `${siteUrl}/cv-photo.png`,
+        `${siteUrl}/icons/icon-512.png`,
+      ],
       jobTitle: siteConfig.jobTitle,
       description: siteConfig.description,
       email: siteConfig.email,
+      nationality: {
+        "@type": "Country",
+        name: "Bangladesh",
+      },
+      homeLocation: {
+        "@type": "Place",
+        name: "Dhaka, Bangladesh",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Dhaka",
+          addressCountry: "BD",
+        },
+      },
+      workLocation: {
+        "@type": "Place",
+        name: "Worldwide (Remote)",
+      },
       alumniOf: {
         "@type": "EducationalOrganization",
-        name: "Computer Science (Bachelor's and Master's)",
+        name: "Computer Science and Engineering (Bachelor's and Master's)",
       },
+      knowsLanguage: ["en", "bn"],
       knowsAbout: [
         "Software Quality Assurance",
         "Manual QA",
@@ -212,41 +261,26 @@ const jsonLd = {
     {
       "@type": "ProfessionalService",
       "@id": `${siteUrl}/#service`,
-      name: "Hire Senior QA Engineer Remotely — Masfiqur Rahman",
+      name: "Hire MD Masfiqur Rahman — Senior QA Engineer Remotely Worldwide",
       url: `${siteUrl}/#hire`,
-      image: `${siteUrl}/icons/icon-512.png`,
+      image: `${siteUrl}/cv-photo.png`,
       description:
-        "Hire a Top-Rated Senior QA Engineer available remotely worldwide for manual QA, Playwright automation, mobile app testing, API testing, and quality assurance engineering. Based in Bangladesh and trusted by global teams.",
+        "Hire MD Masfiqur Rahman (Masfiqur Rahman), a Top-Rated Senior QA Engineer available remotely worldwide for manual QA, Playwright automation, mobile app testing, API testing, and quality assurance engineering.",
       provider: { "@id": `${siteUrl}/#person` },
       areaServed: [
-        {
-          "@type": "Place",
-          name: "Worldwide",
-        },
-        {
-          "@type": "Country",
-          name: "United States",
-        },
-        {
-          "@type": "Country",
-          name: "United Kingdom",
-        },
-        {
-          "@type": "Country",
-          name: "Australia",
-        },
-        {
-          "@type": "Country",
-          name: "Netherlands",
-        },
-        {
-          "@type": "Country",
-          name: "Brazil",
-        },
-        {
-          "@type": "Country",
-          name: "Bangladesh",
-        },
+        { "@type": "Place", name: "Worldwide" },
+        { "@type": "AdministrativeArea", name: "Global Remote" },
+        { "@type": "Country", name: "United States" },
+        { "@type": "Country", name: "United Kingdom" },
+        { "@type": "Country", name: "Canada" },
+        { "@type": "Country", name: "Australia" },
+        { "@type": "Country", name: "Germany" },
+        { "@type": "Country", name: "Netherlands" },
+        { "@type": "Country", name: "United Arab Emirates" },
+        { "@type": "Country", name: "Singapore" },
+        { "@type": "Country", name: "India" },
+        { "@type": "Country", name: "Brazil" },
+        { "@type": "Country", name: "Bangladesh" },
       ],
       availableLanguage: ["English", "Bangla"],
       serviceType: [
@@ -273,7 +307,7 @@ const jsonLd = {
         {
           "@type": "ListItem",
           position: 1,
-          name: "Home",
+          name: "MD Masfiqur Rahman",
           item: siteUrl,
         },
       ],
@@ -281,12 +315,15 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="antialiased">
         <script
           type="application/ld+json"
+          nonce={nonce}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
