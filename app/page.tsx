@@ -421,11 +421,11 @@ export default function Home() {
   const navLinks = [
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
-    { href: "/blog", label: "Blog" },
     { href: "#certificates", label: "Certificates" },
     { href: "#testimonials", label: "Testimonials" },
     { href: "#feedback", label: "Feedback" },
     { href: "#case-studies", label: "Work" },
+    { href: "/blog", label: "Blog" },
     { href: "#contact", label: "Contact" },
   ];
 
