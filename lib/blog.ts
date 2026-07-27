@@ -1,3 +1,5 @@
+export type BugSeverity = "Critical" | "High" | "Medium" | "Low";
+
 export type BlogBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
@@ -5,7 +7,48 @@ export type BlogBlock =
   | { type: "ul"; items: string[] }
   | { type: "ol"; items: string[]; start?: number }
   | { type: "code"; language?: string; code: string }
-  | { type: "callout"; text: string };
+  | { type: "callout"; text: string }
+  | { type: "image"; src: string; alt: string; caption?: string }
+  | { type: "table"; caption?: string; headers: string[]; rows: string[][] }
+  | { type: "metrics"; items: { value: string; label: string }[] }
+  | {
+      type: "bugGrid";
+      items: {
+        severity: BugSeverity;
+        title: string;
+        detail: string;
+        impact?: string;
+      }[];
+    }
+  | {
+      type: "bugCard";
+      id?: string;
+      title: string;
+      severity: BugSeverity;
+      environment?: string;
+      steps?: string[];
+      expected?: string;
+      actual?: string;
+      impact?: string;
+      evidence?: string;
+    }
+  | {
+      type: "downloads";
+      items: {
+        href: string;
+        label: string;
+        description: string;
+        fileLabel?: string;
+      }[];
+    }
+  | {
+      type: "links";
+      items: {
+        href: string;
+        label: string;
+        description: string;
+      }[];
+    };
 
 export type BlogPost = {
   slug: string;
@@ -15,10 +58,233 @@ export type BlogPost = {
   date: string;
   readingMinutes: number;
   tags: string[];
+  featured?: boolean;
   content: BlogBlock[];
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "qa-work-samples",
+    title: "QA Work Samples: Tools, Evidence, and Real Test Artifacts",
+    description:
+      "A visual walkthrough of the tools I use day-to-day for QA — Jira-style tracking, device matrices, BrowserStack, Chrome DevTools, GA4, Firebase Crashlytics, AWS CloudWatch, and SQL integrity checks — plus downloadable work samples.",
+    topic: "Work Samples",
+    date: "2026-07-27",
+    readingMinutes: 9,
+    tags: ["Work Samples", "Portfolio", "QA Tools", "Evidence"],
+    featured: true,
+    content: [
+      {
+        type: "p",
+        text: "Clients hiring QA remotely rarely get to watch the work happen live. This page closes that gap — it collects anonymized, illustrative evidence of the tools and artifacts I produce during a normal QA engagement: ticket tracking, device coverage, browser debugging, analytics validation, crash monitoring, backend log investigation, and database integrity checks.",
+      },
+      {
+        type: "callout",
+        text: "Every screenshot below is a reconstructed, illustrative mock built for portfolio purposes. No real client data, session IDs, user records, or proprietary dashboards are shown — this keeps client work confidential while still demonstrating how I test.",
+      },
+      {
+        type: "h2",
+        text: "What this work sample set covers",
+      },
+      {
+        type: "ul",
+        items: [
+          "Bug tracking and sprint-style QA boards (Jira-style)",
+          "Cross-device / cross-OS mobile QA matrices",
+          "Cross-browser and real-device coverage with BrowserStack",
+          "Root-cause debugging with Chrome DevTools (Network + Console)",
+          "Product analytics validation with GA4 DebugView",
+          "Mobile crash and stability monitoring with Firebase Crashlytics",
+          "Backend log investigation with AWS CloudWatch Logs Insights",
+          "Data integrity validation with direct SQL checks",
+          "Pull request QA on Bitbucket, plus local git/Docker verification",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Tooling & Evidence Samples",
+      },
+      {
+        type: "p",
+        text: "These mocks are styled after real dashboards I use, rebuilt with sample data so the layout, workflow, and QA judgment are visible without exposing any client's actual product or users.",
+      },
+      {
+        type: "image",
+        src: "/blog/work-samples/jira-style-qa-board-mock.svg",
+        alt: "Anonymized Jira-style QA board showing Backlog, In Progress, QA Review, and Done columns",
+        caption: "Sample — Jira-style QA board: severity-tagged tickets moving through a sprint (illustrative data).",
+      },
+      {
+        type: "image",
+        src: "/blog/work-samples/mobile-app-qa-matrix-mock.svg",
+        alt: "Anonymized mobile app QA device and release matrix with a checklist and pass rate",
+        caption: "Sample — Mobile device/OS coverage matrix with a release-readiness checklist and pass rate (illustrative data).",
+      },
+      {
+        type: "image",
+        src: "/blog/work-samples/browserstack-device-matrix-mock.svg",
+        alt: "Anonymized BrowserStack Automate session matrix with a live session panel",
+        caption: "Sample — BrowserStack Automate: cross-browser/device session matrix plus a live-session view (illustrative data).",
+      },
+      {
+        type: "image",
+        src: "/blog/work-samples/chrome-devtools-network-mock.svg",
+        alt: "Anonymized Chrome DevTools Network tab showing a failed checkout API call and a related console error",
+        caption: "Sample — Chrome DevTools: a failed checkout API call (500) traced through Network and Console tabs (illustrative data).",
+      },
+      {
+        type: "image",
+        src: "/blog/work-samples/ga4-debugview-mock.svg",
+        alt: "Anonymized Google Analytics 4 DebugView validating page_view, sign_up, and purchase events",
+        caption: "Sample — GA4 DebugView: validating page_view, sign_up, and purchase events with parameter-level checks (illustrative data).",
+      },
+      {
+        type: "image",
+        src: "/blog/work-samples/firebase-crashlytics-mock.svg",
+        alt: "Anonymized Firebase Crashlytics dashboard showing crash-free trend and top fatal and non-fatal issues",
+        caption: "Sample — Firebase Crashlytics: crash-free trend plus top fatal/non-fatal issues from a release candidate (illustrative data).",
+      },
+      {
+        type: "image",
+        src: "/blog/work-samples/aws-cloudwatch-logs-mock.svg",
+        alt: "Anonymized AWS CloudWatch Logs Insights query and results showing an error spike investigation",
+        caption: "Sample — AWS CloudWatch Logs Insights: tracing an error-rate spike back to an upstream timeout (illustrative data).",
+      },
+      {
+        type: "image",
+        src: "/blog/work-samples/sql-db-integrity-check-mock.svg",
+        alt: "Anonymized SQL integrity validation showing duplicate, orphaned-record, and null-field checks",
+        caption: "Sample — SQL validation: duplicate-key, orphaned-record, and required-field null checks against a staging dataset (illustrative data).",
+      },
+      {
+        type: "h2",
+        text: "Bitbucket PR & Local Verification",
+      },
+      {
+        type: "p",
+        text: "A large share of my day-to-day QA happens directly on the pull request, before code ever reaches a shared staging environment. I check the diff for risk, read the pipeline status, smoke-test the branch on a preview build or locally, and leave a checklist-style comment so the dev and reviewers know exactly what was and wasn't covered.",
+      },
+      {
+        type: "image",
+        src: "/blog/work-samples/bitbucket-pr-review-mock.svg",
+        alt: "Anonymized Bitbucket pull request showing branch flow, pipeline status, reviewer approvals, and a QA checklist comment",
+        caption: "Sample — Bitbucket PR review: branch flow, pipeline status, and a QA checklist comment moving the ticket from \"Needs QA\" to \"QA Passed\" (illustrative data).",
+      },
+      {
+        type: "image",
+        src: "/blog/work-samples/bitbucket-pipelines-build-mock.svg",
+        alt: "Anonymized Bitbucket Pipelines build showing lint, unit, integration, end-to-end, and deploy-preview stages",
+        caption: "Sample — Bitbucket Pipelines: lint, unit, integration, and Playwright E2E stages feeding the same PR's build status (illustrative data).",
+      },
+      {
+        type: "table",
+        caption: "What I check on a pull request before approving QA",
+        headers: ["Check", "What I'm looking for", "Where"],
+        rows: [
+          ["Diff risk", "Blast radius of the change — files touched, shared components, migrations", "PR diff / file tree"],
+          ["Pipeline status", "Lint, unit, and integration stages green before I spend time manually testing", "Pipeline / build checks"],
+          ["Smoke on preview", "Core happy path works on the deployed preview build or a local run", "Preview URL or local docker/dev server"],
+          ["Targeted regression", "Areas adjacent to the change haven't broken (related flows, permissions, edge cases)", "Preview / local + regression checklist"],
+          ["Test plan / evidence", "Steps taken, environment, and result are written on the PR, not just \"looks good\"", "PR comment or linked test-plan doc"],
+        ],
+      },
+      {
+        type: "p",
+        text: "When a preview environment isn't available (or I need to reproduce something more precisely), I pull the branch and run the app locally. These are representative commands from that workflow — branch and service names are anonymized.",
+      },
+      {
+        type: "code",
+        language: "bash",
+        code: `# Get the latest branches and switch to the PR branch
+git fetch origin
+git checkout feature/checkout-retry-fix
+git pull origin feature/checkout-retry-fix
+
+# Rebuild and run the full stack locally with Docker
+docker compose up --build
+
+# ...or run just the app/API for a faster loop
+npm install
+npm run dev
+
+# Run the automated checks referenced on the PR
+npm run test          # unit / integration
+npm run test:e2e      # Playwright end-to-end
+
+# Tear down local containers when done
+docker compose down`,
+      },
+      {
+        type: "callout",
+        text: "I leave the exact commands and result (pass/fail, screenshots, console/network evidence) as a PR comment — so \"QA Passed\" always maps to something reproducible, not just a verbal sign-off.",
+      },
+      {
+        type: "h2",
+        text: "How these tools fit together in one QA cycle",
+      },
+      {
+        type: "table",
+        caption: "Tool → what it validates in a typical release cycle",
+        headers: ["Tool", "What it validates", "When I use it"],
+        rows: [
+          ["Jira-style board", "Ticket flow, severity, ownership", "Throughout the sprint"],
+          ["Device/OS matrix", "Representative mobile coverage", "Before release sign-off"],
+          ["BrowserStack", "Cross-browser & real-device parity", "Regression + release candidates"],
+          ["Chrome DevTools", "Failed requests, JS errors, payloads", "Bug investigation"],
+          ["GA4 DebugView", "Event firing & parameter accuracy", "Analytics/tracking QA"],
+          ["Firebase Crashlytics", "Crash-free rate, fatal/non-fatal issues", "Mobile release monitoring"],
+          ["AWS CloudWatch", "Backend error spikes, log tracing", "Production/staging incidents"],
+          ["SQL validation", "Duplicates, orphans, null integrity", "Data & migration QA"],
+          ["Bitbucket PR + local run", "Diff risk, pipeline status, smoke on preview/local", "Every pull request before merge"],
+        ],
+      },
+      {
+        type: "h2",
+        text: "Downloadable work samples (PDF)",
+      },
+      {
+        type: "p",
+        text: "For a closer look at how I document real engagements — scope, environment, findings, and impact — here are a few anonymized work-sample PDFs available for download.",
+      },
+      {
+        type: "downloads",
+        items: [
+          {
+            href: "/blog/work-samples/pdfs/Masfiqur_Rahman_QA_Work_Demo.pdf",
+            label: "QA Work Demo",
+            description: "General manual QA engagement sample: scope, test approach, and findings.",
+            fileLabel: "PDF",
+          },
+          {
+            href: "/blog/work-samples/pdfs/Masfiqur_Rahman_AI_Platform_QA_Work_Sample.pdf",
+            label: "AI Platform QA Work Sample",
+            description: "QA approach for an AI-powered SaaS platform, including prompt and safety checks.",
+            fileLabel: "PDF",
+          },
+          {
+            href: "/blog/work-samples/pdfs/Masfiqur_Rahman_Senior_QA_B2C_SaaS_Work_Sample.pdf",
+            label: "Senior QA — B2C SaaS Work Sample",
+            description: "Senior-level QA sample for a consumer SaaS product covering release readiness.",
+            fileLabel: "PDF",
+          },
+          {
+            href: "/blog/work-samples/pdfs/Masfiqur_Rahman_QA_Work_Demo_UAT_Tester.pdf",
+            label: "UAT Tester Work Demo",
+            description: "UAT-focused testing sample: stakeholder scenarios, sign-off, and exit criteria.",
+            fileLabel: "PDF",
+          },
+        ],
+      },
+      {
+        type: "callout",
+        text: "Want a work sample tailored to your stack (web, mobile, API, or AI features)? Reach out and I can walk through relevant evidence from past engagements — all anonymized to protect client confidentiality.",
+      },
+      {
+        type: "p",
+        text: "This page will keep growing as I add new anonymized evidence. If you are evaluating QA support for an upcoming release, these samples should give a realistic picture of the process, tooling, and documentation quality you can expect.",
+      },
+    ],
+  },
   {
     slug: "playwright-automation-that-survives-releases",
     title: "Playwright Automation That Survives Real Releases",

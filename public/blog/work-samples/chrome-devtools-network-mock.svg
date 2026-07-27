@@ -1,0 +1,153 @@
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" font-family="Manrope, Arial, sans-serif" role="img" aria-labelledby="title4 desc4">
+  <title id="title4">Anonymized Chrome DevTools Network tab mock</title>
+  <desc id="desc4">Illustrative mock of a Chrome DevTools Network panel capturing a reproduced 500 error during a checkout request, with request headers and response preview.</desc>
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" rx="24" fill="url(#bg4)"/>
+  <rect x="0.5" y="0.5" width="1199" height="699" rx="23.5" fill="none" stroke="#2A2A2A"/>
+
+  <circle cx="34" cy="34" r="6" fill="#F87171"/>
+  <circle cx="56" cy="34" r="6" fill="#FBBF24"/>
+  <circle cx="78" cy="34" r="6" fill="#75C32C"/>
+  <rect x="1096" y="24" width="80" height="24" rx="12" fill="#1E1633" stroke="#5B29DA"/>
+  <text x="1136" y="40" text-anchor="middle" fill="#B39CFF" font-size="11" font-weight="700">SAMPLE</text>
+
+  <text x="40" y="76" fill="#FFFFFF" font-size="21" font-weight="700">Network Debugging - Reproduced Checkout API Failure</text>
+  <text x="40" y="100" fill="#A3A3A3" font-size="13">Chrome DevTools Network tab, anonymized URLs and payloads</text>
+
+  <!-- DevTools tab bar -->
+  <g font-size="12" fill="#A3A3A3">
+    <rect x="40" y="120" width="1120" height="34" rx="6" fill="#171717" stroke="#2A2A2A"/>
+    <text x="60" y="141">Elements</text>
+    <text x="140" y="141">Console</text>
+    <text x="210" y="141">Sources</text>
+    <rect x="278" y="122" width="76" height="30" rx="6" fill="#1E1633"/>
+    <text x="316" y="141" text-anchor="middle" fill="#FFFFFF" font-weight="700">Network</text>
+    <text x="374" y="141">Performance</text>
+    <text x="470" y="141">Application</text>
+  </g>
+
+  <!-- Filter bar -->
+  <g font-size="11" fill="#A3A3A3">
+    <rect x="40" y="162" width="1120" height="30" rx="6" fill="#141414" stroke="#2A2A2A"/>
+    <rect x="52" y="168" width="360" height="18" rx="4" fill="#0F0F0F" stroke="#2A2A2A"/>
+    <text x="60" y="181">Filter: /api/checkout</text>
+    <rect x="430" y="168" width="58" height="18" rx="9" fill="#1E1633"/>
+    <text x="459" y="181" text-anchor="middle" fill="#B39CFF" font-weight="700">Fetch/XHR</text>
+    <text x="500" y="181">JS</text>
+    <text x="530" y="181">CSS</text>
+    <text x="565" y="181">Img</text>
+    <text x="1000" y="181">Preserve log</text>
+    <rect x="1088" y="169" width="12" height="12" rx="2" fill="none" stroke="#75C32C"/>
+  </g>
+
+  <!-- Table header -->
+  <g font-size="11" font-weight="700" fill="#71717A">
+    <rect x="40" y="196" width="1120" height="26" fill="#121212"/>
+    <text x="56" y="213">NAME</text>
+    <text x="420" y="213">STATUS</text>
+    <text x="490" y="213">TYPE</text>
+    <text x="560" y="213">INITIATOR</text>
+    <text x="700" y="213">SIZE</text>
+    <text x="770" y="213">TIME</text>
+    <text x="840" y="213">WATERFALL</text>
+  </g>
+
+  <!-- Rows -->
+  <g font-size="12" font-family="monospace">
+    <rect x="40" y="222" width="1120" height="28" fill="#0F0F0F"/>
+    <text x="56" y="241" fill="#D4D4D4">session</text>
+    <text x="420" y="241" fill="#9AE070">200</text>
+    <text x="490" y="241" fill="#A3A3A3">fetch</text>
+    <text x="560" y="241" fill="#A3A3A3">app.js:112</text>
+    <text x="700" y="241" fill="#A3A3A3">1.2 kB</text>
+    <text x="770" y="241" fill="#A3A3A3">88 ms</text>
+    <rect x="840" y="230" width="60" height="8" rx="2" fill="#3A2A6B"/>
+
+    <rect x="40" y="250" width="1120" height="28" fill="#141414"/>
+    <text x="56" y="269" fill="#D4D4D4">cart</text>
+    <text x="420" y="269" fill="#9AE070">200</text>
+    <text x="490" y="269" fill="#A3A3A3">fetch</text>
+    <text x="560" y="269" fill="#A3A3A3">app.js:145</text>
+    <text x="700" y="269" fill="#A3A3A3">3.4 kB</text>
+    <text x="770" y="269" fill="#A3A3A3">102 ms</text>
+    <rect x="840" y="258" width="80" height="8" rx="2" fill="#3A2A6B"/>
+
+    <rect x="40" y="278" width="1120" height="28" fill="#0F0F0F"/>
+    <text x="56" y="297" fill="#D4D4D4">shipping-rates</text>
+    <text x="420" y="297" fill="#9AE070">200</text>
+    <text x="490" y="297" fill="#A3A3A3">fetch</text>
+    <text x="560" y="297" fill="#A3A3A3">checkout.js:58</text>
+    <text x="700" y="297" fill="#A3A3A3">0.8 kB</text>
+    <text x="770" y="297" fill="#A3A3A3">140 ms</text>
+    <rect x="840" y="286" width="110" height="8" rx="2" fill="#3A2A6B"/>
+
+    <!-- Highlighted 500 row -->
+    <rect x="40" y="306" width="1120" height="30" fill="#3B1414" stroke="#7F1D1D"/>
+    <text x="56" y="326" fill="#FFD7D7" font-weight="700">charge</text>
+    <text x="420" y="326" fill="#FCA5A5" font-weight="700">500</text>
+    <text x="490" y="326" fill="#FCA5A5">fetch</text>
+    <text x="560" y="326" fill="#FCA5A5">checkout.js:91</text>
+    <text x="700" y="326" fill="#FCA5A5">0.6 kB</text>
+    <text x="770" y="326" fill="#FCA5A5">3.8 s</text>
+    <rect x="840" y="312" width="220" height="10" rx="2" fill="#7F1D1D"/>
+
+    <rect x="40" y="336" width="1120" height="28" fill="#141414"/>
+    <text x="56" y="355" fill="#D4D4D4">retry-charge</text>
+    <text x="420" y="355" fill="#FCD34D" font-weight="700">404</text>
+    <text x="490" y="355" fill="#A3A3A3">fetch</text>
+    <text x="560" y="355" fill="#A3A3A3">checkout.js:104</text>
+    <text x="700" y="355" fill="#A3A3A3">0.3 kB</text>
+    <text x="770" y="355" fill="#A3A3A3">64 ms</text>
+    <rect x="840" y="344" width="40" height="8" rx="2" fill="#78350F"/>
+
+    <rect x="40" y="364" width="1120" height="28" fill="#0F0F0F"/>
+    <text x="56" y="383" fill="#D4D4D4">receipt</text>
+    <text x="420" y="383" fill="#71717A">(pending)</text>
+    <text x="490" y="383" fill="#A3A3A3">fetch</text>
+    <text x="560" y="383" fill="#A3A3A3">checkout.js:120</text>
+    <text x="700" y="383" fill="#A3A3A3">-</text>
+    <text x="770" y="383" fill="#A3A3A3">-</text>
+
+    <rect x="40" y="196" width="1120" height="196" rx="0" fill="none" stroke="#2A2A2A"/>
+  </g>
+
+  <!-- Headers / preview panel -->
+  <g>
+    <rect x="40" y="410" width="546" height="200" rx="12" fill="#141414" stroke="#2A2A2A"/>
+    <text x="60" y="436" fill="#FFFFFF" font-size="13" font-weight="700">Headers - charge</text>
+    <text x="60" y="460" fill="#A3A3A3" font-size="11">Request URL</text>
+    <text x="60" y="476" fill="#E5E5E5" font-size="11.5" font-family="monospace">https://api.anon-app.example.com/v1/checkout/charge</text>
+    <text x="60" y="500" fill="#A3A3A3" font-size="11">Request Method</text>
+    <text x="220" y="500" fill="#E5E5E5" font-size="11.5" font-family="monospace">POST</text>
+    <text x="60" y="522" fill="#A3A3A3" font-size="11">Status Code</text>
+    <text x="220" y="522" fill="#FCA5A5" font-size="11.5" font-family="monospace" font-weight="700">500 Internal Server Error</text>
+    <text x="60" y="544" fill="#A3A3A3" font-size="11">Remote Address</text>
+    <text x="220" y="544" fill="#E5E5E5" font-size="11.5" font-family="monospace">203.0.113.10:443</text>
+    <text x="60" y="566" fill="#A3A3A3" font-size="11">Referrer Policy</text>
+    <text x="220" y="566" fill="#E5E5E5" font-size="11.5" font-family="monospace">strict-origin-when-cross-origin</text>
+    <text x="60" y="590" fill="#A3A3A3" font-size="11">x-request-id</text>
+    <text x="220" y="590" fill="#E5E5E5" font-size="11.5" font-family="monospace">REDACTED-FOR-SAMPLE</text>
+  </g>
+
+  <g>
+    <rect x="606" y="410" width="554" height="200" rx="12" fill="#141414" stroke="#2A2A2A"/>
+    <text x="626" y="436" fill="#FFFFFF" font-size="13" font-weight="700">Response preview</text>
+    <rect x="626" y="452" width="514" height="132" rx="8" fill="#0F0F0F" stroke="#2A2A2A"/>
+    <text x="642" y="474" fill="#7C4DFF" font-family="monospace" font-size="12">{{'{'}}</text>
+    <text x="656" y="494" fill="#E5E5E5" font-family="monospace" font-size="12">"error": "upstream_timeout",</text>
+    <text x="656" y="514" fill="#E5E5E5" font-family="monospace" font-size="12">"gateway": "payments-anon",</text>
+    <text x="656" y="534" fill="#E5E5E5" font-family="monospace" font-size="12">"requestId": "REDACTED",</text>
+    <text x="656" y="554" fill="#E5E5E5" font-family="monospace" font-size="12">"retryable": true</text>
+    <text x="642" y="574" fill="#7C4DFF" font-family="monospace" font-size="12">{{'}'}}</text>
+    <text x="626" y="600" fill="#A3A3A3" font-size="11">Filed as QA-497 - payment gateway timeout not surfaced to user</text>
+  </g>
+
+  <text x="40" y="650" fill="#71717A" font-size="12">Illustrative capture - domains, IDs &amp; payloads are anonymized samples, not a real production request</text>
+  <text x="1160" y="650" text-anchor="end" fill="#7C4DFF" font-size="12" font-weight="700">masfiqur.com</text>
+</svg>

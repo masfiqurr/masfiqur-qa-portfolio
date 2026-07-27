@@ -1003,6 +1003,19 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="mt-10 flex flex-col items-center gap-3 rounded-2xl border border-brand/30 bg-brand/10 p-6 text-center sm:flex-row sm:justify-between sm:text-left">
+            <div>
+              <h3 className="font-display text-lg font-semibold text-white">
+                Want to see the tools behind the work?
+              </h3>
+              <p className="mt-1 text-sm leading-6 text-mute">
+                Browse anonymized screenshots — BrowserStack, DevTools, GA4, Firebase, CloudWatch, SQL checks, and more.
+              </p>
+            </div>
+            <a href="/blog/qa-work-samples" className="btn-primary shrink-0 whitespace-nowrap">
+              View QA Work Samples <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </section>
 

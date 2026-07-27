@@ -1,0 +1,166 @@
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" font-family="Manrope, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Anonymized Jira-style QA board</title>
+  <desc id="desc">Illustrative kanban board mock showing anonymized QA tickets across Backlog, In Progress, QA Review, and Done columns.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5B29DA" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#5B29DA" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" rx="24" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="699" rx="23.5" fill="none" stroke="#2A2A2A"/>
+  <rect x="0" y="0" width="420" height="200" fill="url(#glow)"/>
+
+  <!-- Top bar -->
+  <circle cx="34" cy="34" r="6" fill="#F87171"/>
+  <circle cx="56" cy="34" r="6" fill="#FBBF24"/>
+  <circle cx="78" cy="34" r="6" fill="#75C32C"/>
+  <text x="600" y="40" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="700">QA Board — Sprint 24 (Anonymized Demo)</text>
+  <text x="600" y="64" text-anchor="middle" fill="#A3A3A3" font-size="13">Sample tickets illustrating bug-report and test-tracking style · no real client data</text>
+
+  <!-- Column headers -->
+  <g font-size="14" font-weight="700" fill="#FFFFFF">
+    <rect x="40" y="90" width="265" height="38" rx="8" fill="#1A1A1A" stroke="#2A2A2A"/>
+    <text x="60" y="114">BACKLOG</text>
+    <circle cx="285" cy="109" r="10" fill="#2A2A2A"/>
+    <text x="285" y="113" text-anchor="middle" font-size="11" fill="#A3A3A3">4</text>
+
+    <rect x="325" y="90" width="265" height="38" rx="8" fill="#1A1A1A" stroke="#2A2A2A"/>
+    <text x="345" y="114">IN PROGRESS</text>
+    <circle cx="570" cy="109" r="10" fill="#2A2A2A"/>
+    <text x="570" y="113" text-anchor="middle" font-size="11" fill="#A3A3A3">3</text>
+
+    <rect x="610" y="90" width="265" height="38" rx="8" fill="#1A1A1A" stroke="#2A2A2A"/>
+    <text x="630" y="114">QA REVIEW</text>
+    <circle cx="855" cy="109" r="10" fill="#5B29DA"/>
+    <text x="855" y="113" text-anchor="middle" font-size="11" fill="#FFFFFF">2</text>
+
+    <rect x="895" y="90" width="265" height="38" rx="8" fill="#1A1A1A" stroke="#2A2A2A"/>
+    <text x="915" y="114">DONE</text>
+    <circle cx="1140" cy="109" r="10" fill="#75C32C"/>
+    <text x="1140" y="113" text-anchor="middle" font-size="11" fill="#0A0A0A">3</text>
+  </g>
+
+  <!-- Card template drawn manually per column -->
+  <!-- Backlog cards -->
+  <g>
+    <rect x="40" y="145" width="265" height="98" rx="10" fill="#141414" stroke="#2A2A2A"/>
+    <text x="58" y="170" fill="#7C4DFF" font-size="11" font-weight="700">QA-482</text>
+    <rect x="228" y="156" width="60" height="20" rx="10" fill="#7F1D1D"/>
+    <text x="258" y="170" text-anchor="middle" fill="#FECACA" font-size="10" font-weight="700">CRITICAL</text>
+    <text x="58" y="192" fill="#E5E5E5" font-size="12.5">Wallet session persists after</text>
+    <text x="58" y="209" fill="#E5E5E5" font-size="12.5">logout on new signup</text>
+    <circle cx="270" cy="222" r="11" fill="#5B29DA"/>
+    <text x="270" y="226" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">QA</text>
+    <text x="58" y="228" fill="#A3A3A3" font-size="10">Mobile · Security</text>
+
+    <rect x="40" y="253" width="265" height="98" rx="10" fill="#141414" stroke="#2A2A2A"/>
+    <text x="58" y="278" fill="#7C4DFF" font-size="11" font-weight="700">QA-497</text>
+    <rect x="212" y="264" width="76" height="20" rx="10" fill="#7C2D12"/>
+    <text x="250" y="278" text-anchor="middle" fill="#FED7AA" font-size="10" font-weight="700">HIGH</text>
+    <text x="58" y="300" fill="#E5E5E5" font-size="12.5">Push notification deep link</text>
+    <text x="58" y="317" fill="#E5E5E5" font-size="12.5">opens wrong screen (iOS)</text>
+    <circle cx="270" cy="330" r="11" fill="#5B29DA"/>
+    <text x="270" y="334" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">QA</text>
+    <text x="58" y="336" fill="#A3A3A3" font-size="10">iOS · Navigation</text>
+
+    <rect x="40" y="361" width="265" height="80" rx="10" fill="#141414" stroke="#2A2A2A"/>
+    <text x="58" y="386" fill="#7C4DFF" font-size="11" font-weight="700">QA-503</text>
+    <rect x="216" y="372" width="72" height="20" rx="10" fill="#78350F"/>
+    <text x="252" y="386" text-anchor="middle" fill="#FDE68A" font-size="10" font-weight="700">MEDIUM</text>
+    <text x="58" y="408" fill="#E5E5E5" font-size="12.5">Double-booked tech shows</text>
+    <text x="58" y="425" fill="#E5E5E5" font-size="12.5">no overlap warning</text>
+
+    <rect x="40" y="453" width="265" height="60" rx="10" fill="#141414" stroke="#2A2A2A"/>
+    <text x="58" y="478" fill="#7C4DFF" font-size="11" font-weight="700">QA-511</text>
+    <text x="58" y="498" fill="#E5E5E5" font-size="12.5">CSV import: null email silently</text>
+    <text x="58" y="503" fill="#A3A3A3" font-size="10"> </text>
+  </g>
+
+  <!-- In progress -->
+  <g>
+    <rect x="325" y="145" width="265" height="98" rx="10" fill="#141414" stroke="#2A2A2A"/>
+    <text x="343" y="170" fill="#7C4DFF" font-size="11" font-weight="700">QA-465</text>
+    <rect x="513" y="156" width="60" height="20" rx="10" fill="#7F1D1D"/>
+    <text x="543" y="170" text-anchor="middle" fill="#FECACA" font-size="10" font-weight="700">CRITICAL</text>
+    <text x="343" y="192" fill="#E5E5E5" font-size="12.5">iPad crash editing</text>
+    <text x="343" y="209" fill="#E5E5E5" font-size="12.5">substitution time in Action Log</text>
+    <circle cx="555" cy="222" r="11" fill="#75C32C"/>
+    <text x="555" y="226" text-anchor="middle" fill="#0A0A0A" font-size="9" font-weight="700">MR</text>
+    <text x="343" y="228" fill="#A3A3A3" font-size="10">Tablet · Crash</text>
+
+    <rect x="325" y="253" width="265" height="98" rx="10" fill="#141414" stroke="#2A2A2A"/>
+    <text x="343" y="278" fill="#7C4DFF" font-size="11" font-weight="700">QA-471</text>
+    <rect x="497" y="264" width="76" height="20" rx="10" fill="#7C2D12"/>
+    <text x="535" y="278" text-anchor="middle" fill="#FED7AA" font-size="10" font-weight="700">HIGH</text>
+    <text x="343" y="300" fill="#E5E5E5" font-size="12.5">Stripe connection token</text>
+    <text x="343" y="317" fill="#E5E5E5" font-size="12.5">retrieval fails intermittently</text>
+    <circle cx="555" cy="330" r="11" fill="#75C32C"/>
+    <text x="555" y="334" text-anchor="middle" fill="#0A0A0A" font-size="9" font-weight="700">MR</text>
+    <text x="343" y="336" fill="#A3A3A3" font-size="10">Payments · Tap-to-Pay</text>
+
+    <rect x="325" y="361" width="265" height="80" rx="10" fill="#141414" stroke="#2A2A2A"/>
+    <text x="343" y="386" fill="#7C4DFF" font-size="11" font-weight="700">QA-488</text>
+    <rect x="501" y="372" width="72" height="20" rx="10" fill="#78350F"/>
+    <text x="537" y="386" text-anchor="middle" fill="#FDE68A" font-size="10" font-weight="700">MEDIUM</text>
+    <text x="343" y="408" fill="#E5E5E5" font-size="12.5">Complete-job CTA hit target</text>
+    <text x="343" y="425" fill="#E5E5E5" font-size="12.5">too small on mobile</text>
+  </g>
+
+  <!-- QA review -->
+  <g>
+    <rect x="610" y="145" width="265" height="98" rx="10" fill="#171226" stroke="#5B29DA"/>
+    <text x="628" y="170" fill="#B39CFF" font-size="11" font-weight="700">QA-441</text>
+    <rect x="798" y="156" width="60" height="20" rx="10" fill="#7F1D1D"/>
+    <text x="828" y="170" text-anchor="middle" fill="#FECACA" font-size="10" font-weight="700">CRITICAL</text>
+    <text x="628" y="192" fill="#F3F0FF" font-size="12.5">Silent data loss when optional</text>
+    <text x="628" y="209" fill="#F3F0FF" font-size="12.5">source column is missing</text>
+    <circle cx="840" cy="222" r="11" fill="#5B29DA"/>
+    <text x="840" y="226" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">QA</text>
+    <text x="628" y="228" fill="#B9B2D6" font-size="10">ETL · Verify fix</text>
+
+    <rect x="610" y="253" width="265" height="98" rx="10" fill="#171226" stroke="#5B29DA"/>
+    <text x="628" y="278" fill="#B39CFF" font-size="11" font-weight="700">QA-458</text>
+    <rect x="782" y="264" width="76" height="20" rx="10" fill="#7C2D12"/>
+    <text x="820" y="278" text-anchor="middle" fill="#FED7AA" font-size="10" font-weight="700">HIGH</text>
+    <text x="628" y="300" fill="#F3F0FF" font-size="12.5">Job Complete on tech phone,</text>
+    <text x="628" y="317" fill="#F3F0FF" font-size="12.5">still En Route on office board</text>
+    <circle cx="840" cy="330" r="11" fill="#5B29DA"/>
+    <text x="840" y="334" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">QA</text>
+    <text x="628" y="336" fill="#B9B2D6" font-size="10">Field Service · Sync</text>
+  </g>
+
+  <!-- Done -->
+  <g>
+    <rect x="895" y="145" width="265" height="80" rx="10" fill="#0F1F12" stroke="#2E5D1B"/>
+    <text x="913" y="170" fill="#9AE070" font-size="11" font-weight="700">QA-402</text>
+    <text x="913" y="192" fill="#D9F2C7" font-size="12.5">Checkout retries after payment</text>
+    <text x="913" y="209" fill="#D9F2C7" font-size="12.5">API 503 — cart preserved</text>
+    <circle cx="1135" cy="217" r="9" fill="#75C32C"/>
+    <path d="M1130 217 l3 3 l6 -7" stroke="#0A0A0A" stroke-width="1.6" fill="none"/>
+
+    <rect x="895" y="235" width="265" height="80" rx="10" fill="#0F1F12" stroke="#2E5D1B"/>
+    <text x="913" y="260" fill="#9AE070" font-size="11" font-weight="700">QA-409</text>
+    <text x="913" y="282" fill="#D9F2C7" font-size="12.5">Session clears fully after</text>
+    <text x="913" y="299" fill="#D9F2C7" font-size="12.5">logout — verified on 3 roles</text>
+    <circle cx="1135" cy="307" r="9" fill="#75C32C"/>
+    <path d="M1130 307 l3 3 l6 -7" stroke="#0A0A0A" stroke-width="1.6" fill="none"/>
+
+    <rect x="895" y="325" width="265" height="80" rx="10" fill="#0F1F12" stroke="#2E5D1B"/>
+    <text x="913" y="350" fill="#9AE070" font-size="11" font-weight="700">QA-415</text>
+    <text x="913" y="372" fill="#D9F2C7" font-size="12.5">Audit actor now shows signed-in</text>
+    <text x="913" y="389" fill="#D9F2C7" font-size="12.5">admin on bulk-paste edits</text>
+    <circle cx="1135" cy="397" r="9" fill="#75C32C"/>
+    <path d="M1130 397 l3 3 l6 -7" stroke="#0A0A0A" stroke-width="1.6" fill="none"/>
+  </g>
+
+  <!-- Footer strip -->
+  <rect x="40" y="640" width="1120" height="1" fill="#2A2A2A"/>
+  <text x="40" y="670" fill="#71717A" font-size="12">Illustrative board · ticket IDs, titles &amp; avatars are anonymized samples — not a real client workspace</text>
+  <text x="1160" y="670" text-anchor="end" fill="#7C4DFF" font-size="12" font-weight="700">masfiqur.com</text>
+</svg>

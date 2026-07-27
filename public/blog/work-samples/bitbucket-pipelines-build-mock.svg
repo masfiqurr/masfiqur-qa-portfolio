@@ -1,0 +1,86 @@
+<svg viewBox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg" font-family="Manrope, Arial, sans-serif" role="img" aria-labelledby="bptitle bpdesc">
+  <title id="bptitle">Anonymized Bitbucket Pipelines build steps</title>
+  <desc id="bpdesc">Illustrative mock of a Bitbucket Pipelines run showing lint, unit, integration, end-to-end, and preview-deploy stages with pass, running, and retest states.</desc>
+  <defs>
+    <linearGradient id="bpbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+    <linearGradient id="bpglow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5B29DA" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#5B29DA" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="620" rx="24" fill="url(#bpbg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="619" rx="23.5" fill="none" stroke="#2A2A2A"/>
+  <rect x="0" y="0" width="440" height="170" fill="url(#bpglow)"/>
+
+  <circle cx="34" cy="34" r="6" fill="#F87171"/>
+  <circle cx="56" cy="34" r="6" fill="#FBBF24"/>
+  <circle cx="78" cy="34" r="6" fill="#75C32C"/>
+  <text x="600" y="42" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="700">Bitbucket Pipelines - Build #482.3 (Anonymized Demo)</text>
+  <text x="600" y="66" text-anchor="middle" fill="#A3A3A3" font-size="13">PR #482 - feature/checkout-retry-fix - sample build, not a real client pipeline</text>
+
+  <!-- Stage list -->
+  <g>
+    <!-- Lint -->
+    <rect x="40" y="100" width="1120" height="70" rx="12" fill="#141414" stroke="#2A2A2A"/>
+    <circle cx="72" cy="135" r="14" fill="#0F1F12" stroke="#2E5D1B"/>
+    <path d="M65 135 l5 5 l10 -10" stroke="#75C32C" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="100" y="128" fill="#FFFFFF" font-size="14" font-weight="700">Lint &amp; type-check</text>
+    <text x="100" y="147" fill="#71717A" font-size="11.5">eslint . &amp;&amp; tsc --noEmit</text>
+    <text x="980" y="132" fill="#71717A" font-size="12">18s</text>
+    <rect x="1030" y="120" width="70" height="24" rx="12" fill="#0F1F12" stroke="#2E5D1B"/>
+    <text x="1065" y="136" text-anchor="middle" fill="#9AE070" font-size="11" font-weight="700">PASS</text>
+
+    <!-- Unit -->
+    <rect x="40" y="178" width="1120" height="70" rx="12" fill="#171717" stroke="#2A2A2A"/>
+    <circle cx="72" cy="213" r="14" fill="#0F1F12" stroke="#2E5D1B"/>
+    <path d="M65 213 l5 5 l10 -10" stroke="#75C32C" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="100" y="206" fill="#FFFFFF" font-size="14" font-weight="700">Unit tests</text>
+    <text x="100" y="225" fill="#71717A" font-size="11.5">npm run test:unit -- --coverage</text>
+    <text x="960" y="210" fill="#71717A" font-size="12">1m 42s</text>
+    <rect x="1030" y="198" width="70" height="24" rx="12" fill="#0F1F12" stroke="#2E5D1B"/>
+    <text x="1065" y="214" text-anchor="middle" fill="#9AE070" font-size="11" font-weight="700">PASS</text>
+    <text x="1110" y="214" text-anchor="end" fill="#71717A" font-size="10.5">92% cov</text>
+
+    <!-- Integration -->
+    <rect x="40" y="256" width="1120" height="70" rx="12" fill="#141414" stroke="#2A2A2A"/>
+    <circle cx="72" cy="291" r="14" fill="#0F1F12" stroke="#2E5D1B"/>
+    <path d="M65 291 l5 5 l10 -10" stroke="#75C32C" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="100" y="284" fill="#FFFFFF" font-size="14" font-weight="700">Integration tests</text>
+    <text x="100" y="303" fill="#71717A" font-size="11.5">npm run test:integration (payments, webhooks)</text>
+    <text x="960" y="288" fill="#71717A" font-size="12">2m 05s</text>
+    <rect x="1030" y="276" width="70" height="24" rx="12" fill="#0F1F12" stroke="#2E5D1B"/>
+    <text x="1065" y="292" text-anchor="middle" fill="#9AE070" font-size="11" font-weight="700">PASS</text>
+
+    <!-- E2E running -->
+    <rect x="40" y="334" width="1120" height="70" rx="12" fill="#1E1633" stroke="#5B29DA"/>
+    <circle cx="72" cy="369" r="14" fill="#1E1633" stroke="#5B29DA"/>
+    <circle cx="72" cy="369" r="5" fill="#B39CFF"/>
+    <text x="100" y="362" fill="#F3F0FF" font-size="14" font-weight="700">E2E - Playwright (Chromium, WebKit)</text>
+    <text x="100" y="381" fill="#B9B2D6" font-size="11.5">npx playwright test --project=chromium --project=webkit</text>
+    <text x="960" y="366" fill="#B9B2D6" font-size="12">running...</text>
+    <rect x="1006" y="354" width="94" height="24" rx="12" fill="#1E1633" stroke="#5B29DA"/>
+    <text x="1053" y="370" text-anchor="middle" fill="#B39CFF" font-size="11" font-weight="700">IN PROGRESS</text>
+
+    <!-- Deploy preview queued -->
+    <rect x="40" y="412" width="1120" height="70" rx="12" fill="#171717" stroke="#2A2A2A"/>
+    <circle cx="72" cy="447" r="14" fill="#1A1A1A" stroke="#3A3A3A"/>
+    <text x="100" y="440" fill="#D4D4D4" font-size="14" font-weight="700">Deploy to preview environment</text>
+    <text x="100" y="459" fill="#71717A" font-size="11.5">docker compose -f docker-compose.preview.yml up -d --build</text>
+    <rect x="1030" y="432" width="70" height="24" rx="12" fill="#1A1A1A" stroke="#3A3A3A"/>
+    <text x="1065" y="448" text-anchor="middle" fill="#A3A3A3" font-size="11" font-weight="700">QUEUED</text>
+  </g>
+
+  <rect x="40" y="502" width="1120" height="1" fill="#2A2A2A"/>
+  <g font-size="12" fill="#A3A3A3">
+    <text x="40" y="530">Stages: 3 passed / 1 running / 1 queued</text>
+    <text x="420" y="530">Branch: feature/checkout-retry-fix</text>
+    <text x="740" y="530">Triggered by: sample-dev (push)</text>
+  </g>
+
+  <text x="40" y="586" fill="#71717A" font-size="12">Illustrative Pipelines run - step names, timings &amp; commands are anonymized samples, not a real client build</text>
+  <text x="1160" y="586" text-anchor="end" fill="#7C4DFF" font-size="12" font-weight="700">masfiqur.com</text>
+</svg>

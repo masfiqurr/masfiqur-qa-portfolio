@@ -1,0 +1,86 @@
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" font-family="Manrope, Arial, sans-serif" role="img" aria-labelledby="dbtitle dbdesc">
+  <title id="dbtitle">Anonymized database integrity check mock</title>
+  <desc id="dbdesc">Illustrative mock of SQL validation queries and results for duplicate, orphaned-record, and null-field integrity checks.</desc>
+  <defs>
+    <linearGradient id="dbbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" rx="24" fill="url(#dbbg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="699" rx="23.5" fill="none" stroke="#2A2A2A"/>
+
+  <circle cx="34" cy="34" r="6" fill="#F87171"/>
+  <circle cx="56" cy="34" r="6" fill="#FBBF24"/>
+  <circle cx="78" cy="34" r="6" fill="#75C32C"/>
+  <rect x="110" y="22" width="360" height="24" rx="12" fill="#171717" stroke="#2A2A2A"/>
+  <text x="128" y="38" fill="#A3A3A3" font-size="11">sample-db-client — qa_readonly@staging</text>
+
+  <text x="600" y="76" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="700">Database Testing — SQL Integrity Validation (Anonymized Demo)</text>
+  <text x="600" y="100" text-anchor="middle" fill="#A3A3A3" font-size="13">Sample duplicate, orphan &amp; null-field checks run against a staging dataset</text>
+
+  <!-- Query 1: duplicate check -->
+  <g>
+    <rect x="40" y="126" width="1120" height="96" rx="10" fill="#0F0F0F" stroke="#2A2A2A"/>
+    <text x="60" y="148" fill="#A3A3A3" font-size="10.5">Query 1 — duplicate external_id check</text>
+    <text x="60" y="170" font-family="monospace" font-size="12" fill="#E5E5E5">SELECT external_id, COUNT(*)</text>
+    <text x="60" y="188" font-family="monospace" font-size="12" fill="#E5E5E5">FROM destination_table</text>
+    <text x="60" y="206" font-family="monospace" font-size="12" fill="#E5E5E5">GROUP BY external_id <tspan fill="#B39CFF">HAVING</tspan> COUNT(*) &gt; 1;</text>
+    <rect x="900" y="140" width="240" height="24" rx="12" fill="#0F1F12"/>
+    <text x="1020" y="157" text-anchor="middle" fill="#9AE070" font-size="10.5" font-weight="700">– 0 rows returned — no duplicates</text>
+  </g>
+
+  <!-- Query 2: orphaned rows -->
+  <g>
+    <rect x="40" y="234" width="1120" height="150" rx="10" fill="#0F0F0F" stroke="#2A2A2A"/>
+    <text x="60" y="256" fill="#A3A3A3" font-size="10.5">Query 2 — orphaned order line items (referential integrity)</text>
+    <text x="60" y="278" font-family="monospace" font-size="12" fill="#E5E5E5">SELECT li.id, li.order_id</text>
+    <text x="60" y="296" font-family="monospace" font-size="12" fill="#E5E5E5">FROM order_line_items li</text>
+    <text x="60" y="314" font-family="monospace" font-size="12" fill="#E5E5E5"><tspan fill="#B39CFF">LEFT JOIN</tspan> orders o ON o.id = li.order_id</text>
+    <text x="60" y="332" font-family="monospace" font-size="12" fill="#E5E5E5"><tspan fill="#B39CFF">WHERE</tspan> o.id IS NULL;</text>
+
+    <rect x="700" y="270" width="440" height="96" rx="8" fill="#2A1414" stroke="#7F1D1D"/>
+    <text x="716" y="290" fill="#FCA5A5" font-size="10.5" font-weight="700">2 orphaned rows found</text>
+    <g font-family="monospace" font-size="10.5" fill="#FCA5A5">
+      <text x="716" y="310">id: sample-9931  order_id: sample-4102 (missing)</text>
+      <text x="716" y="328">id: sample-9958  order_id: sample-4108 (missing)</text>
+    </g>
+    <text x="716" y="352" fill="#FED7AA" font-size="10">Linked ticket: QA-441 — silent data loss, optional source column missing</text>
+  </g>
+
+  <!-- Query 3: null check -->
+  <g>
+    <rect x="40" y="396" width="1120" height="96" rx="10" fill="#0F0F0F" stroke="#2A2A2A"/>
+    <text x="60" y="418" fill="#A3A3A3" font-size="10.5">Query 3 — required-field null check</text>
+    <text x="60" y="440" font-family="monospace" font-size="12" fill="#E5E5E5"><tspan fill="#B39CFF">SELECT</tspan> COUNT(*) <tspan fill="#B39CFF">FROM</tspan> users</text>
+    <text x="60" y="458" font-family="monospace" font-size="12" fill="#E5E5E5"><tspan fill="#B39CFF">WHERE</tspan> email <tspan fill="#B39CFF">IS NULL OR</tspan> email = '';</text>
+    <rect x="900" y="424" width="240" height="24" rx="12" fill="#0F1F12"/>
+    <text x="1020" y="441" text-anchor="middle" fill="#9AE070" font-size="10.5" font-weight="700">– count = 0 — passed</text>
+  </g>
+
+  <!-- Summary strip -->
+  <g>
+    <text x="40" y="524" fill="#FFFFFF" font-size="13" font-weight="700">Integrity check summary (sample dataset)</text>
+    <rect x="40" y="540" width="1120" height="1" fill="#2A2A2A"/>
+
+    <rect x="40" y="556" width="270" height="70" rx="10" fill="#141414" stroke="#2A2A2A"/>
+    <text x="58" y="580" fill="#A3A3A3" font-size="11">Duplicate keys</text>
+    <text x="58" y="608" fill="#9AE070" font-size="20" font-weight="700">0 found</text>
+
+    <rect x="330" y="556" width="270" height="70" rx="10" fill="#141414" stroke="#2A2A2A"/>
+    <text x="348" y="580" fill="#A3A3A3" font-size="11">Orphaned records</text>
+    <text x="348" y="608" fill="#F87171" font-size="20" font-weight="700">2 found</text>
+
+    <rect x="620" y="556" width="270" height="70" rx="10" fill="#141414" stroke="#2A2A2A"/>
+    <text x="638" y="580" fill="#A3A3A3" font-size="11">Required-field nulls</text>
+    <text x="638" y="608" fill="#9AE070" font-size="20" font-weight="700">0 found</text>
+
+    <rect x="910" y="556" width="250" height="70" rx="10" fill="#171226" stroke="#5B29DA"/>
+    <text x="928" y="580" fill="#B9B2D6" font-size="11">Overall result</text>
+    <text x="928" y="608" fill="#F3F0FF" font-size="18" font-weight="700">1 defect logged</text>
+  </g>
+
+  <text x="40" y="660" fill="#71717A" font-size="12">Illustrative SQL validation — schema, IDs &amp; row counts are anonymized samples, not a real client database</text>
+  <text x="1160" y="660" text-anchor="end" fill="#7C4DFF" font-size="12" font-weight="700">masfiqur.com</text>
+</svg>

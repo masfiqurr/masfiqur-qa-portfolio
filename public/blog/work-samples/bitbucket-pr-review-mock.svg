@@ -1,0 +1,138 @@
+<svg viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" font-family="Manrope, Arial, sans-serif" role="img" aria-labelledby="bbtitle bbdesc">
+  <title id="bbtitle">Anonymized Bitbucket pull request QA review</title>
+  <desc id="bbdesc">Illustrative mock of a Bitbucket pull request showing branch flow, pipeline build status, reviewer approvals, and a QA checklist comment thread.</desc>
+  <defs>
+    <linearGradient id="bbbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+    <linearGradient id="bbglow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5B29DA" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#5B29DA" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" rx="24" fill="url(#bbbg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="759" rx="23.5" fill="none" stroke="#2A2A2A"/>
+  <rect x="0" y="0" width="440" height="190" fill="url(#bbglow)"/>
+
+  <!-- Browser chrome top bar -->
+  <circle cx="34" cy="34" r="6" fill="#F87171"/>
+  <circle cx="56" cy="34" r="6" fill="#FBBF24"/>
+  <circle cx="78" cy="34" r="6" fill="#75C32C"/>
+  <rect x="110" y="22" width="560" height="24" rx="12" fill="#171717" stroke="#2A2A2A"/>
+  <text x="128" y="38" fill="#A3A3A3" font-size="11">bitbucket.org/sample-workspace/sample-repo/pull-requests/482</text>
+
+  <!-- PR header -->
+  <rect x="40" y="66" width="1120" height="96" rx="14" fill="#141414" stroke="#2A2A2A"/>
+  <text x="64" y="98" fill="#FFFFFF" font-size="18" font-weight="700">#482 - Fix checkout retry state persisting across duplicate payment attempts</text>
+  <text x="64" y="122" fill="#A3A3A3" font-size="12.5">Opened by sample-dev - 2 files changed - +146 / -38</text>
+
+  <!-- Branch flow -->
+  <g font-size="12.5" font-weight="700">
+    <rect x="64" y="132" width="212" height="24" rx="12" fill="#1E1633" stroke="#5B29DA"/>
+    <text x="76" y="148" fill="#B39CFF">feature/checkout-retry-fix</text>
+    <path d="M282 144 h28" stroke="#5B5B5B" stroke-width="2" fill="none"/>
+    <path d="M304 138 l8 6 l-8 6" stroke="#5B5B5B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="320" y="132" width="70" height="24" rx="12" fill="#171717" stroke="#2A2A2A"/>
+    <text x="333" y="148" fill="#E5E5E5">main</text>
+  </g>
+
+  <!-- QA status badge (top-right) -->
+  <rect x="988" y="80" width="140" height="30" rx="15" fill="#0F1F12" stroke="#2E5D1B"/>
+  <circle cx="1006" cy="95" r="4.5" fill="#75C32C"/>
+  <text x="1018" y="100" fill="#9AE070" font-size="12" font-weight="700">QA Passed</text>
+
+  <!-- Pipeline / build status strip -->
+  <g>
+    <rect x="40" y="178" width="1120" height="86" rx="14" fill="#141414" stroke="#2A2A2A"/>
+    <text x="64" y="204" fill="#FFFFFF" font-size="13.5" font-weight="700">Pipeline - build #482.3</text>
+    <text x="64" y="222" fill="#71717A" font-size="11.5">Triggered by push to feature/checkout-retry-fix - 4m 12s</text>
+
+    <g font-size="11.5" font-weight="700">
+      <!-- Lint -->
+      <circle cx="470" cy="205" r="10" fill="#0F1F12" stroke="#2E5D1B"/>
+      <path d="M465 205 l3.5 3.5 l7 -7" stroke="#75C32C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="486" y="209" fill="#D9F2C7">Lint</text>
+
+      <!-- Unit -->
+      <circle cx="560" cy="205" r="10" fill="#0F1F12" stroke="#2E5D1B"/>
+      <path d="M555 205 l3.5 3.5 l7 -7" stroke="#75C32C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="576" y="209" fill="#D9F2C7">Unit tests</text>
+
+      <!-- E2E running -->
+      <circle cx="672" cy="205" r="10" fill="#1E1633" stroke="#5B29DA"/>
+      <circle cx="672" cy="205" r="4" fill="#B39CFF"/>
+      <text x="688" y="209" fill="#F3F0FF">E2E (Playwright) - running</text>
+
+      <!-- Deploy preview pending -->
+      <circle cx="900" cy="205" r="10" fill="#1A1A1A" stroke="#3A3A3A"/>
+      <text x="916" y="209" fill="#A3A3A3">Deploy preview - queued</text>
+    </g>
+
+    <rect x="64" y="232" width="1072" height="8" rx="4" fill="#1A1A1A"/>
+    <rect x="64" y="232" width="790" height="8" rx="4" fill="#75C32C"/>
+    <text x="1136" y="239" text-anchor="end" fill="#9AE070" font-size="11" font-weight="700">3 / 4 stages passed</text>
+  </g>
+
+  <!-- Reviewers -->
+  <g>
+    <rect x="40" y="280" width="360" height="150" rx="14" fill="#141414" stroke="#2A2A2A"/>
+    <text x="64" y="308" fill="#FFFFFF" font-size="13.5" font-weight="700">Reviewers</text>
+
+    <circle cx="76" cy="336" r="14" fill="#5B29DA"/>
+    <text x="76" y="340" text-anchor="middle" fill="#fff" font-size="10.5" font-weight="700">QA</text>
+    <text x="100" y="333" fill="#E5E5E5" font-size="12.5" font-weight="700">QA Reviewer (sample)</text>
+    <text x="100" y="349" fill="#75C32C" font-size="11.5">Approved - checklist attached</text>
+
+    <circle cx="76" cy="378" r="14" fill="#2A2A2A"/>
+    <text x="76" y="382" text-anchor="middle" fill="#D4D4D4" font-size="10.5" font-weight="700">DL</text>
+    <text x="100" y="375" fill="#E5E5E5" font-size="12.5" font-weight="700">Dev Lead (sample)</text>
+    <text x="100" y="391" fill="#75C32C" font-size="11.5">Approved</text>
+
+    <circle cx="76" cy="420" r="14" fill="#1A1A1A" stroke="#3A3A3A"/>
+    <text x="76" y="424" text-anchor="middle" fill="#A3A3A3" font-size="10.5" font-weight="700">PO</text>
+    <text x="100" y="417" fill="#A3A3A3" font-size="12.5">Product Owner (sample)</text>
+    <text x="100" y="433" fill="#FDE68A" font-size="11.5">Review requested</text>
+  </g>
+
+  <!-- QA checklist comment thread -->
+  <g>
+    <rect x="416" y="280" width="744" height="290" rx="14" fill="#141414" stroke="#2A2A2A"/>
+    <text x="440" y="308" fill="#FFFFFF" font-size="13.5" font-weight="700">QA review comment</text>
+
+    <circle cx="452" cy="332" r="12" fill="#5B29DA"/>
+    <text x="452" y="336" text-anchor="middle" fill="#fff" font-size="9.5" font-weight="700">QA</text>
+    <text x="474" y="329" fill="#E5E5E5" font-size="12" font-weight="700">QA Reviewer (sample)</text>
+    <text x="474" y="343" fill="#71717A" font-size="11">commented on the diff - 3h ago</text>
+
+    <rect x="440" y="356" width="696" height="150" rx="10" fill="#0F0F0F" stroke="#232323"/>
+    <text x="458" y="378" fill="#D4D4D4" font-size="12">Tested on the preview environment against the payment-retry scenario:</text>
+
+    <g font-size="12">
+      <path d="M458 396 l3.5 3.5 l7 -7" stroke="#75C32C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="474" y="401" fill="#D9F2C7">Retried payment no longer duplicates charge (checked 3x)</text>
+
+      <path d="M458 418 l3.5 3.5 l7 -7" stroke="#75C32C" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="474" y="423" fill="#D9F2C7">Regression pass: checkout on Chrome, Safari desktop</text>
+
+      <rect x="452" y="432" width="14" height="14" rx="3" fill="none" stroke="#5B5B5B"/>
+      <text x="474" y="445" fill="#E5E5E5">Confirm analytics "purchase" event fires exactly once</text>
+
+      <path d="M458 462 l3.5 3.5 l7 -7" stroke="#FBBF24" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="474" y="467" fill="#FDE68A">Edge case: Safari iOS shows a brief flash of old total - filed QA-529, non-blocking</text>
+
+      <text x="458" y="490" fill="#A3A3A3">Marking "Needs QA" to "QA Passed" once analytics check above is confirmed.</text>
+    </g>
+
+    <rect x="440" y="522" width="696" height="1" fill="#2A2A2A"/>
+    <g font-size="11" fill="#71717A">
+      <text x="440" y="544">Build status referenced: #482.3 (3/4 stages)</text>
+      <text x="440" y="562">Test plan: docs/test-plans/checkout-retry-fix.md (sample link)</text>
+    </g>
+  </g>
+
+  <rect x="40" y="600" width="1120" height="1" fill="#2A2A2A"/>
+  <text x="40" y="632" fill="#71717A" font-size="12">Illustrative Bitbucket layout - workspace, repo, usernames, ticket IDs and comments are anonymized samples, not a real client PR</text>
+  <text x="1160" y="632" text-anchor="end" fill="#7C4DFF" font-size="12" font-weight="700">masfiqur.com</text>
+</svg>

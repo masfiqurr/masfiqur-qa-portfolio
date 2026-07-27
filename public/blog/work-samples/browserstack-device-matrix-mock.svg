@@ -1,0 +1,133 @@
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" font-family="Manrope, Arial, sans-serif" role="img" aria-labelledby="bstitle bsdesc">
+  <title id="bstitle">Anonymized BrowserStack cross-device session matrix</title>
+  <desc id="bsdesc">Illustrative mock of a BrowserStack Automate session matrix with a live-session panel, showing sample browser/OS/device pass-fail coverage.</desc>
+  <defs>
+    <linearGradient id="bsbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+    <linearGradient id="bsglow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5B29DA" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#5B29DA" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" rx="24" fill="url(#bsbg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="699" rx="23.5" fill="none" stroke="#2A2A2A"/>
+  <rect x="0" y="0" width="440" height="180" fill="url(#bsglow)"/>
+
+  <!-- Browser chrome top bar -->
+  <circle cx="34" cy="34" r="6" fill="#F87171"/>
+  <circle cx="56" cy="34" r="6" fill="#FBBF24"/>
+  <circle cx="78" cy="34" r="6" fill="#75C32C"/>
+  <rect x="110" y="22" width="420" height="24" rx="12" fill="#171717" stroke="#2A2A2A"/>
+  <text x="128" y="38" fill="#A3A3A3" font-size="11">app.browserstack.com/automate/sample-build-2481</text>
+
+  <text x="600" y="76" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="700">BrowserStack Automate — Session Matrix (Anonymized Demo)</text>
+  <text x="600" y="100" text-anchor="middle" fill="#A3A3A3" font-size="13">Sample cross-browser / cross-device coverage — no real client build data</text>
+
+  <!-- Left: matrix table -->
+  <g>
+    <rect x="40" y="130" width="660" height="34" rx="8" fill="#1A1A1A" stroke="#2A2A2A"/>
+    <text x="58" y="152" fill="#FFFFFF" font-size="12.5" font-weight="700">Browser / OS</text>
+    <text x="330" y="152" fill="#FFFFFF" font-size="12.5" font-weight="700">Device</text>
+    <text x="500" y="152" fill="#FFFFFF" font-size="12.5" font-weight="700">Duration</text>
+    <text x="630" y="152" fill="#FFFFFF" font-size="12.5" font-weight="700">Status</text>
+
+    <!-- rows -->
+    <g font-size="12.5" fill="#E5E5E5">
+      <rect x="40" y="172" width="660" height="46" fill="#141414" stroke="#232323"/>
+      <text x="58" y="200">Chrome 126 · Windows 11</text>
+      <text x="330" y="200">Desktop · Sample-Win-01</text>
+      <text x="500" y="200">2m 14s</text>
+      <rect x="628" y="184" width="60" height="20" rx="10" fill="#0F1F12"/>
+      <text x="658" y="198" text-anchor="middle" fill="#9AE070" font-size="10" font-weight="700">PASS</text>
+
+      <rect x="40" y="218" width="660" height="46" fill="#171717" stroke="#232323"/>
+      <text x="58" y="246">Safari 17 · macOS Sonoma</text>
+      <text x="330" y="246">Desktop · Sample-Mac-04</text>
+      <text x="500" y="246">1m 58s</text>
+      <rect x="628" y="230" width="60" height="20" rx="10" fill="#0F1F12"/>
+      <text x="658" y="244" text-anchor="middle" fill="#9AE070" font-size="10" font-weight="700">PASS</text>
+
+      <rect x="40" y="264" width="660" height="46" fill="#141414" stroke="#232323"/>
+      <text x="58" y="292">Firefox 128 · Windows 11</text>
+      <text x="330" y="292">Desktop · Sample-Win-02</text>
+      <text x="500" y="292">2m 05s</text>
+      <rect x="628" y="276" width="60" height="20" rx="10" fill="#0F1F12"/>
+      <text x="658" y="290" text-anchor="middle" fill="#9AE070" font-size="10" font-weight="700">PASS</text>
+
+      <rect x="40" y="310" width="660" height="46" fill="#171717" stroke="#232323"/>
+      <text x="58" y="338">Chrome · Android 14</text>
+      <text x="330" y="338">Galaxy S24 (sample)</text>
+      <text x="500" y="338">2m 41s</text>
+      <rect x="628" y="322" width="60" height="20" rx="10" fill="#0F1F12"/>
+      <text x="658" y="336" text-anchor="middle" fill="#9AE070" font-size="10" font-weight="700">PASS</text>
+
+      <rect x="40" y="356" width="660" height="46" fill="#1E1633" stroke="#5B29DA"/>
+      <text x="58" y="384" fill="#F3F0FF">Safari · iOS 17</text>
+      <text x="330" y="384" fill="#F3F0FF">iPhone 15 (sample)</text>
+      <text x="500" y="384" fill="#F3F0FF">Running…</text>
+      <rect x="620" y="368" width="76" height="20" rx="10" fill="#1E1633" stroke="#5B29DA"/>
+      <text x="658" y="382" text-anchor="middle" fill="#B39CFF" font-size="10" font-weight="700">IN PROGRESS</text>
+
+      <rect x="40" y="402" width="660" height="46" fill="#141414" stroke="#232323"/>
+      <text x="58" y="430">Edge 126 · Windows 11</text>
+      <text x="330" y="430">Desktop · Sample-Win-03</text>
+      <text x="500" y="430">1m 47s</text>
+      <rect x="612" y="414" width="76" height="20" rx="10" fill="#3A2A0E"/>
+      <text x="650" y="428" text-anchor="middle" fill="#FDE68A" font-size="10" font-weight="700">RETEST</text>
+    </g>
+  </g>
+
+  <!-- Right: live session panel -->
+  <g>
+    <rect x="720" y="130" width="440" height="318" rx="14" fill="#141414" stroke="#2A2A2A"/>
+    <text x="744" y="160" fill="#FFFFFF" font-size="14" font-weight="700">Live Session</text>
+    <rect x="1040" y="145" width="96" height="22" rx="11" fill="#1E1633" stroke="#5B29DA"/>
+    <text x="1088" y="160" text-anchor="middle" fill="#B39CFF" font-size="10" font-weight="700">● RUNNING</text>
+
+    <rect x="744" y="182" width="150" height="230" rx="18" fill="#0F0F0F" stroke="#2A2A2A" stroke-width="2"/>
+    <rect x="756" y="204" width="126" height="180" rx="4" fill="#171717"/>
+    <rect x="756" y="204" width="126" height="26" fill="#5B29DA" opacity="0.25"/>
+    <text x="819" y="221" text-anchor="middle" fill="#FFFFFF" font-size="9">Sample Checkout App</text>
+    <rect x="766" y="240" width="106" height="10" rx="3" fill="#2A2A2A"/>
+    <rect x="766" y="258" width="106" height="10" rx="3" fill="#2A2A2A"/>
+    <rect x="766" y="276" width="70" height="10" rx="3" fill="#2A2A2A"/>
+    <rect x="766" y="330" width="106" height="28" rx="6" fill="#75C32C"/>
+    <text x="819" y="349" text-anchor="middle" fill="#0A0A0A" font-size="10" font-weight="700">Pay Now</text>
+    <circle cx="819" cy="393" r="5" fill="#2A2A2A"/>
+
+    <g font-size="12" fill="#E5E5E5">
+      <text x="920" y="200" fill="#A3A3A3">Session ID</text>
+      <text x="920" y="218" font-weight="700">bs-sample-8841</text>
+      <text x="920" y="248" fill="#A3A3A3">Device</text>
+      <text x="920" y="266" font-weight="700">iPhone 15 (sample)</text>
+      <text x="920" y="296" fill="#A3A3A3">OS / Browser</text>
+      <text x="920" y="314" font-weight="700">iOS 17 · Safari</text>
+      <text x="920" y="344" fill="#A3A3A3">Network</text>
+      <text x="920" y="362" font-weight="700">4G (simulated)</text>
+    </g>
+
+    <rect x="744" y="424" width="416" height="1" fill="#2A2A2A"/>
+    <text x="744" y="440" fill="#71717A" font-size="10.5">Screenshot, logs &amp; network capture available per session</text>
+  </g>
+
+  <!-- Summary strip -->
+  <rect x="40" y="480" width="1120" height="1" fill="#2A2A2A"/>
+  <g font-size="13" fill="#E5E5E5">
+    <text x="40" y="512" font-weight="700" fill="#FFFFFF">Sample matrix pass rate</text>
+    <rect x="40" y="528" width="1120" height="26" rx="13" fill="#1A1A1A"/>
+    <rect x="40" y="528" width="933" height="26" rx="13" fill="#75C32C"/>
+    <text x="990" y="546" text-anchor="end" fill="#0A0A0A" font-size="12" font-weight="700">5 / 6 configurations passed</text>
+  </g>
+  <g font-size="12" fill="#A3A3A3">
+    <text x="40" y="590">Desktop browsers: 4/4 pass</text>
+    <text x="330" y="590">Mobile: 1 in progress, 1 retest</text>
+    <text x="640" y="590">Build: sample-build-2481</text>
+    <text x="900" y="590">Owner: QA — Masfiqur</text>
+  </g>
+
+  <text x="40" y="655" fill="#71717A" font-size="12">Illustrative BrowserStack layout — session IDs, devices &amp; results are anonymized samples, not a live client dashboard</text>
+  <text x="1160" y="655" text-anchor="end" fill="#7C4DFF" font-size="12" font-weight="700">masfiqur.com</text>
+</svg>
