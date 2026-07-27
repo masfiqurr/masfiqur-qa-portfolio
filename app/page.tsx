@@ -431,9 +431,9 @@ export default function Home() {
 
   return (
     <>
-      <header className="site-header fixed inset-x-0 top-0 z-50 w-full border-b border-white/10 bg-ink/90 backdrop-blur-xl">
+      <header className="site-header fixed inset-x-0 top-0 z-50 flex max-h-[100svh] w-full flex-col border-b border-white/10 bg-ink/90 backdrop-blur-xl">
         <nav
-          className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4"
+          className="mx-auto flex w-full max-w-6xl shrink-0 items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4"
           aria-label="Primary"
         >
           <a href="#" className="group flex min-w-0 items-baseline gap-1.5 overflow-hidden">
@@ -478,7 +478,7 @@ export default function Home() {
         {menuOpen && (
           <div
             id="mobile-nav"
-            className="border-t border-white/10 bg-ink/95 px-4 py-4 xl:hidden"
+            className="min-h-0 flex-1 overflow-y-auto border-t border-white/10 bg-ink/95 px-4 py-4 xl:hidden"
           >
             <div className="mx-auto flex max-w-6xl flex-col gap-1">
               {navLinks.map((link) => (

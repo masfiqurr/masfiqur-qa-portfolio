@@ -27,6 +27,14 @@ body {
   backface-visibility: hidden;
 }
 
+/* Let the mobile dropdown menu scroll internally when it's taller than the
+   viewport (e.g. short mobile-landscape heights), so links below the fold
+   like "Download CV" stay reachable while the header row above stays put. */
+#mobile-nav {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
 .font-display {
   font-family: var(--font-display), sans-serif;
 }
