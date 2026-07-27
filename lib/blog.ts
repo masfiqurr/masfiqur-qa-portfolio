@@ -64,6 +64,242 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "collecting-android-ios-device-logs-app-debugging",
+    title: "Collecting Logs from Android and iOS Devices for App Debugging",
+    description:
+      "A practical guide to pulling real device logs for mobile bug reports — enabling Developer Mode, capturing with ADB or a log app on Android, and the Xcode/Console.app workflow on iOS.",
+    topic: "Mobile QA",
+    date: "2025-07-22",
+    readingMinutes: 8,
+    tags: ["Mobile QA", "Android", "iOS", "ADB", "Debugging"],
+    content: [
+      {
+        type: "p",
+        text: "\"Can you attach the logs?\" is one of the most common follow-up requests a developer will send after a mobile bug report. A screenshot shows what happened; a device log shows why. This guide covers how I pull logs from Android and iOS devices during QA — turning on Developer Mode, capturing via ADB or a log-capture app on Android, and the Xcode / Console.app workflow on iOS — plus turning everything back off when the investigation is done.",
+      },
+      {
+        type: "callout",
+        text: "Works the same way regardless of your desktop OS. ADB itself is cross-platform; only the installation step differs between Windows, macOS, and Linux (covered below).",
+      },
+      {
+        type: "h2",
+        text: "Android: Enabling Developer Mode",
+      },
+      {
+        type: "p",
+        text: "Developer options are hidden by default on Android, so the first step on any device is unlocking them:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Open Settings → About phone (naming varies slightly by manufacturer, e.g. \"About device\").",
+          "Find Build number.",
+          "Tap Build number seven times in a row. You'll see a countdown toast (\"You are now 4 steps away from being a developer...\").",
+          "After the seventh tap, Android confirms: \"You are now a developer!\"",
+          "Go back to the main Settings screen — a new Developer options (or System → Developer options) menu is now visible.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Android: Enabling USB Debugging",
+      },
+      {
+        type: "p",
+        text: "Developer options being visible isn't enough on its own — USB debugging has to be switched on separately before ADB can see the device:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Open Settings → System → Developer options.",
+          "Toggle on USB debugging.",
+          "Confirm the \"Allow USB debugging?\" dialog.",
+          "Connect the device to your computer with a USB cable and select \"Always allow from this computer\" when the RSA key fingerprint prompt appears, so future connections don't re-prompt.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Android: Getting Logs via ADB",
+      },
+      {
+        type: "p",
+        text: "ADB (Android Debug Bridge) gives you the full, unfiltered system log — the same one developers use to trace crashes, ANRs, and network failures. It requires a computer and a USB (or Wi-Fi debugging) connection, but it's the most complete capture method.",
+      },
+      {
+        type: "h3",
+        text: "Installing ADB",
+      },
+      {
+        type: "table",
+        caption: "ADB setup by desktop OS",
+        headers: ["OS", "Install method"],
+        rows: [
+          ["Windows", "Download the SDK Platform-Tools ZIP from Google, extract it, and run adb.exe from that folder (or add it to your PATH)."],
+          ["macOS", "brew install android-platform-tools"],
+          ["Linux (Debian/Ubuntu)", "sudo apt install android-tools-adb"],
+        ],
+      },
+      {
+        type: "p",
+        text: "Once ADB is installed and the device is connected, confirm it's detected:",
+      },
+      {
+        type: "code",
+        language: "bash",
+        code: `adb devices
+# Expect output like:
+# List of devices attached
+# R58N30ABCDE    device`,
+      },
+      {
+        type: "callout",
+        text: "If the device shows as \"unauthorized\" instead of \"device,\" check the phone screen for the RSA fingerprint dialog and accept it — this is the most common reason adb devices comes back empty or unauthorized.",
+      },
+      {
+        type: "p",
+        text: "With the device authorized, capture the log to a file, reproduce the bug, then stop the capture:",
+      },
+      {
+        type: "code",
+        language: "bash",
+        code: `# Clear any stale buffered log lines first (optional but recommended)
+adb logcat -c
+
+# Start capturing to a file
+adb logcat > logs.txt
+
+# ...reproduce the bug on the device now...
+
+# Press Ctrl+C in the terminal to stop capturing`,
+      },
+      {
+        type: "p",
+        text: "Attach logs.txt to the bug report along with your steps to reproduce, timestamp, and app version. If the issue is specific to your app's package, filtering by tag or PID before attaching keeps the file focused instead of handing over the entire device log:",
+      },
+      {
+        type: "code",
+        language: "bash",
+        code: `# Filter to a single app by package name
+adb logcat --pid=$(adb shell pidof -s com.example.app) > app-only-logs.txt`,
+      },
+      {
+        type: "h2",
+        text: "Android: Using a Log Capture App (No PC Required)",
+      },
+      {
+        type: "p",
+        text: "When a computer isn't available — a field tester, a client's device, or a bug that only reproduces away from a desk — an on-device log capture app works instead of ADB. Two I've used reliably:",
+      },
+      {
+        type: "ul",
+        items: [
+          "MatLog Libre — open-source, filters by tag/priority, and exports the captured log as a shareable text file.",
+          "Logcat Reader — lightweight logcat viewer with search and save-to-file support, once it has permission to read the full log.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The catch: since Android 4.1, apps can only read their own log output by default. To let either app show the full device log, grant the READ_LOGS permission once — via adb shell pm grant <package> android.permission.READ_LOGS from a computer, or root access on the device. That one-time grant is the only PC step; after it's done, the app captures logs on its own.",
+      },
+      {
+        type: "h2",
+        text: "Android: Disabling Developer Mode",
+      },
+      {
+        type: "p",
+        text: "Once the investigation is closed, turn Developer options back off — leaving USB debugging enabled on a device long-term is an unnecessary attack surface, especially on shared or client-owned hardware.",
+      },
+      {
+        type: "ol",
+        items: [
+          "Open Settings → System → Developer options.",
+          "Toggle Developer options off (or toggle USB debugging off individually if you want to keep other developer settings).",
+          "Confirm if prompted.",
+        ],
+      },
+      {
+        type: "callout",
+        text: "On some OEM builds (notably Samsung and Xiaomi), the Developer options toggle doesn't fully reset until you clear app data for Settings, or on rare cases perform a full device restart. If the menu reappears after disabling it, that's expected — Android just re-hides the entry point; it doesn't wipe stored preferences.",
+      },
+      {
+        type: "h2",
+        text: "iOS: Capturing Device Logs",
+      },
+      {
+        type: "p",
+        text: "iOS doesn't expose an ADB-style debug toggle, but Apple's own tooling gives QA a comparable live log stream — no jailbreak or hidden menu required. The two approaches below cover almost every mobile QA scenario on iOS.",
+      },
+      {
+        type: "h3",
+        text: "Option 1: Xcode's Devices & Simulators Console (recommended)",
+      },
+      {
+        type: "ol",
+        items: [
+          "Connect the iPhone/iPad to a Mac with a cable (or pair over Wi-Fi if already configured) and trust the computer on the device if prompted.",
+          "Open Xcode → Window → Devices and Simulators.",
+          "Select the connected device in the left sidebar.",
+          "Click Open Console at the bottom of the window — this streams the device's live unified log.",
+          "Use the search/filter bar to narrow by process name (your app's binary) before reproducing the issue, then reproduce the bug and copy or export the relevant lines.",
+        ],
+      },
+      {
+        type: "h3",
+        text: "Option 2: Console.app with the device selected",
+      },
+      {
+        type: "p",
+        text: "macOS's built-in Console.app (Applications → Utilities → Console) can also target a connected iOS device directly from its sidebar, without opening Xcode at all. It's the same unified log, useful when you just need a quick read without a full Xcode install, or want to run a sysdiagnose (Console.app → device menu → \"Collect sysdiagnose from device\") for a deeper, Apple-support-style diagnostic bundle.",
+      },
+      {
+        type: "h3",
+        text: "Option 3: Command-line via libimobiledevice",
+      },
+      {
+        type: "p",
+        text: "For a lighter-weight, scriptable capture (useful in CI or when Xcode isn't installed), idevicesyslog from the open-source libimobiledevice project streams the same device log to a terminal:",
+      },
+      {
+        type: "code",
+        language: "bash",
+        code: `# macOS install
+brew install libimobiledevice
+
+# Stream the connected device's log to a file
+idevicesyslog > ios-logs.txt
+
+# ...reproduce the bug...
+# Press Ctrl+C to stop`,
+      },
+      {
+        type: "h3",
+        text: "TestFlight builds",
+      },
+      {
+        type: "p",
+        text: "For issues that only reproduce on a TestFlight build away from a Mac, ask the tester to send feedback with a screenshot from within TestFlight (shake the device or use the TestFlight app's \"Send Beta Feedback\") — this bundles recent diagnostic logs automatically and lands directly in App Store Connect for the build, without needing a cable at all.",
+      },
+      {
+        type: "h2",
+        text: "Android vs. iOS: Quick Reference",
+      },
+      {
+        type: "table",
+        caption: "Which capture method to reach for",
+        headers: ["Scenario", "Android", "iOS"],
+        rows: [
+          ["Full, unfiltered system log", "adb logcat", "Xcode Devices & Simulators → Open Console"],
+          ["No computer available", "MatLog Libre / Logcat Reader", "TestFlight \"Send Beta Feedback\""],
+          ["Deep diagnostic bundle", "adb bugreport", "sysdiagnose via Console.app"],
+          ["Scriptable / CI-friendly", "adb logcat (scriptable natively)", "idevicesyslog"],
+        ],
+      },
+      {
+        type: "p",
+        text: "Whichever platform you're on, the habit that matters most is capturing the log while the bug is reproduced — not after. Start the capture, note the timestamp, reproduce the issue, then stop and attach. That single discipline turns a vague \"it crashed\" report into something a developer can actually trace.",
+      },
+    ],
+  },
+  {
     slug: "qa-work-samples",
     title: "QA Work Samples: Tools, Evidence, and Real Test Artifacts",
     description:
