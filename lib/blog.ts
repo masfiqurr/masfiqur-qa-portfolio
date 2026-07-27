@@ -585,83 +585,246 @@ HAVING COUNT(*) > 1;`,
     ],
   },
   {
-    slug: "accessibility-testing-wcag-checks-qa-can-run",
-    title: "Accessibility Testing: WCAG Checks Every QA Can Run",
+    slug: "accessibility-testing-qa-checklist",
+    title: "Accessibility Testing – QA Checklist",
     description:
-      "Practical accessibility validation for QA engineers — keyboard flows, labels, contrast, and release checks that improve both usability and automation stability.",
+      "A practical, WCAG-aligned accessibility testing checklist for QA engineers — keyboard, screen readers, contrast, forms, mobile, and dynamic content — plus where automation helps and where it can't replace manual testing.",
     topic: "Accessibility",
-    date: "2026-07-02",
-    readingMinutes: 7,
-    tags: ["Accessibility", "WCAG", "Inclusive Design", "QA"],
+    date: "2026-01-26",
+    readingMinutes: 11,
+    tags: ["Accessibility", "WCAG", "Inclusive Design", "QA Checklist"],
     content: [
       {
         type: "p",
-        text: "Accessibility is not only a compliance topic. It is product quality. Users with keyboards, screen readers, and different visual needs should be able to complete core journeys. The good news: QA can catch many accessibility defects without being a specialist auditor.",
+        text: "Accessibility bugs rarely show up in a standard functional pass — the happy path works fine with a mouse and 20/20 vision. But ship a form a screen reader can't parse, a modal that traps keyboard focus, or text that fails contrast, and a real share of your users are locked out of a flow that \"passed QA.\" This is the checklist I run against on real projects: what accessibility testing actually means, why it matters commercially and legally, and a full section-by-section pass any QA engineer can execute without being a certified accessibility auditor.",
       },
       {
         type: "h2",
-        text: "Start with journeys, not widgets",
+        text: "What is Accessibility Testing?",
       },
       {
         type: "p",
-        text: "Pick the same critical flows you already test functionally — login, search, checkout, settings — and validate them with accessibility in mind.",
-      },
-      {
-        type: "h2",
-        text: "Manual checks that catch real bugs",
+        text: "Accessibility testing verifies that a product can be used by people with a wide range of abilities — not just the default case of a sighted user with a mouse and a keyboard. That includes people who:",
       },
       {
         type: "ul",
         items: [
-          "Keyboard-only navigation through the full flow",
-          "Visible focus state on interactive elements",
-          "Form inputs have associated labels",
-          "Buttons and links have accessible names",
-          "Images that convey meaning have alt text",
-          "Error messages are announced and connected to fields",
-          "Modals trap focus and can be dismissed accessibly",
+          "Have low vision, color blindness, or are fully blind and rely on screen magnification or screen readers",
+          "Cannot use a mouse and navigate entirely by keyboard or switch device",
+          "Are Deaf or hard of hearing and depend on captions and visual alternatives to audio",
+          "Use assistive technology such as NVDA, JAWS, or VoiceOver to hear and navigate the page",
+          "Have cognitive or motor differences that make dense layouts, tight timers, or small tap targets hard to use",
         ],
       },
       {
-        type: "h2",
-        text: "Contrast and readability",
-      },
-      {
         type: "p",
-        text: "Low-contrast text is still one of the most common findings. Check primary text, secondary text, placeholders, and button labels against background colors. Also verify zoom / dynamic text does not break layout on key screens.",
+        text: "The goal is simple to state and easy to underestimate: no one should be blocked from completing a core task because of how they perceive or interact with the interface. Accessibility testing is how QA proves that goal is actually met, rather than assumed.",
       },
       {
         type: "h2",
-        text: "Mobile accessibility basics",
+        text: "Why Accessibility Testing Is Important",
       },
       {
         type: "ul",
         items: [
-          "VoiceOver / TalkBack labels on primary controls",
-          "Tap targets are large enough",
-          "Content is not clipped under notches or system bars",
-          "Dark mode maintains readable contrast (if supported)",
+          "Better UX for everyone — clear focus states, readable contrast, and sensible heading structure improve usability for all users, not only those using assistive technology",
+          "Legal and compliance exposure — ADA, Section 508, the EU's EN 301 549, and similar regulations increasingly apply to commercial web and mobile products, and lawsuits over inaccessible sites are common",
+          "Inclusion and reach — a meaningful percentage of any user base has a permanent, temporary, or situational disability; excluding them is excluding paying customers",
+          "WCAG as the shared standard — the Web Content Accessibility Guidelines give teams an objective, testable bar (Level A/AA/AAA) instead of a subjective \"looks fine to me\"",
         ],
-      },
-      {
-        type: "h2",
-        text: "Why accessibility helps automation too",
-      },
-      {
-        type: "p",
-        text: "Accessible names and roles make Playwright and other tools more stable. When a button has a clear role and name, both users and automation benefit. Accessibility debt often shows up later as locator debt.",
       },
       {
         type: "callout",
-        text: "QA accessibility checks do not replace a full WCAG audit. They do prevent many high-impact usability failures from reaching production.",
+        text: "Guideline reference: this checklist is aligned to WCAG 2.1 / 2.2, targeting Level AA — the bar most commercial products and compliance frameworks are held to. When in doubt about a specific success criterion, WCAG is the source of truth.",
       },
       {
         type: "h2",
-        text: "Release gate suggestion",
+        text: "How I Use This on Real Projects",
       },
       {
         type: "p",
-        text: "For each release, require that critical journeys are keyboard-operable, form errors are understandable, and no severe contrast or labeling defects exist on primary screens. That is a realistic, high-value bar for most product teams.",
+        text: "I don't run a full audit on every ticket. I map this checklist onto the same critical journeys I already test functionally — login, search, checkout, settings, and any form the business depends on — and run the relevant sections against those flows before release. Anything found gets triaged like any other defect: severity, evidence, and a clear expected-vs-actual, so it competes fairly with functional bugs instead of getting quietly deprioritized.",
+      },
+      {
+        type: "h2",
+        text: "QA Accessibility Testing Checklist",
+      },
+      {
+        type: "h3",
+        text: "1. Keyboard Accessibility",
+      },
+      {
+        type: "ul",
+        items: [
+          "Every interactive element is reachable via Tab / Shift+Tab in a logical, predictable order",
+          "A visible focus indicator appears on every focusable element — never removed via outline: none without a replacement",
+          "No keyboard traps: modals, dropdowns, and custom widgets can always be exited",
+          "Enter and Space activate buttons and custom controls the way a mouse click would",
+          "A skip-to-content link is available before repetitive navigation blocks",
+          "Custom widgets (tabs, accordions, sliders, menus) support arrow-key interaction per standard ARIA patterns",
+        ],
+      },
+      {
+        type: "h3",
+        text: "2. Screen Reader Compatibility (NVDA, VoiceOver)",
+      },
+      {
+        type: "ul",
+        items: [
+          "Each page has a clear, descriptive document title",
+          "Headings follow a logical hierarchy (h1 → h2 → h3) so screen reader users can navigate by heading",
+          "NVDA (Windows, with Chrome or Firefox) announces every interactive element with the correct role, name, and state",
+          "VoiceOver (macOS and iOS Safari) announces the same controls and content correctly",
+          "Reading order matches visual order — no confusing jumps caused by CSS positioning or tab index overrides",
+          "Content hidden from sighted users only when intended is marked with aria-hidden, not left ambiguous",
+        ],
+      },
+      {
+        type: "h3",
+        text: "3. Images & Icons",
+      },
+      {
+        type: "ul",
+        items: [
+          "Meaningful images have concise, descriptive alt text",
+          "Purely decorative images use alt=\"\" so screen readers skip them instead of reading a filename",
+          "Icon-only buttons and links have an accessible name via aria-label or visually hidden text",
+          "Complex images — charts, infographics, diagrams — have a text alternative or an adjacent long description",
+          "SVG icons used as interactive controls carry the correct role and aria attributes",
+        ],
+      },
+      {
+        type: "h3",
+        text: "4. Color & Contrast",
+      },
+      {
+        type: "ul",
+        items: [
+          "Text meets WCAG AA contrast ratios (4.5:1 for normal text, 3:1 for large text)",
+          "Color is never the only signal for meaning — errors, status, and links all have a second visual cue",
+          "Dark mode and high-contrast display modes remain fully readable, if supported",
+          "Focus indicators have sufficient contrast against their background in every theme",
+          "Content stays legible and usable when the page is zoomed to 200%",
+        ],
+      },
+      {
+        type: "h3",
+        text: "5. Forms & Input Fields",
+      },
+      {
+        type: "ul",
+        items: [
+          "Every input has a visible label programmatically associated with it (not just placeholder text)",
+          "Required fields are marked both visually and for assistive technology",
+          "Validation errors are announced to screen readers and linked to the relevant field, not just shown as color",
+          "Related inputs (radio groups, checkbox sets) are grouped with fieldset/legend or an equivalent pattern",
+          "Autocomplete attributes are set for common fields such as name, email, and address",
+          "Field-level help text is associated with its input via aria-describedby",
+        ],
+      },
+      {
+        type: "h3",
+        text: "6. Buttons & Links",
+      },
+      {
+        type: "ul",
+        items: [
+          "Buttons and links have clear, descriptive accessible names — never bare \"Click here\" or \"Read more\" out of context",
+          "Links that open a new tab or trigger a download warn the user before it happens",
+          "Disabled state is communicated to assistive technology, not only through visual styling",
+          "Icon-only buttons include a text alternative",
+          "Custom-styled controls use the correct semantic element (button, a) or an equivalent ARIA role rather than a bare div or span",
+        ],
+      },
+      {
+        type: "h3",
+        text: "7. Navigation & Structure",
+      },
+      {
+        type: "ul",
+        items: [
+          "Landmarks — header, nav, main, footer — are used correctly and consistently across pages",
+          "Heading structure reflects the actual content hierarchy, not just visual size",
+          "Breadcrumbs and menus are fully keyboard- and screen-reader-navigable",
+          "The page language is declared correctly via the lang attribute",
+          "Primary navigation stays consistent from page to page so returning users (and assistive tech users especially) aren't relearning the layout",
+        ],
+      },
+      {
+        type: "h3",
+        text: "8. Mobile Accessibility",
+      },
+      {
+        type: "ul",
+        items: [
+          "Touch targets meet minimum size guidance (roughly 44×44px) with adequate spacing",
+          "VoiceOver (iOS) and TalkBack (Android) can operate every core flow, not just static screens",
+          "Content reflows correctly at large system text sizes and under pinch-zoom",
+          "Orientation lock (portrait/landscape) never blocks a required task",
+          "Gestures have an accessible alternative — no swipe-only or long-press-only interactions",
+        ],
+      },
+      {
+        type: "h3",
+        text: "9. Audio & Video Content",
+      },
+      {
+        type: "ul",
+        items: [
+          "Videos include accurate captions or subtitles",
+          "Pre-recorded audio has a transcript available",
+          "Auto-playing audio or video can be paused, stopped, or muted immediately",
+          "Player controls (play, pause, volume, captions) are fully keyboard-accessible",
+          "No content flashes more than three times per second (seizure risk)",
+        ],
+      },
+      {
+        type: "h3",
+        text: "10. Alerts, Errors & Messages",
+      },
+      {
+        type: "ul",
+        items: [
+          "Success, error, and warning messages are announced to assistive technology via aria-live or role=\"alert\"",
+          "Toasts and banners stay visible long enough for a screen reader to announce them before they auto-dismiss",
+          "Error messages explain what went wrong and how to fix it — not just \"Invalid input\"",
+          "Status is never conveyed by color or icon alone",
+        ],
+      },
+      {
+        type: "h3",
+        text: "11. Dynamic Content & Modals",
+      },
+      {
+        type: "ul",
+        items: [
+          "Modals trap focus while open and return focus to the triggering element on close",
+          "Modals are dismissible via Escape and a clearly labeled close control",
+          "Dynamically loaded content (infinite scroll, live updates, async results) is announced appropriately rather than silently appearing",
+          "Tooltips and popovers are reachable and dismissible via keyboard",
+          "Loading and busy states are communicated to assistive technology, not shown only as a visual spinner",
+        ],
+      },
+      {
+        type: "h3",
+        text: "12. Automation (Support Check Only)",
+      },
+      {
+        type: "ul",
+        items: [
+          "Automated scanners (axe, Lighthouse, WAVE) run as a fast first pass and are wired into CI where possible",
+          "Automated findings — missing alt text, contrast failures, ARIA misuse — are triaged and fixed, not just logged",
+          "Flagged issues are confirmed manually before reporting, since scanners produce false positives and false negatives",
+          "Automated coverage is tracked as a baseline, not treated as proof the product is accessible",
+        ],
+      },
+      {
+        type: "callout",
+        text: "Automated tools typically catch a minority of real WCAG issues — things like keyboard traps, illogical reading order, and unclear error messaging need a human. Automation supports accessibility testing; it does not replace it. Manual keyboard and screen reader testing on real user journeys is mandatory before sign-off.",
+      },
+      {
+        type: "p",
+        text: "Used consistently, this checklist turns accessibility from a vague compliance worry into a concrete, testable part of release readiness — the same way a functional or regression checklist does. Run it against your critical journeys, log what you find with the same rigor as any other defect, and treat automation as a helpful first filter rather than the finish line.",
       },
     ],
   },
