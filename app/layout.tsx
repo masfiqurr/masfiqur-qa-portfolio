@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Space_Grotesk, Manrope } from "next/font/google";
+import { faqs } from "@/data/faqs";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -251,12 +252,32 @@ const jsonLd = {
         siteConfig.links.upwork,
         siteConfig.links.linkedin,
         siteConfig.links.github,
+        siteConfig.links.githubProfile,
       ],
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": siteUrl,
+      },
       address: {
         "@type": "PostalAddress",
         addressLocality: "Dhaka",
         addressCountry: "BD",
       },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
+      url: `${siteUrl}/#faq`,
+      mainEntity: faqs.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+      about: { "@id": `${siteUrl}/#person` },
+      isPartOf: { "@id": `${siteUrl}/#website` },
     },
     {
       "@type": "ProfessionalService",

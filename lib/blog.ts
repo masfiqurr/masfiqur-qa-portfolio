@@ -64,6 +64,719 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "qa-for-beginners-learn-testing-start-freelancing",
+    title: "QA for Beginners: Learn Software Testing and Start Freelancing",
+    description:
+      "A practical roadmap to become a QA tester from scratch — core skills, tools, how to practice, write bugs clients trust, and land your first freelance QA job.",
+    topic: "Career",
+    date: "2026-08-20",
+    readingMinutes: 11,
+    tags: [
+      "QA for Beginners",
+      "Software Testing",
+      "Freelance QA",
+      "Manual QA",
+      "Career",
+      "Upwork",
+    ],
+    content: [
+      {
+        type: "p",
+        text: "\"How do I become a QA tester?\" and \"Can I freelance as a beginner in QA?\" are two of the most searched questions in software testing. The short answer: yes — if you learn the craft in the right order, practice on real products, and show evidence (clear bugs, checklists, and a simple portfolio) instead of only certificates.",
+      },
+      {
+        type: "p",
+        text: "This guide is the path I recommend to people starting out: what QA actually is, which skills matter first, how to practice without a job, how to write bug reports clients will pay for, and how to take the first freelance steps without burning trust.",
+      },
+      {
+        type: "callout",
+        text: "Start with manual QA and strong bug reporting. Automation (Playwright, etc.) is valuable — but freelancers who cannot explain a defect clearly rarely keep clients, even if they can write scripts.",
+      },
+      {
+        type: "h2",
+        text: "What Does a QA Tester Actually Do?",
+      },
+      {
+        type: "p",
+        text: "A QA (Quality Assurance) tester checks whether software works as expected before users find the problems. Day to day that usually means:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Reading requirements or tickets and turning them into test ideas",
+          "Exploring the product (web, mobile, API) for functional and UX issues",
+          "Writing reproducible bug reports with steps, expected vs actual, and evidence",
+          "Regression testing before release",
+          "Talking with developers and product owners about risk and severity",
+        ],
+      },
+      {
+        type: "p",
+        text: "You are not only \"finding bugs.\" You are reducing release risk and helping the team ship with confidence.",
+      },
+      {
+        type: "h2",
+        text: "Beginner Roadmap (Learn in This Order)",
+      },
+      {
+        type: "table",
+        caption: "Suggested learning order for new QA testers",
+        headers: ["Stage", "Focus", "Outcome"],
+        rows: [
+          [
+            "1. Foundations",
+            "SDLC, Agile basics, severity vs priority, test types",
+            "You can talk like a tester in interviews",
+          ],
+          [
+            "2. Manual testing",
+            "Test cases, exploratory testing, regression, smoke",
+            "You can test a real feature end to end",
+          ],
+          [
+            "3. Bug reporting",
+            "Steps, evidence, environment, impact",
+            "Developers can fix from your reports alone",
+          ],
+          [
+            "4. Tools",
+            "Browser DevTools, Jira/ClickUp, Postman basics",
+            "You fit into a real team workflow",
+          ],
+          [
+            "5. Mobile & API",
+            "TestFlight/APK installs, simple API checks",
+            "You are hireable beyond \"click around the UI\"",
+          ],
+          [
+            "6. Light automation",
+            "Playwright smoke tests after manual mastery",
+            "You grow into automation without skipping fundamentals",
+          ],
+        ],
+      },
+      {
+        type: "h3",
+        text: "Core concepts to learn first",
+      },
+      {
+        type: "ul",
+        items: [
+          "Functional vs non-functional testing (usability, performance, security at a basic level)",
+          "Smoke, sanity, regression, UAT",
+          "Positive, negative, and boundary cases",
+          "Severity (how bad) vs priority (how soon)",
+          "Traceability: requirement → test → bug → fix → retest",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Essential Skills Clients Look For",
+      },
+      {
+        type: "ul",
+        items: [
+          "Curiosity and attention to detail — you notice what others skip",
+          "Clear written English — bug reports and updates are your product",
+          "Basic web literacy — browsers, cookies, cache, responsive layouts",
+          "Comfort with tickets — Jira, Linear, Asana, or ClickUp",
+          "Honest communication — escalate blockers early; never hide risk",
+        ],
+      },
+      {
+        type: "h3",
+        text: "Tools worth installing this month",
+      },
+      {
+        type: "ul",
+        items: [
+          "Chrome / Firefox DevTools (Network + Console)",
+          "Postman (or Insomnia) for API smoke checks",
+          "A free Jira or Trello board to practice tickets",
+          "Notion or Google Docs for a personal test checklist",
+          "Later: Playwright for a small smoke suite",
+        ],
+      },
+      {
+        type: "h2",
+        text: "How to Practice Without a Job",
+      },
+      {
+        type: "p",
+        text: "You do not need permission from a company to build proof. Practice on public products and document everything:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Pick a public website or open demo app (e-commerce, SaaS trial, or your own side project).",
+          "Write a one-page test plan: what you will cover, devices/browsers, out of scope.",
+          "Run exploratory sessions (30–45 minutes) with notes.",
+          "File 5–10 bugs in a template (title, steps, expected, actual, severity, screenshot).",
+          "Publish anonymised samples on a portfolio site, Notion page, or GitHub README.",
+        ],
+      },
+      {
+        type: "callout",
+        text: "Only test systems you are allowed to test. Prefer public marketing sites, dedicated demo environments, or products that invite bug reports. Do not attack private accounts or break terms of service.",
+      },
+      {
+        type: "h2",
+        text: "How to Write Bugs That Get You Hired",
+      },
+      {
+        type: "p",
+        text: "A strong beginner bug report beats a weak automation script. Use this structure every time:",
+      },
+      {
+        type: "code",
+        language: "text",
+        code: `Title: [Area] Clear failure in user language
+Severity: Critical | High | Medium | Low
+Environment: Browser/OS/App version/URL
+
+Steps to reproduce:
+1. ...
+2. ...
+3. ...
+
+Expected: ...
+Actual: ...
+Evidence: screenshot / short video / console error
+Impact: who is blocked and how often`,
+      },
+      {
+        type: "p",
+        text: "If a developer can reproduce your bug on the first try, you already look more senior than many \"experienced\" freelancers. When you want a deeper template and examples, read Bug reporting developers can act on and browse QA work samples on this site.",
+      },
+      {
+        type: "links",
+        items: [
+          {
+            href: "/blog/bug-reporting-developers-can-act-on",
+            label: "Next: Bug reporting developers can act on",
+            description: "Full structure for defects that get fixed faster.",
+          },
+          {
+            href: "/blog/qa-work-samples",
+            label: "Next: QA work samples",
+            description: "Client-facing examples of bugs, tooling evidence, and PDFs.",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Starting Freelance QA (Without Getting Fired in Week One)",
+      },
+      {
+        type: "h3",
+        text: "Profile and positioning",
+      },
+      {
+        type: "ul",
+        items: [
+          "Title example: \"Manual QA Tester | Web & Mobile | Clear Bug Reports\"",
+          "Lead with outcomes: reproducible bugs, regression coverage, release readiness — not only years of experience",
+          "Show 2–3 anonymised work samples (bugs + checklist)",
+          "Be honest about junior level; overselling destroys ratings fast",
+        ],
+      },
+      {
+        type: "h3",
+        text: "First jobs to target",
+      },
+      {
+        type: "ul",
+        items: [
+          "Small web app regression before launch",
+          "Mobile TestFlight / APK exploratory pass",
+          "Form/checkout flow testing",
+          "Cross-browser smoke on Chrome + Safari + mobile",
+          "UAT support for a founder who needs a second pair of eyes",
+        ],
+      },
+      {
+        type: "h3",
+        text: "Proposal habits that win",
+      },
+      {
+        type: "ol",
+        items: [
+          "Read the job post twice; mirror their product language.",
+          "Describe your test approach in 5–7 bullets (not a life story).",
+          "Attach one sample bug report (anonymised).",
+          "Ask 2 smart clarifying questions (platforms, environments, deadline).",
+          "Offer a short paid trial (e.g. 2–4 hours) if trust is the blocker.",
+        ],
+      },
+      {
+        type: "callout",
+        text: "Price for learning first, reputation second, rate third. A clean 5-star first project matters more than maximising your first invoice.",
+      },
+      {
+        type: "h2",
+        text: "30-Day Beginner Action Plan",
+      },
+      {
+        type: "ol",
+        items: [
+          "Week 1: Learn foundations + write 10 practice test cases for a public site.",
+          "Week 2: File 10 high-quality bugs with screenshots; refine your template.",
+          "Week 3: Learn DevTools Network tab + 5 Postman API checks on a public API.",
+          "Week 4: Publish a one-page portfolio + apply to 5 well-matched freelance jobs daily with custom proposals.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Common Mistakes Beginners Make",
+      },
+      {
+        type: "ul",
+        items: [
+          "Jumping to Selenium/Playwright before they can write a clear manual bug",
+          "Vague titles like \"Button not working\" with no steps",
+          "Testing only the happy path",
+          "Ignoring mobile or different screen sizes",
+          "Accepting unpaid \"tests\" that are actually full projects",
+          "Copy-paste proposals that never mention the client's product",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What to Learn Next (After You Land Work)",
+      },
+      {
+        type: "p",
+        text: "Once you can write solid bugs and finish a small regression, level up with the deeper guides on this site — same skill order as real freelance work:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Bug quality and test planning — so clients trust your judgment",
+          "Manual release checklists — so you do not miss smoke/regression paths",
+          "Mobile + device logs — for iOS/Android client work",
+          "API + SQL — to validate beyond the UI",
+          "Playwright automation — after manual fundamentals are strong",
+          "Accessibility, AI app testing, and QA ops (n8n) — specialty differentiators",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Level up — advanced guides on this site",
+      },
+      {
+        type: "callout",
+        text: "Read these in order if you can: bug reporting → test planning → manual checklist → mobile/API → Playwright. Work samples show what \"good\" looks like to clients.",
+      },
+      {
+        type: "links",
+        items: [
+          {
+            href: "/blog/bug-reporting-developers-can-act-on",
+            label: "Bug reporting developers can act on",
+            description: "Advanced defect structure — steps, evidence, severity, and impact.",
+          },
+          {
+            href: "/blog/test-planning-for-release-ready-qa",
+            label: "Test planning for release-ready QA",
+            description: "How to plan coverage before you click around.",
+          },
+          {
+            href: "/blog/manual-qa-testing-checklist-for-release-ready-builds",
+            label: "Manual QA checklist for release-ready builds",
+            description: "A full regression checklist you can reuse on client projects.",
+          },
+          {
+            href: "/blog/qa-work-samples",
+            label: "QA work samples (bugs, tooling, PDFs)",
+            description: "See real anonymised samples — BrowserStack, DevTools, Jira-style boards, and more.",
+          },
+          {
+            href: "/blog/mobile-qa-on-real-devices-testflight-and-apk",
+            label: "Mobile QA on real devices (TestFlight & APK)",
+            description: "Next step after web-only testing — install builds and test like a user.",
+          },
+          {
+            href: "/blog/collecting-android-ios-device-logs-app-debugging",
+            label: "Collecting Android & iOS device logs",
+            description: "ADB, Console.app, and log capture for stronger mobile bug evidence.",
+          },
+          {
+            href: "/blog/api-testing-with-postman-and-sql-validation",
+            label: "API testing with Postman and SQL validation",
+            description: "Go behind the UI — contracts, status codes, and data checks.",
+          },
+          {
+            href: "/blog/playwright-automation-that-survives-releases",
+            label: "Playwright automation that survives releases",
+            description: "Stable automation patterns after you master manual QA.",
+          },
+          {
+            href: "/blog/50-playwright-tips-for-stable-automation",
+            label: "50 Playwright tips for stable automation",
+            description: "Practical tips when you start writing smoke suites.",
+          },
+          {
+            href: "/blog/accessibility-testing-qa-checklist",
+            label: "Accessibility testing QA checklist",
+            description: "Keyboard, screen reader, contrast — WCAG-minded checks clients value.",
+          },
+          {
+            href: "/blog/ai-application-testing-practical-qa-guide",
+            label: "AI application testing — practical QA guide",
+            description: "How to test AI-powered products without guessing.",
+          },
+          {
+            href: "/blog/automating-qa-operations-with-n8n",
+            label: "Automating QA operations with n8n",
+            description: "Connect Jira, TestRail, CI, and AI for QA ops automation.",
+          },
+          {
+            href: "/blog/qa-interview-questions-for-manual-and-automation-roles",
+            label: "QA interview questions (manual & automation)",
+            description: "Prepare for client interviews and staff roles.",
+          },
+          {
+            href: "/blog",
+            label: "All QA blog articles",
+            description: "Browse the full library of testing guides.",
+          },
+          {
+            href: "/#case-studies",
+            label: "Portfolio work & case studies",
+            description: "See how senior QA work is presented to clients.",
+          },
+          {
+            href: "/cv",
+            label: "CV — MD Masfiqur Rahman",
+            description: "Example of a clear senior QA CV layout.",
+          },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Final Advice",
+      },
+      {
+        type: "p",
+        text: "QA is a skill of attention, communication, and risk thinking. Beginners who practice publicly, write excellent bugs, and stay honest about scope get hired. Beginners who collect certificates without samples stay stuck. Start small, document everything, deliver reliability — then use the advanced guides above to grow into the work clients pay senior rates for.",
+      },
+    ],
+  },
+  {
+    slug: "automating-qa-operations-with-n8n",
+    title: "Automating QA Operations with n8n",
+    description:
+      "How QA teams use n8n to connect Jira, TestRail, CI, and AI — automate test runs, result import, bug filing, and release reports without replacing human testers.",
+    topic: "QA Automation",
+    date: "2026-06-20",
+    readingMinutes: 12,
+    tags: ["n8n", "QA Automation", "Jira", "TestRail", "OpenAI", "CI/CD"],
+    content: [
+      {
+        type: "p",
+        text: "Quality assurance is still central to shipping software — but a large share of QA work is repetitive and data-heavy. Creating test runs, importing results, summarising failures, and filing bugs slows releases and invites human error. Low-code platforms like n8n let teams orchestrate Jira, TestRail, CI/CD, Slack, and AI into one workflow. This guide covers what to automate, how the integrations work, and four practical use cases I recommend starting with.",
+      },
+      {
+        type: "callout",
+        text: "Automation should augment testers — not replace exploratory judgment. Use n8n for the glue work (runs, results, tickets, reports) so humans can focus on risk and product quality.",
+      },
+      {
+        type: "h2",
+        text: "Why Automate QA with n8n?",
+      },
+      {
+        type: "p",
+        text: "Manual QA often means constant context switching between project tools, test management, and chat. Engineering reporting research regularly finds managers spending hours each week assembling status updates — still risking omissions and recency bias. n8n helps with:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Efficiency: Workflow automation can cut report prep dramatically (some teams cite ~80% less time on status assembly). Similar gains apply to result aggregation and bug triage.",
+          "Consistency: Automated collection means fewer missed tickets or runs; AI summaries follow a fixed template.",
+          "Visibility: One place for manual and automated results becomes a single source of truth for coverage.",
+          "Scalability: Visual nodes plus HTTP Request cover tools without a native connector — including TestRail.",
+        ],
+      },
+      {
+        type: "p",
+        text: "For leadership, that means faster, evidence-based go/no-go decisions. For product managers, real-time quality signals. For QA, less admin and more time for deep testing.",
+      },
+      {
+        type: "h2",
+        text: "What Should Be Automated?",
+      },
+      {
+        type: "table",
+        caption: "High-value QA tasks to automate with n8n",
+        headers: ["Task", "What n8n does", "Typical tools"],
+        rows: [
+          [
+            "Test run management",
+            "Create, update, and close runs when builds ship",
+            "TestRail API, CI webhook",
+          ],
+          [
+            "Result import",
+            "Bulk-upload pass/fail from pipelines",
+            "TestRail add_results_for_cases, Jenkins/GitHub Actions",
+          ],
+          [
+            "Bug create & triage",
+            "Open/update Jira issues from failures",
+            "Jira nodes, attachments, Slack",
+          ],
+          [
+            "Test reporting",
+            "Aggregate metrics + AI narrative → email/Slack/Docs",
+            "OpenAI, Gmail, Slack, Google Docs",
+          ],
+          [
+            "PR quality signals",
+            "Link PRs to Jira tasks and surface risk",
+            "GitHub/GitLab + Jira + Slack",
+          ],
+          [
+            "Lessons learned",
+            "When an Epic hits Done, compile a retro doc",
+            "Jira Trigger + OpenAI + Docs/Confluence",
+          ],
+        ],
+      },
+      {
+        type: "h2",
+        text: "Integration Points",
+      },
+      {
+        type: "h3",
+        text: "n8n fundamentals",
+      },
+      {
+        type: "p",
+        text: "n8n is an open-source workflow tool with a visual editor. You connect triggers (schedule, webhook, app event) to action nodes. When a native node is missing, HTTP Request + credentials cover the gap. That pattern is exactly how TestRail fits in.",
+      },
+      {
+        type: "h3",
+        text: "Jira",
+      },
+      {
+        type: "p",
+        text: "n8n ships Jira Software nodes and a Jira Trigger (issue create/update, comments, sprint changes). Common QA actions:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Create or update issues from failed automated tests",
+          "Add comments and attach logs/screenshots",
+          "Get / Get many issues for metrics and PR linkage",
+        ],
+      },
+      {
+        type: "callout",
+        text: "Store Jira email + API token in n8n's encrypted credentials store. Prefer least-privilege tokens and restrict who can edit production workflows.",
+      },
+      {
+        type: "h3",
+        text: "OpenAI (or compatible LLM)",
+      },
+      {
+        type: "p",
+        text: "OpenAI nodes (or generic LLM HTTP calls) turn raw metrics into summaries, classifications, or structured JSON. Useful patterns:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Classify a GitHub issue as bug vs task, then create the right Jira type",
+          "Turn pass/fail tables into an executive report (summary, risks, next steps)",
+          "Synthesise Epic comments into a lessons-learned narrative",
+        ],
+      },
+      {
+        type: "p",
+        text: "Control output with a clear system prompt, low temperature for factual reports, and a structured-output / JSON parser when the next node needs machine-readable fields.",
+      },
+      {
+        type: "h3",
+        text: "TestRail via HTTP Request",
+      },
+      {
+        type: "p",
+        text: "TestRail has no native n8n node — use HTTP Request with basic auth (email + API key). Core endpoints:",
+      },
+      {
+        type: "code",
+        language: "text",
+        code: `POST .../api/v2/add_run/{project_id}
+POST .../api/v2/update_run/{run_id}
+POST .../api/v2/close_run/{run_id}
+POST .../api/v2/add_results_for_cases/{run_id}
+GET  .../api/v2/get_statuses
+GET  .../api/v2/get_results_for_case/{run_id}/{case_id}`,
+      },
+      {
+        type: "p",
+        text: "Bulk result upload is the win: case_id, status_id, comment, defects, elapsed, and custom fields in one request — then map the response into Jira or Slack nodes.",
+      },
+      {
+        type: "h2",
+        text: "Use Case 1 — Automated Test Report Generation",
+      },
+      {
+        type: "p",
+        text: "Goal: nightly or post-CI consolidation of run stats, AI narrative, and delivery to stakeholders.",
+      },
+      {
+        type: "ol",
+        items: [
+          "Trigger: schedule or CI webhook when the pipeline finishes.",
+          "Fetch runs/results via TestRail HTTP nodes (get_runs, get_results_for_case).",
+          "Aggregate in a Function/Code node: passed vs failed, defects linked, avg duration.",
+          "Send metrics to an LLM with a prompt for executive summary, highlights, risks, and next steps.",
+          "Format as Markdown/HTML (optional PDF), then deliver via email, Slack, or Google Docs — and optionally attach the link on the release Epic.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Use Case 2 — PR-Linked Quality Stats to Slack",
+      },
+      {
+        type: "ol",
+        items: [
+          "Trigger on GitHub/GitLab PR opened or updated.",
+          "Parse Jira keys from the PR/commits; fetch status, priority, and open bugs.",
+          "Tally features vs bugs, unresolved criticals, and untested cases.",
+          "Optional: AI short summary in problem → solution → impact form.",
+          "Post a formatted Slack/Teams message before merge.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Use Case 3 — Auto Bug Creation from Failures",
+      },
+      {
+        type: "p",
+        text: "Flow in plain terms:",
+      },
+      {
+        type: "code",
+        language: "text",
+        code: `CI finishes tests
+  → webhook to n8n
+  → HTTP: TestRail add_results_for_cases
+  → Code node: keep failures only
+  → for each failure:
+       Jira Create Issue (title, env, steps, artifacts)
+       Jira Add Comment (TestRail run link)
+       Slack notify #qa (optional)`,
+      },
+      {
+        type: "p",
+        text: "Assign by module owner or last PR author; set priority from severity or blast radius. Developers get a ticket with evidence instead of digging through raw CI logs.",
+      },
+      {
+        type: "h2",
+        text: "Use Case 4 — Lessons-Learned When an Epic Completes",
+      },
+      {
+        type: "ol",
+        items: [
+          "Jira Trigger: Epic → Done.",
+          "Get many linked issues + comments; optionally pull related TestRail results.",
+          "Filter noise (e.g. drop tiny comments); group by bug fix vs feature.",
+          "LLM produces what worked, what hurt, and next-sprint recommendations.",
+          "Write to Google Docs/Confluence and share in Slack.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Best Practices",
+      },
+      {
+        type: "ul",
+        items: [
+          "Respect API rate limits (TestRail Cloud 429s, Jira, OpenAI) — add retries/backoff.",
+          "Use n8n error workflows so failed API calls ping the right owner.",
+          "Keep secrets only in n8n credentials; restrict workflow edit access.",
+          "Iterate prompts on a small subset (e.g. one nightly report) before scaling.",
+          "Never auto-close customer-facing bugs without a human gate.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Who Benefits",
+      },
+      {
+        type: "ul",
+        items: [
+          "Product: live coverage and defect trends without spreadsheet archaeology.",
+          "QA: less run/result/ticket busywork; more exploratory and usability time.",
+          "Leadership: KPI-style summaries for release readiness and risk.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Conclusion",
+      },
+      {
+        type: "p",
+        text: "n8n sits between CI, TestRail, Jira, and AI so QA operations stay consistent as the product scales. Start with one workflow — nightly reporting or auto-bug-from-failure — measure time saved, then expand. The goal is faster feedback and clearer quality signals, not removing testers from the loop.",
+      },
+      {
+        type: "h2",
+        text: "Further reading",
+      },
+      {
+        type: "links",
+        items: [
+          {
+            href: "https://medium.com/@josh.magady/automating-engineering-reports-with-n8n-and-ai-609fd6b922c4",
+            label: "Automating Engineering Reports with n8n and AI (Medium)",
+            description: "Reporting patterns and AI narrative structure.",
+          },
+          {
+            href: "https://www.testrail.com/integrations/",
+            label: "TestRail Integrations",
+            description: "Official TestRail integration overview.",
+          },
+          {
+            href: "https://testdriver.ai/articles/how-to-use-n8n-for-test-automation-workflows-effectively",
+            label: "Using n8n for Test Automation Workflows (TestDriver)",
+            description: "Practical notes on n8n for test automation glue.",
+          },
+          {
+            href: "https://support.testrail.com/hc/en-us/articles/7077874763156-Runs",
+            label: "TestRail Runs API docs",
+            description: "add_run / update_run / close_run reference.",
+          },
+          {
+            href: "https://support.testrail.com/hc/en-us/articles/7077819312404-Results",
+            label: "TestRail Results API docs",
+            description: "add_results_for_cases and result retrieval.",
+          },
+          {
+            href: "https://n8n.io/integrations/jira-software/and/openai/",
+            label: "n8n: Jira Software + OpenAI",
+            description: "Combined Jira and OpenAI automation patterns.",
+          },
+          {
+            href: "https://n8n.io/workflows/3579-automated-research-report-generation-with-ai-wiki-search-and-gmailtelegram/",
+            label: "n8n template: Automated research report",
+            description: "Collect → AI narrative → deliver pattern.",
+          },
+          {
+            href: "https://n8n.io/workflows/3934-generate-lessons-learned-reports-from-jira-epics-with-ai-and-google-docs/",
+            label: "n8n template: Lessons learned from Jira Epics",
+            description: "Epic Done → AI report → Google Docs.",
+          },
+          {
+            href: "https://n8n.io/workflows/8216-classify-and-convert-github-issues-to-jira-tickets-with-openai/",
+            label: "n8n template: GitHub issues → Jira via OpenAI",
+            description: "Classification + structured routing example.",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "collecting-android-ios-device-logs-app-debugging",
     title: "Collecting Logs from Android and iOS Devices for App Debugging",
     description:

@@ -3,21 +3,26 @@ export type FaqItem = {
   answer: string;
 };
 
-/** Kept for a future FAQ section / FAQPage schema. Not currently rendered. */
+/** Used on the homepage and in FAQPage JSON-LD for name / entity SEO. */
 export const faqs: FaqItem[] = [
   {
-    question: "Can I hire you as a remote QA engineer for a worldwide team?",
+    question: "Who is MD Masfiqur Rahman?",
     answer:
-      "Yes. MD Masfiqur Rahman is a Top-Rated Senior QA Engineer available remotely for clients worldwide, with 11+ years of remote delivery across the USA, UK, Australia, Netherlands, Brazil, and more. Based in Bangladesh.",
+      "MD Masfiqur Rahman (also known as Masfiqur Rahman) is a Top-Rated Senior Software Quality Assurance Engineer based in Dhaka, Bangladesh. He has 14+ years of experience in manual QA, Playwright automation, mobile app testing (iOS and Android), API testing, and release readiness for startups and enterprises worldwide.",
   },
   {
-    question: "What makes a strong QA engineer for hire?",
+    question: "Who is Masfiqur Rahman?",
     answer:
-      "Clear communication, thorough manual and automation coverage, reproducible bug reports, and release-focused testing. Masfiqur combines 14+ years of QA experience with Playwright automation, API testing, and mobile app QA.",
+      "Masfiqur Rahman is the professional name used by MD Masfiqur Rahman, a Senior QA Engineer for hire. He delivers remote QA for global teams across the USA, UK, Australia, Netherlands, Brazil, and more, with a Top Rated Plus profile and 100% Job Success on Upwork.",
   },
   {
-    question: "Do you offer quality assurance engineer services for startups and enterprises?",
+    question: "Can I hire MD Masfiqur Rahman as a remote QA engineer?",
     answer:
-      "Yes. Services include manual QA, Playwright automation, API and SQL validation, iOS and Android testing, AI QA, SaaS and eCommerce testing, regression, UAT, and release readiness for global product teams.",
+      "Yes. MD Masfiqur Rahman is available remotely for clients worldwide, with 11+ years of remote delivery. Hire him for manual QA, Playwright automation, mobile app QA, API testing, Stripe payment testing, Analytics QA, and release-focused quality assurance.",
+  },
+  {
+    question: "What QA services does Masfiqur Rahman offer?",
+    answer:
+      "Services include manual and exploratory testing, Playwright automation, API and SQL validation, iOS and Android testing, AI application QA, SaaS and eCommerce testing, regression, UAT, accessibility checks, and production readiness for global product teams.",
   },
 ];

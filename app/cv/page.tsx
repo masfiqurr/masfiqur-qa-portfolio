@@ -111,13 +111,13 @@ function IconCheck() {
 
 const achievements = [
   "14+ Years Experience",
-  "Top Rated Plus Freelancer",
-  "100% Job Success",
+  "Upwork Top Rated Plus",
+  "100% Job Success on Upwork",
+  "Master’s in Computer Science",
+  "Claude & AI Fluency Certified",
   "50+ Production Releases",
-  "11K+ Hours Delivered",
   "200+ Applications Tested",
   "Web, Mobile, API & AI Testing",
-  "Manual + Automation QA",
 ];
 
 const coreSkills = [
@@ -138,23 +138,20 @@ const coreSkills = [
 ];
 
 const qaExpertise = [
-  "Manual Testing (Web, Mobile & Desktop)",
-  "Functional, Regression, Smoke & E2E",
+  "Manual QA (Web / Mobile / Desktop)",
+  "Functional · Regression · Smoke · E2E",
   "API Testing (Postman)",
-  "Stripe Payment Testing",
-  "NFC / Stripe Test Cards",
-  "Local Branch QA (Git & Docker)",
-  "TestFlight, APK & Xcode",
-  "Analytics QA (Firebase & GA)",
+  "Stripe & NFC Payments",
+  "Local Branch QA (Git / Docker)",
+  "TestFlight · APK · Xcode",
+  "Analytics QA (Firebase / GA)",
   "AI & Prompt Validation",
   "Exploratory & Edge Cases",
-  "UI/UX Testing",
-  "Integration & Compatibility",
-  "UAT",
-  "Release Validation",
+  "UI / UX Testing",
+  "UAT & Release Validation",
   "Accessibility (WCAG)",
-  "Cross-browser & Cross-device",
-  "SQL Database Validation",
+  "Cross-browser / Cross-device",
+  "SQL Validation",
   "Performance Testing",
 ];
 
@@ -315,12 +312,14 @@ export default function CvPage() {
             </h2>
             <p className="cv-about">
               Top-Rated Senior Software Quality Assurance Engineer with 14+ years of experience
-              delivering high-quality web, mobile, SaaS, AI, and enterprise applications. Worked with
-              global brands including Tesco, Harrods, Marks &amp; Spencer, Visa, Dell, FedEx, Hilton,
-              and many others. Specialized in Manual QA, Playwright Automation, REST API Testing,
+              delivering high-quality web, mobile, SaaS, AI, and enterprise applications. Hold
+              Bachelor’s and Master’s degrees in Computer Science and Engineering. Worked with global
+              brands including Tesco, Harrods, Marks &amp; Spencer, Visa, Dell, FedEx, Hilton, and
+              many others. Specialized in Manual QA, Playwright Automation, REST API Testing,
               exploratory testing, cross-browser testing, User Acceptance Testing (UAT), Analytics
-              QA, and release readiness for distributed Agile Scrum and CI/CD teams. Upwork Top Rated
-              Plus • 100% Job Success • 11K+ hours • 50+ releases • 200+ apps.
+              QA, and release readiness for distributed Agile Scrum and CI/CD teams. Certified in
+              Claude and AI Fluency (Anthropic). Upwork Top Rated Plus · 100% Job Success · 50+
+              releases · 200+ apps.
             </p>
           </section>
 
@@ -351,64 +350,103 @@ export default function CvPage() {
                   <h3>Full Stack QA Engineer</h3>
                   <time dateTime="2017-06">Jun 2017 — Present</time>
                 </div>
-                <p className="cv-company">The SilverLogic · Full-time · Boca Raton, FL (Remote)</p>
+                <p className="cv-company">
+                  The SilverLogic · Full-time · Boca Raton, FL, United States (Remote)
+                </p>
                 <ul className="cv-bullets">
                   <li>
-                    Delivered QA across 50+ production releases for enterprise SaaS platforms and
-                    global remote teams.
+                    Remote Senior QA Engineer collaborating with developers, designers, and product
+                    managers across USA-based and global remote teams.
                   </li>
                   <li>
-                    Reduced regression testing effort through Playwright automation and structured
-                    smoke/sanity suites.
+                    Delivered QA across 50+ production releases for enterprise SaaS platforms with
+                    Playwright automation and structured smoke/sanity suites.
                   </li>
                   <li>
                     Performed web, mobile, REST API, Analytics, and Stripe payment / NFC testing with
-                    SQL validation.
-                  </li>
-                  <li>
-                    Verified TestFlight, APK, Expo, and Xcode builds before production releases.
-                  </li>
-                  <li>
-                    Collaborated with developers, designers, and product managers in Agile Scrum
-                    teams.
+                    SQL validation; verified TestFlight, APK, Expo, and Xcode builds.
                   </li>
                 </ul>
               </li>
               <li>
                 <div className="cv-job-top">
-                  <h3>QA Lead and Scrum Master</h3>
+                  <h3>Quality Assurance Engineer (Freelance)</h3>
+                  <time dateTime="2024-03">Mar 2024 — Aug 2026</time>
+                </div>
+                <p className="cv-company">
+                  World Sport Action · Freelance · Mona Vale, NSW, Australia (Remote)
+                </p>
+                <ul className="cv-bullets">
+                  <li>
+                    Freelance remote QA for Squadi, Basketball, and Netball apps and portals across
+                    Dev, QA, and Staging — registrations, livescores, attendance, referee reports,
+                    banners, and ticket-fix verification.
+                  </li>
+                  <li>
+                    End-to-end checks from UI behavior into APIs and databases when needed; detailed
+                    pass/fail notes and evidence in Jira.
+                  </li>
+                  <li>
+                    Started on Squadi AU, then Basketball and Netball, reusing shared checks across
+                    similar sports apps without mixing environments.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div className="cv-job-top">
+                  <h3>QA Lead and Scrum Master (Freelance)</h3>
                   <time dateTime="2021-07">Jul 2021 — Oct 2023</time>
                 </div>
-                <p className="cv-company">Teachally · Seattle, WA, United States</p>
+                <p className="cv-company">
+                  Teachally · Freelance · Seattle, WA, United States (Remote)
+                </p>
                 <ul className="cv-bullets">
-                  <li>Led QA for an AI-powered edtech product used by teachers for classroom workflows.</li>
-                  <li>Reviewed requirements and technical designs to catch quality risks early.</li>
-                  <li>Drove release readiness and UAT across web and mobile with clear defect reporting.</li>
-                  <li>Facilitated Scrum ceremonies while keeping quality ownership cross-functional.</li>
+                  <li>
+                    Freelance QA Lead for an AI-powered edtech product used by teachers for lesson
+                    planning and classroom workflows.
+                  </li>
+                  <li>
+                    Reviewed requirements and technical designs to catch quality risks early; drove
+                    release readiness and UAT across web and mobile.
+                  </li>
+                  <li>
+                    Facilitated Scrum ceremonies while keeping quality ownership cross-functional.
+                  </li>
                 </ul>
               </li>
               <li>
                 <div className="cv-job-top">
-                  <h3>QA Consultant</h3>
+                  <h3>QA Consultant (Contract / Freelance)</h3>
                   <time dateTime="2021-11">Nov 2021 — Feb 2022</time>
                 </div>
-                <p className="cv-company">Enian · Contract · Greater London, United Kingdom</p>
+                <p className="cv-company">
+                  Enian · Contract / Freelance · Greater London, England, United Kingdom (Remote)
+                </p>
                 <ul className="cv-bullets">
-                  <li>Improved software quality inside a cross-functional product delivery team.</li>
-                  <li>Partnered with developers, designers, Scrum Master, and product managers.</li>
-                  <li>Strengthened QA process and release confidence for production deployments.</li>
+                  <li>
+                    Contract freelance QA improving software quality inside a cross-functional team
+                    of developers, designers, Scrum Masters, and product managers.
+                  </li>
+                  <li>
+                    Strengthened QA process and release confidence for production deployments.
+                  </li>
                 </ul>
               </li>
               <li>
                 <div className="cv-job-top">
-                  <h3>Sr. Software QA Engineer</h3>
-                  <time dateTime="2015-07">Jul 2015 — Mar 2018</time>
+                  <h3>Sr. Software QA Engineer &amp; Risk and Compliance Analyst</h3>
+                  <time dateTime="2012-07">Jul 2012 — Mar 2018</time>
                 </div>
-                <p className="cv-company">SEBPO · Also Risk &amp; Compliance Analyst</p>
+                <p className="cv-company">SEBPO · Full-time · Dhaka, Bangladesh (On-site)</p>
                 <ul className="cv-bullets">
-                  <li>Owned senior QA delivery for business-critical software applications.</li>
-                  <li>Supported risk and compliance analysis alongside quality assurance controls.</li>
-                  <li>Improved reliability through structured validation and process discipline.</li>
+                  <li>
+                    Created and executed test scripts across multiple environments and browsers for
+                    business-critical applications.
+                  </li>
+                  <li>
+                    Supported risk and compliance analysis alongside quality assurance controls and
+                    structured validation.
+                  </li>
                 </ul>
               </li>
             </ul>

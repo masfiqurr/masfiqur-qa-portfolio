@@ -208,23 +208,34 @@ export default function BlogContent({ blocks }: { blocks: BlogBlock[] }) {
           case "links":
             return (
               <div key={index} className="blog-download-grid">
-                {block.items.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="blog-download-card"
-                  >
-                    <div className="blog-download-card__icon">
-                      <ExternalLink className="h-5 w-5" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="blog-download-card__label">{item.label}</p>
-                      <p className="blog-download-card__desc">{item.description}</p>
-                    </div>
-                  </a>
-                ))}
+                {block.items.map((item) => {
+                  const isInternal =
+                    item.href.startsWith("/") ||
+                    item.href.startsWith("#") ||
+                    item.href.includes("masfiqur.com");
+                  return (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      {...(isInternal
+                        ? {}
+                        : { target: "_blank", rel: "noreferrer" })}
+                      className="blog-download-card"
+                    >
+                      <div className="blog-download-card__icon">
+                        {isInternal ? (
+                          <FileText className="h-5 w-5" />
+                        ) : (
+                          <ExternalLink className="h-5 w-5" />
+                        )}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="blog-download-card__label">{item.label}</p>
+                        <p className="blog-download-card__desc">{item.description}</p>
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
             );
 

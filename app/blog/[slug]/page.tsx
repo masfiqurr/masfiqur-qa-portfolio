@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import BlogContent from "@/components/BlogContent";
 import {
@@ -27,6 +28,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: post.title,
     description: post.description,
+    authors: [{ name: siteConfig.officialName, url: siteConfig.url }],
+    creator: siteConfig.officialName,
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
@@ -47,12 +50,47 @@ export default async function BlogPostPage({ params }: PageProps) {
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const related = getAllPosts()
     .filter((item) => item.slug !== post.slug)
     .slice(0, 3);
 
+  const articleUrl = `${siteConfig.url}/blog/${post.slug}`;
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: articleUrl,
+    url: articleUrl,
+    author: {
+      "@type": "Person",
+      name: siteConfig.officialName,
+      alternateName: [siteConfig.name, ...siteConfig.alternateNames],
+      url: siteConfig.url,
+      sameAs: [
+        siteConfig.links.upwork,
+        siteConfig.links.linkedin,
+        siteConfig.links.github,
+      ],
+    },
+    publisher: {
+      "@type": "Person",
+      name: siteConfig.officialName,
+      url: siteConfig.url,
+    },
+    keywords: post.tags.join(", "),
+  };
+
   return (
     <article className="pt-24 pb-20">
+      <script
+        type="application/ld+json"
+        nonce={nonce}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <div className="section !pb-8 !pt-8">
         <div className="flex flex-wrap items-center gap-3">
           <Link

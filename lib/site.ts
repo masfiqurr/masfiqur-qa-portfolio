@@ -17,14 +17,15 @@ export const siteConfig = {
   email: "ameit001@gmail.com",
   locale: "en_US",
   description:
-    "MD Masfiqur Rahman (Masfiqur Rahman) — Top-Rated Senior QA Engineer available remotely worldwide. Hire for manual QA, Playwright automation, mobile app testing, API testing, and quality assurance. Trusted by global teams; based in Bangladesh.",
+    "MD Masfiqur Rahman (Masfiqur Rahman) is a Top-Rated Senior QA Engineer based in Bangladesh, available remotely worldwide. Hire for manual QA, Playwright automation, mobile app testing, API testing, and quality assurance.",
   title:
-    "MD Masfiqur Rahman | Masfiqur Rahman — Top-Rated Senior QA Engineer Worldwide",
+    "MD Masfiqur Rahman (Masfiqur Rahman) — Top-Rated Senior QA Engineer",
   ogImage: "/og-image.svg",
   links: {
     upwork: "https://www.upwork.com/freelancers/masfique",
     linkedin: "https://www.linkedin.com/in/masfique/",
     github: "https://github.com/masfiqurr",
+    githubProfile: "https://github.com/masfiqurr/masfiqurr",
   },
 } as const;
 

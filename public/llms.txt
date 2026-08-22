@@ -1,0 +1,24 @@
+# MD Masfiqur Rahman (Masfiqur Rahman)
+
+> Official portfolio of MD Masfiqur Rahman — Top-Rated Senior Software Quality Assurance Engineer.
+
+- Full name: MD Masfiqur Rahman
+- Also known as: Masfiqur Rahman, Md. Masfiqur Rahman, Masfique
+- Role: Senior Software Quality Assurance Engineer (manual QA, Playwright automation, mobile QA, API testing)
+- Location: Dhaka, Bangladesh (serving clients worldwide / remote)
+- Website: https://www.masfiqur.com
+- Email: ameit001@gmail.com
+- Upwork: https://www.upwork.com/freelancers/masfique
+- LinkedIn: https://www.linkedin.com/in/masfique/
+- GitHub: https://github.com/masfiqurr
+
+## Key pages
+
+- Homepage: https://www.masfiqur.com
+- Blog: https://www.masfiqur.com/blog
+- QA work samples: https://www.masfiqur.com/blog/qa-work-samples
+- CV: https://www.masfiqur.com/cv
+
+## Summary
+
+MD Masfiqur Rahman helps startups and enterprises ship reliable web, mobile, and AI products with thorough QA, clear bug reports, and release readiness. 14+ years of experience; Top Rated Plus on Upwork.

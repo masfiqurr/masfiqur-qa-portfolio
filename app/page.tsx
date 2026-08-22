@@ -31,6 +31,7 @@ import {
   Download,
 } from "lucide-react";
 import TestimonialsSection from "@/components/Testimonials";
+import { faqs } from "@/data/faqs";
 import { testimonials } from "@/data/testimonials";
 
 const fade = {
@@ -426,6 +427,7 @@ export default function Home() {
     { href: "#feedback", label: "Feedback" },
     { href: "#case-studies", label: "Work" },
     { href: "/blog", label: "Blog" },
+    { href: "#faq", label: "FAQ" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -537,7 +539,7 @@ export default function Home() {
               transition={{ duration: 0.55 }}
               className="font-display font-semibold heading-hero"
             >
-              Masfiqur Rahman
+              MD Masfiqur Rahman
             </motion.h1>
 
             <motion.p
@@ -641,9 +643,10 @@ export default function Home() {
           >
             <span className="badge">About</span>
             <h2 className="mt-5 font-display font-semibold heading-section">
+              About MD Masfiqur Rahman —{" "}
               <span className="text-brandSoft">14+ years</span>
               {" "}
-              <span>as a software QA engineer, tester &amp; QA lead</span>
+              as a software QA engineer
             </h2>
             <p className="mt-6 text-base leading-8 text-mute md:text-lg">
               I am MD Masfiqur Rahman, a Top-Rated Senior Software Quality Assurance Engineer with 14+
@@ -1175,6 +1178,44 @@ FROM destination_table
 GROUP BY external_id
 HAVING COUNT(*) > 1;`}
             </pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="border-y border-line bg-panel/60">
+        <div className="section">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="badge">FAQ</span>
+            <h2 className="mt-5 font-display font-semibold heading-section">
+              About MD Masfiqur Rahman
+            </h2>
+            <p className="mt-4 text-base leading-7 text-mute">
+              Quick answers for clients searching for MD Masfiqur Rahman / Masfiqur Rahman —
+              Senior QA Engineer for hire.
+            </p>
+          </div>
+          <div className="mx-auto mt-10 max-w-3xl space-y-4">
+            {faqs.map((item) => (
+              <details
+                key={item.question}
+                className="group rounded-2xl border border-line bg-ink open:border-brand/40"
+              >
+                <summary className="cursor-pointer list-none px-5 py-4 font-display text-base font-semibold text-white marker:content-none [&::-webkit-details-marker]:hidden md:px-6 md:text-lg">
+                  <span className="flex items-start justify-between gap-4">
+                    {item.question}
+                    <span
+                      className="mt-0.5 shrink-0 text-brandSoft transition group-open:rotate-45"
+                      aria-hidden="true"
+                    >
+                      +
+                    </span>
+                  </span>
+                </summary>
+                <p className="border-t border-line px-5 py-4 text-sm leading-7 text-mute md:px-6 md:text-base md:leading-8">
+                  {item.answer}
+                </p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
