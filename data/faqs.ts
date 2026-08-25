@@ -8,12 +8,7 @@ export const faqs: FaqItem[] = [
   {
     question: "Who is MD Masfiqur Rahman?",
     answer:
-      "MD Masfiqur Rahman (also known as Masfiqur Rahman) is a Top-Rated Senior Software Quality Assurance Engineer based in Dhaka, Bangladesh. He has 14+ years of experience in manual QA, Playwright automation, mobile app testing (iOS and Android), API testing, and release readiness for startups and enterprises worldwide.",
-  },
-  {
-    question: "Who is Masfiqur Rahman?",
-    answer:
-      "Masfiqur Rahman is the professional name used by MD Masfiqur Rahman, a Senior QA Engineer for hire. He delivers remote QA for global teams across the USA, UK, Australia, Netherlands, Brazil, and more, with a Top Rated Plus profile and 100% Job Success on Upwork.",
+      "MD Masfiqur Rahman (also known as Masfiqur Rahman) is a Top-Rated Senior Software Quality Assurance Engineer based in Dhaka, Bangladesh, available remotely worldwide. He has 14+ years of experience in manual QA, Playwright automation, mobile app testing (iOS and Android), API testing, and release readiness for startups and enterprises — with a Top Rated Plus profile and 100% Job Success on Upwork.",
   },
   {
     question: "Can I hire MD Masfiqur Rahman as a remote QA engineer?",
