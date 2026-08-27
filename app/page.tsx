@@ -427,7 +427,6 @@ export default function Home() {
     { href: "#feedback", label: "Feedback" },
     { href: "#case-studies", label: "Work" },
     { href: "/blog", label: "Blog" },
-    { href: "#faq", label: "FAQ" },
     { href: "#contact", label: "Contact" },
   ];
 

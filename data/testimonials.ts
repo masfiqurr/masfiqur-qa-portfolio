@@ -57,14 +57,15 @@ export const testimonials: Testimonial[] = [
     tags: ["Clear Communicator"],
   },
   {
-    id: "grant-espanet",
-    clientName: "Grant Espanet",
-    position: "Fractional CTO · Mobile / Full Stack",
-    company: "Engineering collaborator",
+    id: "rodrigo-souza",
+    clientName: "Rodrigo Souza",
+    position: "Delivery Lead | QA Engineering Leader",
+    company: "World Sport Action",
     comment:
-      "Whenever a developer created a pull request, Masfiqur was responsible for testing it. Masfiqur always found ways to improve each pull request, whether it be UX suggestions, UI changes, or bug detection. Masfiqur is very familiar with testing on iOS, Android, front end, and back end.",
-    date: "Mar 1, 2020",
+      "I had the pleasure of managing Masfiqur at World Sport Action, and he was a reliable and valuable member of our QA team. He consistently approached his work with care, professionalism and strong attention to detail. Masfiqur was always willing to investigate issues thoroughly, collaborate with developers and other team members, and help ensure we delivered a quality product to our users. Beyond his technical contribution, he was respectful, dependable and easy to work with. I truly appreciated his commitment and positive attitude, and I would confidently recommend him to any team looking for a dedicated Quality Assurance professional.",
+    date: "Aug 25, 2026",
     source: "LinkedIn",
+    tags: ["Attention to Detail", "Collaborative", "Reliable"],
   },
   {
     id: "rafael-hurpia",
