@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: post.title,
     description: post.description,
+    keywords: post.tags,
     authors: [{ name: siteConfig.officialName, url: siteConfig.url }],
     creator: siteConfig.officialName,
     alternates: {
@@ -41,6 +42,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       publishedTime: post.date,
       authors: [siteConfig.officialName],
       tags: post.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
     },
   };
 }
@@ -62,9 +68,10 @@ export default async function BlogPostPage({ params }: PageProps) {
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: new Date().toISOString().slice(0, 10),
     mainEntityOfPage: articleUrl,
     url: articleUrl,
+    inLanguage: "en",
     author: {
       "@type": "Person",
       name: siteConfig.officialName,

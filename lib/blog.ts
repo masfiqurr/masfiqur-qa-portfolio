@@ -65,28 +65,32 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     slug: "qa-for-beginners-learn-testing-start-freelancing",
-    title: "QA for Beginners: Learn Software Testing and Start Freelancing",
+    title: "QA for Beginners: QA Testing Examples, Samples & How to Start Freelancing",
     description:
-      "A practical roadmap to become a QA tester from scratch — core skills, tools, how to practice, write bugs clients trust, and land your first freelance QA job.",
+      "Learn QA testing with real examples — sample bug reports, checklists, QA artifacts, and a quality-check workflow so you are ready for testing and ready for QA freelance work.",
     topic: "Career",
     date: "2026-08-20",
-    readingMinutes: 11,
+    readingMinutes: 12,
     tags: [
       "QA for Beginners",
-      "Software Testing",
+      "QA Testing Examples",
+      "QA Sample",
+      "QA Artifacts",
+      "Ready for Testing",
+      "Ready for QA",
+      "Quality Check Workflow",
       "Freelance QA",
       "Manual QA",
-      "Career",
-      "Upwork",
+      "Software Testing",
     ],
     content: [
       {
         type: "p",
-        text: "\"How do I become a QA tester?\" and \"Can I freelance as a beginner in QA?\" are two of the most searched questions in software testing. The short answer: yes — if you learn the craft in the right order, practice on real products, and show evidence (clear bugs, checklists, and a simple portfolio) instead of only certificates.",
+        text: "People searching for \"QA testing examples,\" \"QA sample,\" or \"how do I become a QA tester?\" usually want the same thing: proof of how testing looks in practice — not only theory. This guide gives beginners a clear path plus concrete QA samples (bug reports, checklists, and artifacts) so you look ready for testing and ready for QA on real freelance jobs.",
       },
       {
         type: "p",
-        text: "This guide is the path I recommend to people starting out: what QA actually is, which skills matter first, how to practice without a job, how to write bug reports clients will pay for, and how to take the first freelance steps without burning trust.",
+        text: "You will learn what a QA tester does, which skills matter first, a simple quality-check workflow, how to practice without a job, how to write bug reports clients pay for, and how to take the first freelance steps without burning trust.",
       },
       {
         type: "callout",
@@ -113,6 +117,70 @@ export const blogPosts: BlogPost[] = [
       {
         type: "p",
         text: "You are not only \"finding bugs.\" You are reducing release risk and helping the team ship with confidence.",
+      },
+      {
+        type: "h2",
+        text: "QA Testing Examples Beginners Should Practice",
+      },
+      {
+        type: "p",
+        text: "These QA testing examples mirror what clients ask for on small freelance gigs. Treat each as a mini assignment and save the output as a portfolio sample:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Login / signup: valid login, wrong password, empty fields, locked account messaging",
+          "Forms: required fields, email format, max length, paste/autofill behavior",
+          "Checkout or submit flow: success path, payment/network failure, double-submit",
+          "Mobile web: keyboard covering inputs, orientation change, slow 3G feel",
+          "Search/filter: empty results, special characters, pagination",
+          "Permissions: user vs admin — confirm unauthorized actions are blocked",
+        ],
+      },
+      {
+        type: "callout",
+        text: "A strong QA sample is not a long essay — it is a short checklist, 3–5 bugs with evidence, and a one-line risk summary (what is ready for QA sign-off vs what blocks release).",
+      },
+      {
+        type: "h2",
+        text: "Quality Check Workflow (Ready for Testing → Ready for QA)",
+      },
+      {
+        type: "p",
+        text: "Use this simple quality-check workflow on every feature so your process looks professional even as a beginner:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Confirm build/environment and what is \"ready for testing\" (scope, accounts, data).",
+          "Run smoke checks (critical paths open and don't crash).",
+          "Deep functional + exploratory testing on the change.",
+          "File bugs with severity, steps, and evidence (screenshots, video, logs).",
+          "Retest fixes; mark the build ready for QA sign-off only when criticals are clear.",
+          "Write a short status note: what passed, what failed, residual risk.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "QA Artifacts Clients Expect to See",
+      },
+      {
+        type: "p",
+        text: "When someone asks for a \"QA sample\" or \"QA artifacts,\" they usually mean deliverables like:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Test cases or a lightweight checklist for the feature",
+          "Bug reports with reproducible steps and severity",
+          "Evidence pack (screenshots, Loom, console/network notes, device logs when mobile)",
+          "Daily/end-of-cycle summary: coverage + open risks",
+          "Go / no-go recommendation for release readiness",
+        ],
+      },
+      {
+        type: "p",
+        text: "Browse anonymised tooling and sample PDFs on the QA work samples page when you want portfolio-ready examples of those artifacts.",
       },
       {
         type: "h2",
@@ -221,11 +289,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "h2",
-        text: "How to Write Bugs That Get You Hired",
+        text: "Sample Bug Report (QA Testing Example)",
       },
       {
         type: "p",
-        text: "A strong beginner bug report beats a weak automation script. Use this structure every time:",
+        text: "A strong beginner bug report beats a weak automation script. Use this QA sample structure every time:",
       },
       {
         type: "code",
@@ -778,17 +846,29 @@ GET  .../api/v2/get_results_for_case/{run_id}/{case_id}`,
   },
   {
     slug: "collecting-android-ios-device-logs-app-debugging",
-    title: "Collecting Logs from Android and iOS Devices for App Debugging",
+    title:
+      "How to Get Android & iOS Device Logs (ADB Logcat, Xcode Console, Log Apps)",
     description:
-      "A practical guide to pulling real device logs for mobile bug reports — enabling Developer Mode, capturing with ADB or a log app on Android, and the Xcode/Console.app workflow on iOS.",
+      "How to check Android device logs and iOS device logs for app debugging — ADB logcat, system/app logs, Android log viewer apps, and Xcode Devices console / Console.app.",
     topic: "Mobile QA",
     date: "2025-07-22",
-    readingMinutes: 8,
-    tags: ["Mobile QA", "Android", "iOS", "ADB", "Debugging"],
+    readingMinutes: 9,
+    tags: [
+      "Android Logs",
+      "Device Logs",
+      "ADB",
+      "ADB Logcat",
+      "Android Device Logs",
+      "iOS Device Logs",
+      "Xcode",
+      "Mobile App Logging",
+      "Android Log Viewer",
+      "Debugging",
+    ],
     content: [
       {
         type: "p",
-        text: "\"Can you attach the logs?\" is one of the most common follow-up requests a developer will send after a mobile bug report. A screenshot shows what happened; a device log shows why. This guide covers how I pull logs from Android and iOS devices during QA — turning on Developer Mode, capturing via ADB or a log-capture app on Android, and the Xcode / Console.app workflow on iOS — plus turning everything back off when the investigation is done.",
+        text: "\"Can you attach the logs?\" is one of the most common follow-ups after a mobile bug report. A screenshot shows what happened; Android logs or iOS device logs show why. This guide covers how to get logs from an Android device (ADB logcat, system logger / app logs, and on-device log readers) and how to view device logs in Xcode or Console.app on iOS — then turn developer options back off when you are done.",
       },
       {
         type: "callout",
@@ -796,11 +876,11 @@ GET  .../api/v2/get_results_for_case/{run_id}/{case_id}`,
       },
       {
         type: "h2",
-        text: "Android: Enabling Developer Mode",
+        text: "Android: Enable Developer Mode Before Viewing Logs",
       },
       {
         type: "p",
-        text: "Developer options are hidden by default on Android, so the first step on any device is unlocking them:",
+        text: "Developer options are hidden by default on Android, so the first step on any device is unlocking them before you can pull Android app logs or system logs:",
       },
       {
         type: "ol",
@@ -814,11 +894,11 @@ GET  .../api/v2/get_results_for_case/{run_id}/{case_id}`,
       },
       {
         type: "h2",
-        text: "Android: Enabling USB Debugging",
+        text: "Android: Enable USB Debugging for ADB Logs",
       },
       {
         type: "p",
-        text: "Developer options being visible isn't enough on its own — USB debugging has to be switched on separately before ADB can see the device:",
+        text: "Developer options being visible isn't enough on its own — USB debugging has to be switched on separately before ADB can see the device and stream Android ADB logs:",
       },
       {
         type: "ol",
@@ -831,15 +911,15 @@ GET  .../api/v2/get_results_for_case/{run_id}/{case_id}`,
       },
       {
         type: "h2",
-        text: "Android: Getting Logs via ADB",
+        text: "How to Check Android Device Logs with ADB (Logcat)",
       },
       {
         type: "p",
-        text: "ADB (Android Debug Bridge) gives you the full, unfiltered system log — the same one developers use to trace crashes, ANRs, and network failures. It requires a computer and a USB (or Wi-Fi debugging) connection, but it's the most complete capture method.",
+        text: "ADB (Android Debug Bridge) gives you the full, unfiltered Android system log — the same stream developers use for crashes, ANRs, and network failures. If you searched for \"how to check Android logs,\" \"Android log files,\" or \"Android ADB logs,\" this is the primary method.",
       },
       {
         type: "h3",
-        text: "Installing ADB",
+        text: "Installing ADB (Windows, macOS, Linux)",
       },
       {
         type: "table",
@@ -869,7 +949,7 @@ GET  .../api/v2/get_results_for_case/{run_id}/{case_id}`,
       },
       {
         type: "p",
-        text: "With the device authorized, capture the log to a file, reproduce the bug, then stop the capture:",
+        text: "With the device authorized, capture the Android application log / device log to a file, reproduce the bug, then stop the capture:",
       },
       {
         type: "code",
@@ -877,7 +957,7 @@ GET  .../api/v2/get_results_for_case/{run_id}/{case_id}`,
         code: `# Clear any stale buffered log lines first (optional but recommended)
 adb logcat -c
 
-# Start capturing to a file
+# Start capturing Android logs to a file
 adb logcat > logs.txt
 
 # ...reproduce the bug on the device now...
@@ -886,7 +966,7 @@ adb logcat > logs.txt
       },
       {
         type: "p",
-        text: "Attach logs.txt to the bug report along with your steps to reproduce, timestamp, and app version. If the issue is specific to your app's package, filtering by tag or PID before attaching keeps the file focused instead of handing over the entire device log:",
+        text: "Attach logs.txt (your Android log file) to the bug report along with steps, timestamp, and app version. To focus on one app's package instead of the entire system logger output:",
       },
       {
         type: "code",
@@ -896,30 +976,34 @@ adb logcat --pid=$(adb shell pidof -s com.example.app) > app-only-logs.txt`,
       },
       {
         type: "h2",
-        text: "Android: Using a Log Capture App (No PC Required)",
+        text: "Android Log Viewer Apps (When You Have No PC)",
       },
       {
         type: "p",
-        text: "When a computer isn't available — a field tester, a client's device, or a bug that only reproduces away from a desk — an on-device log capture app works instead of ADB. Two I've used reliably:",
+        text: "When a computer isn't available — field testing, a client's phone, or a bug that only reproduces away from a desk — an Android log reader / log tool on the device can replace ADB. Two I've used reliably:",
       },
       {
         type: "ul",
         items: [
-          "MatLog Libre — open-source, filters by tag/priority, and exports the captured log as a shareable text file.",
-          "Logcat Reader — lightweight logcat viewer with search and save-to-file support, once it has permission to read the full log.",
+          "MatLog Libre — open-source Android log viewer; filters by tag/priority and exports a shareable text log file.",
+          "Logcat Reader — lightweight viewer with search and save-to-file, once it can read the full device log.",
         ],
       },
       {
         type: "p",
-        text: "The catch: since Android 4.1, apps can only read their own log output by default. To let either app show the full device log, grant the READ_LOGS permission once — via adb shell pm grant <package> android.permission.READ_LOGS from a computer, or root access on the device. That one-time grant is the only PC step; after it's done, the app captures logs on its own.",
+        text: "The catch: since Android 4.1, apps can only read their own log output by default. To let either app show the full Android system logs, grant READ_LOGS once — via adb shell pm grant <package> android.permission.READ_LOGS from a computer, or root on the device. That one-time grant is the only PC step; after it's done, the app captures logs on its own.",
+      },
+      {
+        type: "callout",
+        text: "On Samsung and some OEM builds you may also see \"verbose\" / debug logging options under Developer options. Use them when you need deeper Android debug logs, then turn them off after the investigation.",
       },
       {
         type: "h2",
-        text: "Android: Disabling Developer Mode",
+        text: "Android: Disable Developer Mode After Capturing Logs",
       },
       {
         type: "p",
-        text: "Once the investigation is closed, turn Developer options back off — leaving USB debugging enabled on a device long-term is an unnecessary attack surface, especially on shared or client-owned hardware.",
+        text: "Once the investigation is closed, turn Developer options back off — leaving USB debugging enabled long-term is an unnecessary attack surface, especially on shared or client-owned hardware.",
       },
       {
         type: "ol",
@@ -935,15 +1019,15 @@ adb logcat --pid=$(adb shell pidof -s com.example.app) > app-only-logs.txt`,
       },
       {
         type: "h2",
-        text: "iOS: Capturing Device Logs",
+        text: "How to View iOS Device Logs in Xcode",
       },
       {
         type: "p",
-        text: "iOS doesn't expose an ADB-style debug toggle, but Apple's own tooling gives QA a comparable live log stream — no jailbreak or hidden menu required. The two approaches below cover almost every mobile QA scenario on iOS.",
+        text: "iOS doesn't expose an ADB-style debug toggle, but Apple's tooling gives QA a live log stream — no jailbreak required. If you searched for \"iOS device logs\" or \"Xcode view device logs,\" start here.",
       },
       {
         type: "h3",
-        text: "Option 1: Xcode's Devices & Simulators Console (recommended)",
+        text: "Xcode Devices & Simulators console (recommended)",
       },
       {
         type: "ol",
@@ -951,21 +1035,21 @@ adb logcat --pid=$(adb shell pidof -s com.example.app) > app-only-logs.txt`,
           "Connect the iPhone/iPad to a Mac with a cable (or pair over Wi-Fi if already configured) and trust the computer on the device if prompted.",
           "Open Xcode → Window → Devices and Simulators.",
           "Select the connected device in the left sidebar.",
-          "Click Open Console at the bottom of the window — this streams the device's live unified log.",
+          "Click Open Console at the bottom of the window — this streams the device's live unified log (same idea as Android console log / logcat).",
           "Use the search/filter bar to narrow by process name (your app's binary) before reproducing the issue, then reproduce the bug and copy or export the relevant lines.",
         ],
       },
       {
         type: "h3",
-        text: "Option 2: Console.app with the device selected",
+        text: "Console.app with the device selected",
       },
       {
         type: "p",
-        text: "macOS's built-in Console.app (Applications → Utilities → Console) can also target a connected iOS device directly from its sidebar, without opening Xcode at all. It's the same unified log, useful when you just need a quick read without a full Xcode install, or want to run a sysdiagnose (Console.app → device menu → \"Collect sysdiagnose from device\") for a deeper, Apple-support-style diagnostic bundle.",
+        text: "macOS's built-in Console.app (Applications → Utilities → Console) can also target a connected iOS device directly from its sidebar, without opening Xcode at all. It's the same unified log, useful when you just need a quick read without a full Xcode install, or want to run a sysdiagnose (Console.app → device menu → \"Collect sysdiagnose from device\") for a deeper diagnostic bundle.",
       },
       {
         type: "h3",
-        text: "Option 3: Command-line via libimobiledevice",
+        text: "Command-line via libimobiledevice",
       },
       {
         type: "p",
@@ -993,17 +1077,18 @@ idevicesyslog > ios-logs.txt
       },
       {
         type: "h2",
-        text: "Android vs. iOS: Quick Reference",
+        text: "Android vs iOS Device Logs: Quick Reference",
       },
       {
         type: "table",
         caption: "Which capture method to reach for",
         headers: ["Scenario", "Android", "iOS"],
         rows: [
-          ["Full, unfiltered system log", "adb logcat", "Xcode Devices & Simulators → Open Console"],
+          ["Full system / device log", "adb logcat", "Xcode → Devices & Simulators → Open Console"],
           ["No computer available", "MatLog Libre / Logcat Reader", "TestFlight \"Send Beta Feedback\""],
           ["Deep diagnostic bundle", "adb bugreport", "sysdiagnose via Console.app"],
-          ["Scriptable / CI-friendly", "adb logcat (scriptable natively)", "idevicesyslog"],
+          ["Scriptable / CI-friendly", "adb logcat", "idevicesyslog"],
+          ["Emulator logs", "adb logcat (emulator serial)", "Xcode Simulator console"],
         ],
       },
       {
@@ -1014,18 +1099,26 @@ idevicesyslog > ios-logs.txt
   },
   {
     slug: "qa-work-samples",
-    title: "QA Work Samples: Tools, Evidence, and Real Test Artifacts",
+    title: "QA Work Samples & Artifacts: Tools, Evidence, and Test Examples",
     description:
-      "A visual walkthrough of the tools I use day-to-day for QA — Jira-style tracking, device matrices, BrowserStack, Chrome DevTools, GA4, Firebase Crashlytics, AWS CloudWatch, and SQL integrity checks — plus downloadable work samples.",
+      "QA sample artifacts for clients — bug boards, device matrices, BrowserStack, DevTools, analytics checks, CloudWatch, SQL integrity, Bitbucket PR QA, and downloadable work-sample PDFs.",
     topic: "Work Samples",
     date: "2026-07-27",
     readingMinutes: 9,
-    tags: ["Work Samples", "Portfolio", "QA Tools", "Evidence"],
+    tags: [
+      "QA Sample",
+      "QA Artifacts",
+      "QA Testing Examples",
+      "Work Samples",
+      "Portfolio",
+      "QA Tools",
+      "Evidence",
+    ],
     featured: true,
     content: [
       {
         type: "p",
-        text: "Clients hiring QA remotely rarely get to watch the work happen live. This page closes that gap — it collects anonymized, illustrative evidence of the tools and artifacts I produce during a normal QA engagement: ticket tracking, device coverage, browser debugging, analytics validation, crash monitoring, backend log investigation, and database integrity checks.",
+        text: "Clients hiring QA remotely rarely get to watch the work happen live. This page closes that gap — it collects anonymized QA samples and artifacts from a normal engagement: ticket tracking, device coverage, browser debugging, analytics validation, crash monitoring, backend log investigation, and database integrity checks.",
       },
       {
         type: "callout",
@@ -1779,17 +1872,24 @@ HAVING COUNT(*) > 1;`,
   },
   {
     slug: "bug-reporting-developers-can-act-on",
-    title: "Bug Reporting Developers Can Act On",
+    title: "Bug Reporting Developers Can Act On (QA Sample Template)",
     description:
-      "How to write clear, reproducible bug reports with severity, evidence, and impact — the difference between ignored tickets and fast fixes.",
+      "QA testing example for bug reports — clear title, steps, severity, evidence, and impact so defects get fixed fast. A reusable QA sample template for freelancers and teams.",
     topic: "Bug Reporting",
     date: "2026-06-28",
     readingMinutes: 6,
-    tags: ["Bug Reporting", "Communication", "QA Process"],
+    tags: [
+      "Bug Reporting",
+      "QA Sample",
+      "QA Testing Examples",
+      "QA Artifacts",
+      "Communication",
+      "QA Process",
+    ],
     content: [
       {
         type: "p",
-        text: "A bug report is a handoff. If developers cannot reproduce the issue quickly, the defect stalls. Over 14+ years of QA work, the reports that get fixed fastest share the same traits: clear title, exact steps, environment details, expected vs actual, and business impact.",
+        text: "A bug report is a handoff — and one of the most useful QA artifacts you can show in a portfolio. If developers cannot reproduce the issue quickly, the defect stalls. Over 14+ years of QA work, the reports that get fixed fastest share the same traits: clear title, exact steps, environment details, expected vs actual, and business impact.",
       },
       {
         type: "h2",
@@ -2458,17 +2558,25 @@ What 8–12 checks do you automate in Playwright, and what do you keep manual?"`
   },
   {
     slug: "manual-qa-testing-checklist-for-release-ready-builds",
-    title: "Manual QA Testing Checklist for Release-Ready Builds",
+    title: "Manual QA Checklist: Ready for Testing & Ready for QA Sign-Off",
     description:
-      "A practical manual QA checklist covering smoke, functional, regression, UAT, cross-browser/device, API basics, and production readiness sign-off.",
+      "A practical quality-check workflow and manual QA checklist so builds are ready for testing and ready for QA — smoke, functional, regression, UAT, and release sign-off.",
     topic: "Manual QA",
     date: "2026-07-17",
     readingMinutes: 10,
-    tags: ["Manual QA", "Checklist", "Regression", "Release Readiness"],
+    tags: [
+      "Manual QA",
+      "Ready for Testing",
+      "Ready for QA",
+      "Quality Check Workflow",
+      "Checklist",
+      "Regression",
+      "Release Readiness",
+    ],
     content: [
       {
         type: "p",
-        text: "Manual QA remains essential for exploratory depth, usability judgment, and release confidence. Automation catches known regressions; skilled manual testing finds what scripts were never written to see. Use this checklist as a reusable baseline for feature testing, regression, UAT, and production readiness reviews.",
+        text: "When a build is marked \"ready for testing\" or \"ready for QA,\" you need a repeatable quality-check workflow — not random clicking. Manual QA remains essential for exploratory depth, usability judgment, and release confidence. Automation catches known regressions; skilled manual testing finds what scripts were never written to see. Use this checklist as a reusable baseline for feature testing, regression, UAT, and production readiness reviews.",
       },
       {
         type: "h2",
