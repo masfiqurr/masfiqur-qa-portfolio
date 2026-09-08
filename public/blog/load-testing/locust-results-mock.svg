@@ -1,0 +1,109 @@
+<svg viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" font-family="Manrope, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Anonymized Locust load test results mock</title>
+  <desc id="desc">Illustrative mock of a Locust statistics panel showing RPS, latency percentiles, and error rates for anonymized API endpoints during a staging load test.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="640" rx="24" fill="url(#bg)"/>
+  <rect x="0.5" y="0.5" width="1199" height="639" rx="23.5" fill="none" stroke="#2A2A2A"/>
+
+  <circle cx="34" cy="34" r="6" fill="#F87171"/>
+  <circle cx="56" cy="34" r="6" fill="#FBBF24"/>
+  <circle cx="78" cy="34" r="6" fill="#75C32C"/>
+  <rect x="1096" y="24" width="80" height="24" rx="12" fill="#1E1633" stroke="#5B29DA"/>
+  <text x="1136" y="40" text-anchor="middle" fill="#B39CFF" font-size="11" font-weight="700">SAMPLE</text>
+
+  <text x="40" y="76" fill="#FFFFFF" font-size="21" font-weight="700">Locust - Staging Load Test Results</text>
+  <text x="40" y="100" fill="#A3A3A3" font-size="13">Anonymized endpoints | 200 virtual users | 10 min run | staging environment</text>
+
+  <g font-size="12">
+    <rect x="40" y="124" width="170" height="72" rx="12" fill="#141414" stroke="#2A2A2A"/>
+    <text x="56" y="150" fill="#71717A" font-size="11">Total requests</text>
+    <text x="56" y="178" fill="#FFFFFF" font-size="24" font-weight="700">84,320</text>
+
+    <rect x="222" y="124" width="170" height="72" rx="12" fill="#141414" stroke="#2A2A2A"/>
+    <text x="238" y="150" fill="#71717A" font-size="11">RPS (avg)</text>
+    <text x="238" y="178" fill="#75C32C" font-size="24" font-weight="700">140.5</text>
+
+    <rect x="404" y="124" width="170" height="72" rx="12" fill="#141414" stroke="#2A2A2A"/>
+    <text x="420" y="150" fill="#71717A" font-size="11">Failures</text>
+    <text x="420" y="178" fill="#F87171" font-size="24" font-weight="700">1.8%</text>
+
+    <rect x="586" y="124" width="170" height="72" rx="12" fill="#141414" stroke="#2A2A2A"/>
+    <text x="602" y="150" fill="#71717A" font-size="11">Users (peak)</text>
+    <text x="602" y="178" fill="#FFFFFF" font-size="24" font-weight="700">200</text>
+
+    <rect x="768" y="124" width="392" height="72" rx="12" fill="#141414" stroke="#2A2A2A"/>
+    <text x="784" y="150" fill="#71717A" font-size="11">Run window</text>
+    <text x="784" y="178" fill="#FFFFFF" font-size="16" font-weight="700">2026-09-09 14:02 - 14:12 UTC | ramp 0 to 200 over 2 min</text>
+  </g>
+
+  <rect x="40" y="214" width="1120" height="120" rx="12" fill="#141414" stroke="#2A2A2A"/>
+  <text x="56" y="238" fill="#A3A3A3" font-size="12" font-weight="700">Total requests per second</text>
+  <polyline points="56,310 140,290 220,285 300,280 380,278 460,275 540,272 620,270 700,268 780,265 860,262 940,258 1020,255 1100,252 1140,250" fill="none" stroke="#75C32C" stroke-width="2.5"/>
+  <polyline points="56,310 140,305 220,300 300,295 380,292 460,288 540,285 620,282 700,278 780,275 860,272 940,268 1020,265 1100,262 1140,260" fill="none" stroke="#5B29DA" stroke-width="2" opacity="0.7"/>
+  <text x="56" y="318" fill="#71717A" font-size="10">Green = RPS | Purple = response time (ms, scaled)</text>
+
+  <g font-size="11" font-weight="700" fill="#71717A">
+    <rect x="40" y="350" width="1120" height="28" fill="#121212" rx="6"/>
+    <text x="56" y="368">METHOD</text>
+    <text x="140" y="368">NAME</text>
+    <text x="420" y="368"># REQ</text>
+    <text x="500" y="368">FAIL %</text>
+    <text x="580" y="368">AVG (ms)</text>
+    <text x="670" y="368">P95 (ms)</text>
+    <text x="760" y="368">P99 (ms)</text>
+    <text x="850" y="368">RPS</text>
+  </g>
+
+  <g font-size="12" font-family="monospace">
+    <rect x="40" y="378" width="1120" height="30" fill="#0F0F0F"/>
+    <text x="56" y="398" fill="#9AE070">GET</text>
+    <text x="140" y="398" fill="#D4D4D4">/api/health</text>
+    <text x="420" y="398" fill="#A3A3A3">28,410</text>
+    <text x="500" y="398" fill="#9AE070">0.0%</text>
+    <text x="580" y="398" fill="#A3A3A3">42</text>
+    <text x="670" y="398" fill="#A3A3A3">78</text>
+    <text x="760" y="398" fill="#A3A3A3">112</text>
+    <text x="850" y="398" fill="#A3A3A3">47.4</text>
+
+    <rect x="40" y="408" width="1120" height="30" fill="#141414"/>
+    <text x="56" y="428" fill="#FBBF24">POST</text>
+    <text x="140" y="428" fill="#D4D4D4">/api/auth/login</text>
+    <text x="420" y="428" fill="#A3A3A3">18,220</text>
+    <text x="500" y="428" fill="#9AE070">0.3%</text>
+    <text x="580" y="428" fill="#A3A3A3">186</text>
+    <text x="670" y="428" fill="#FBBF24">412</text>
+    <text x="760" y="428" fill="#FBBF24">680</text>
+    <text x="850" y="428" fill="#A3A3A3">30.4</text>
+
+    <rect x="40" y="438" width="1120" height="30" fill="#0F0F0F"/>
+    <text x="56" y="458" fill="#FBBF24">POST</text>
+    <text x="140" y="458" fill="#D4D4D4">/api/courses/enroll</text>
+    <text x="420" y="458" fill="#A3A3A3">22,640</text>
+    <text x="500" y="458" fill="#F87171">4.1%</text>
+    <text x="580" y="458" fill="#F87171">920</text>
+    <text x="670" y="458" fill="#F87171">2,840</text>
+    <text x="760" y="458" fill="#F87171">4,120</text>
+    <text x="850" y="458" fill="#A3A3A3">37.7</text>
+
+    <rect x="40" y="468" width="1120" height="30" fill="#141414"/>
+    <text x="56" y="488" fill="#FBBF24">POST</text>
+    <text x="140" y="488" fill="#D4D4D4">/api/checkout/confirm</text>
+    <text x="420" y="488" fill="#A3A3A3">15,050</text>
+    <text x="500" y="488" fill="#F87171">2.6%</text>
+    <text x="580" y="488" fill="#FBBF24">540</text>
+    <text x="670" y="488" fill="#F87171">1,980</text>
+    <text x="760" y="488" fill="#F87171">3,200</text>
+    <text x="850" y="488" fill="#A3A3A3">25.1</text>
+  </g>
+
+  <rect x="40" y="518" width="1120" height="92" rx="12" fill="#1E1633" stroke="#5B29DA"/>
+  <text x="56" y="544" fill="#B39CFF" font-size="12" font-weight="700">QA note (illustrative)</text>
+  <text x="56" y="568" fill="#D4D4D4" font-size="13">Enrollment and checkout endpoints degrade above ~180 concurrent users - p95 latency exceeds 2s and error rate climbs.</text>
+  <text x="56" y="592" fill="#A3A3A3" font-size="12">Recommend capacity review before marketing campaign - all data anonymized for portfolio purposes</text>
+</svg>

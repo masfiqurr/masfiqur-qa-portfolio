@@ -1,0 +1,101 @@
+<svg viewBox="0 0 1200 580" xmlns="http://www.w3.org/2000/svg" font-family="Manrope, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Anonymized JMeter Summary Report mock</title>
+  <desc id="desc">Illustrative mock of a JMeter Summary Report listener showing throughput, average response time, error rate, and latency percentiles for anonymized staging endpoints.</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A0A0A"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="580" rx="24" fill="url(#bg3)"/>
+  <rect x="0.5" y="0.5" width="1199" height="579" rx="23.5" fill="none" stroke="#2A2A2A"/>
+
+  <circle cx="34" cy="34" r="6" fill="#F87171"/>
+  <circle cx="56" cy="34" r="6" fill="#FBBF24"/>
+  <circle cx="78" cy="34" r="6" fill="#75C32C"/>
+  <rect x="1096" y="24" width="80" height="24" rx="12" fill="#1E1633" stroke="#5B29DA"/>
+  <text x="1136" y="40" text-anchor="middle" fill="#B39CFF" font-size="11" font-weight="700">SAMPLE</text>
+
+  <text x="40" y="76" fill="#FFFFFF" font-size="21" font-weight="700">JMeter - Summary Report (Listener)</text>
+  <text x="40" y="100" fill="#A3A3A3" font-size="13">Staging run results - anonymized endpoints - made-up numbers for portfolio demo</text>
+
+  <g font-size="11" font-weight="700" fill="#71717A">
+    <rect x="40" y="124" width="1120" height="30" fill="#121212" rx="6"/>
+    <text x="56" y="144">Label</text>
+    <text x="280" y="144"># Samples</text>
+    <text x="400" y="144">Avg (ms)</text>
+    <text x="500" y="144">Min</text>
+    <text x="560" y="144">Max</text>
+    <text x="630" y="144">Error %</text>
+    <text x="720" y="144">Throughput</text>
+    <text x="840" y="144">Received KB/s</text>
+    <text x="980" y="144">P95 (approx)</text>
+  </g>
+
+  <g font-size="12" font-family="monospace">
+    <rect x="40" y="154" width="1120" height="32" fill="#0F0F0F"/>
+    <text x="56" y="175" fill="#D4D4D4">GET /api/health</text>
+    <text x="280" y="175" fill="#A3A3A3">28,410</text>
+    <text x="400" y="175" fill="#A3A3A3">42</text>
+    <text x="500" y="175" fill="#A3A3A3">12</text>
+    <text x="560" y="175" fill="#A3A3A3">210</text>
+    <text x="630" y="175" fill="#9AE070">0.00%</text>
+    <text x="720" y="175" fill="#75C32C">47.4/sec</text>
+    <text x="840" y="175" fill="#A3A3A3">18.2</text>
+    <text x="980" y="175" fill="#A3A3A3">78 ms</text>
+
+    <rect x="40" y="186" width="1120" height="32" fill="#141414"/>
+    <text x="56" y="207" fill="#D4D4D4">POST /api/auth/login</text>
+    <text x="280" y="207" fill="#A3A3A3">18,220</text>
+    <text x="400" y="207" fill="#A3A3A3">186</text>
+    <text x="500" y="207" fill="#A3A3A3">88</text>
+    <text x="560" y="207" fill="#A3A3A3">890</text>
+    <text x="630" y="207" fill="#9AE070">0.30%</text>
+    <text x="720" y="207" fill="#75C32C">30.4/sec</text>
+    <text x="840" y="207" fill="#A3A3A3">42.1</text>
+    <text x="980" y="207" fill="#FBBF24">412 ms</text>
+
+    <rect x="40" y="218" width="1120" height="32" fill="#0F0F0F"/>
+    <text x="56" y="239" fill="#D4D4D4">POST /api/courses/enroll</text>
+    <text x="280" y="239" fill="#A3A3A3">22,640</text>
+    <text x="400" y="239" fill="#F87171">920</text>
+    <text x="500" y="239" fill="#A3A3A3">120</text>
+    <text x="560" y="239" fill="#F87171">5,400</text>
+    <text x="630" y="239" fill="#F87171">4.10%</text>
+    <text x="720" y="239" fill="#75C32C">37.7/sec</text>
+    <text x="840" y="239" fill="#A3A3A3">55.8</text>
+    <text x="980" y="239" fill="#F87171">2,840 ms</text>
+
+    <rect x="40" y="250" width="1120" height="32" fill="#141414"/>
+    <text x="56" y="271" fill="#D4D4D4">POST /api/checkout/confirm</text>
+    <text x="280" y="271" fill="#A3A3A3">15,050</text>
+    <text x="400" y="271" fill="#FBBF24">540</text>
+    <text x="500" y="271" fill="#A3A3A3">95</text>
+    <text x="560" y="271" fill="#F87171">4,200</text>
+    <text x="630" y="271" fill="#F87171">2.60%</text>
+    <text x="720" y="271" fill="#75C32C">25.1/sec</text>
+    <text x="840" y="271" fill="#A3A3A3">38.4</text>
+    <text x="980" y="271" fill="#F87171">1,980 ms</text>
+
+    <rect x="40" y="282" width="1120" height="32" fill="#1E1633"/>
+    <text x="56" y="303" fill="#B39CFF" font-weight="700">TOTAL</text>
+    <text x="280" y="303" fill="#FFFFFF" font-weight="700">84,320</text>
+    <text x="400" y="303" fill="#FFFFFF">284</text>
+    <text x="500" y="303" fill="#A3A3A3">12</text>
+    <text x="560" y="303" fill="#A3A3A3">5,400</text>
+    <text x="630" y="303" fill="#F87171" font-weight="700">1.80%</text>
+    <text x="720" y="303" fill="#75C32C" font-weight="700">140.5/sec</text>
+    <text x="840" y="303" fill="#A3A3A3">154.5</text>
+    <text x="980" y="303" fill="#FFFFFF">680 ms</text>
+  </g>
+
+  <rect x="40" y="334" width="1120" height="140" rx="12" fill="#141414" stroke="#2A2A2A"/>
+  <text x="56" y="362" fill="#A3A3A3" font-size="12" font-weight="700">Throughput over time (sample chart)</text>
+  <polyline points="56,450 140,430 220,420 300,410 380,405 460,400 540,395 620,392 700,388 780,385 860,382 940,378 1020,375 1100,372 1140,370" fill="none" stroke="#75C32C" stroke-width="2.5"/>
+  <text x="56" y="458" fill="#71717A" font-size="10">Throughput = requests handled per second (same idea as RPS in Locust)</text>
+
+  <rect x="40" y="490" width="1120" height="70" rx="12" fill="#1E1633" stroke="#5B29DA"/>
+  <text x="56" y="518" fill="#B39CFF" font-size="12" font-weight="700">How to read this table (plain words)</text>
+  <text x="56" y="542" fill="#D4D4D4" font-size="12">Throughput = requests per second. Error % = failed requests. P95 = 95% of requests finished within this time.</text>
+</svg>
