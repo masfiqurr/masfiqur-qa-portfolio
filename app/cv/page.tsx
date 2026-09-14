@@ -311,15 +311,12 @@ export default function CvPage() {
               About Me
             </h2>
             <p className="cv-about">
-              Top-Rated Senior Software Quality Assurance Engineer with 14+ years of experience
-              delivering high-quality web, mobile, SaaS, AI, and enterprise applications. Hold
-              Bachelor’s and Master’s degrees in Computer Science and Engineering. Worked with global
-              brands including Tesco, Harrods, Marks &amp; Spencer, Visa, Dell, FedEx, Hilton, and
-              many others. Specialized in Manual QA, Playwright Automation, REST API Testing,
-              exploratory testing, cross-browser testing, User Acceptance Testing (UAT), Analytics
-              QA, and release readiness for distributed Agile Scrum and CI/CD teams. Certified in
-              Claude and AI Fluency (Anthropic). Upwork Top Rated Plus · 100% Job Success · 50+
-              releases · 200+ apps.
+              Senior Software Quality Assurance Engineer with 14+ years owning quality across web,
+              mobile, SaaS, AI, and enterprise products. Combine Manual QA, Playwright automation,
+              REST API, and AI testing to catch risk early and ship production-ready releases for
+              distributed Agile teams. Hold Bachelor’s and Master’s degrees in Computer Science and
+              Engineering; certified in Claude and AI Fluency (Anthropic) — 50+ production releases
+              and 200+ applications tested.
             </p>
           </section>
 
